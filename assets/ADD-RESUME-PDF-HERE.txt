@@ -1,0 +1,2 @@
+Place Adam's PDF resume in this folder and name it Adam-Thomas-Janes-Resume.pdf.
+The website download link already points to assets/Adam-Thomas-Janes-Resume.pdf.

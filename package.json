@@ -1,0 +1,10 @@
+{
+  "name": "adam-portfolio-site",
+  "version": "5.2.0",
+  "private": true,
+  "description": "Editorial publication-style portfolio with JavaScript-free heading-based anchor navigation.",
+  "scripts": {
+    "serve": "python -m http.server 8080",
+    "notes": "No build step required. Open index.html directly or serve locally."
+  }
+}

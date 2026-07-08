@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Keep the portfolio easy to crawl.
+Sitemap: https://adamthomasjanes.com/sitemap.xml

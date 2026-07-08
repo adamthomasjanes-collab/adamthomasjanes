@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 104" role="img" aria-labelledby="atjTitle atjDesc">
+  <title id="atjTitle">ATJ</title>
+  <desc id="atjDesc">Custom geometric ATJ initials with a magenta rule under the A.</desc>
+  <rect width="232" height="104" fill="none"/>
+
+  <!-- A -->
+  <path fill="#050505" fill-rule="evenodd" d="
+    M18 70 L45 16 L61 16 L88 70 L72 70 L66 57 L40 57 L34 70 Z
+    M46 45 L60 45 L53 30 Z"/>
+
+  <!-- T -->
+  <path fill="#050505" d="M92 17 H146 V31 H126 V70 H112 V31 H92 Z"/>
+
+  <!-- J -->
+  <path fill="#050505" d="
+    M165 17 H181 V55
+    C181 67 174 75 161 75
+    C150 75 142 69 139 59
+    L153 55
+    C155 60 158 62 162 62
+    C166 62 168 59 168 54
+    V31 H165 Z"/>
+
+  <!-- Magenta rule -->
+  <rect x="18" y="82" width="38" height="6" fill="#ff006e"/>
+</svg>
