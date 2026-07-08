@@ -924,37 +924,37 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         */
         {
           label: "Primary Brand Identity",
-          thumb: "assets/camp-perry/thumbs/camp-perry-logo-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-logo.png",
           src: "assets/camp-perry/camp-perry-logo.png",
           alt: "Camp Perry Lodging and Conference Center logo design"
         },
         {
           label: "Responsive Website",
-          thumb: "assets/camp-perry/thumbs/camp-perry-website-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-website.png",
           src: "assets/camp-perry/camp-perry-website.png",
           alt: "Camp Perry Lodging and Conference Center website design"
         },
         {
           label: "Printed Brochure",
-          thumb: "assets/camp-perry/thumbs/camp-perry-brochure-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-brochure.png",
           src: "assets/camp-perry/camp-perry-brochure.png",
           alt: "Camp Perry Lodging and Conference Center brochure design"
         },
         {
           label: "Location Photography",
-          thumb: "assets/camp-perry/thumbs/camp-perry-photography-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-photography.png",
           src: "assets/camp-perry/camp-perry-photography.jpg",
           alt: "Camp Perry Lodging and Conference Center photography"
         },
         {
           label: "Reservation Email",
-          thumb: "assets/camp-perry/thumbs/camp-perry-email-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-email.png",
           src: "assets/camp-perry/camp-perry-email.png",
           alt: "Camp Perry Lodging and Conference Center email design"
         },
         {
           label: "Marketing Collateral",
-          thumb: "assets/camp-perry/thumbs/camp-perry-collateral-thumb.png",
+          thumb: "assets/camp-perry/thumbs/thumb_camp-perry-collateral.png",
           src: "assets/camp-perry/camp-perry-collateral.png",
           alt: "Camp Perry Lodging and Conference Center marketing collateral"
         }
