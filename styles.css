@@ -2755,7 +2755,7 @@ html {
 .archive-issue-main h3,.archive-issue-sidebar h3{margin-top:0;font:950 12px/1.2 var(--sans,Arial,sans-serif);letter-spacing:.14em;text-transform:uppercase}
 .archive-issue-main p{font-size:clamp(17px,1.6vw,21px);line-height:1.65}
 .archive-ad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0}
-.archive-ad-thumb{aspect-ratio:4/5;border:1px solid rgba(17,17,17,.25);background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.28)),repeating-linear-gradient(0deg,rgba(17,17,17,.05) 0 1px,transparent 1px 12px);display:grid;place-items:center;cursor:pointer;box-shadow:5px 5px 0 rgba(0,0,0,.06);transition:transform .18s ease,box-shadow .18s ease}
+.archive-ad-thumb{aspect-ratio:auto;border:1px solid rgba(17,17,17,.25);background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.28)),repeating-linear-gradient(0deg,rgba(17,17,17,.05) 0 1px,transparent 1px 12px);display:grid;place-items:center;cursor:pointer;box-shadow:5px 5px 0 rgba(0,0,0,.06);transition:transform .18s ease,box-shadow .18s ease}
 .archive-ad-thumb:hover,.archive-ad-thumb:focus-visible{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(255,0,110,.18)}
 .archive-ad-thumb span{font:900 12px/1 var(--sans,Arial,sans-serif);letter-spacing:.12em;text-transform:uppercase}
 .archive-issue-note{border-left:4px solid var(--magenta,#ff006e);padding-left:16px;color:var(--muted,#666)}
@@ -2988,7 +2988,7 @@ Look for .archive-ad-art and .archive-ad-caption if you need to change markup.
   object-fit: contain;
   object-position: center;
   display: block;
-  background: #000;
+  background: #fff;
   transition: transform 220ms ease, filter 220ms ease;
 }
 
@@ -3186,4 +3186,14 @@ Editing:
   .resource-feature {
     grid-template-columns: 1fr;
   }
+}
+.archive-ad-art {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fff;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
 }
