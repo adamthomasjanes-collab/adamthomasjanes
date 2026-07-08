@@ -1,22 +1,4 @@
 /*
-╔══════════════════════════════════════════════════════════════╗
-║  DESIGN SYSTEM FIELD GUIDE                                  ║
-╚══════════════════════════════════════════════════════════════╝
-
-This stylesheet is written as the visual production manual for the
-portfolio-as-publication concept.
-
-The CSS is not only responsible for making the site attractive. It defines
-the editorial atmosphere: paper texture, CMYK accents, page rhythm, motion,
-spacing, typographic hierarchy, responsive behavior, and all the small details
-that make the site feel designed rather than merely assembled.
-
-Design principle:
-Effects are allowed only when they support clarity, pacing, or editorial
-character. If an effect makes the content harder to read, the effect loses.
-*/
-
-/*
   ╔══════════════════════════════════════════════════════════════╗
   ║ STYLE GUIDE WITH A PERSONALITY                              ║
   ╚══════════════════════════════════════════════════════════════╝
@@ -41,14 +23,7 @@ character. If an effect makes the content harder to read, the effect loses.
   - The design should feel like a publication system, not a generic template.
 
   Editing rules:
-  - Use the variables in /* ==========================================================
-   CHAPTER NOTES · ROOT VARIABLES
-
-   These custom properties are the ink cabinet and layout ruler for
-   the whole issue. Change colors, spacing, shadows, or motion here
-   first before hunting through individual components.
-   ========================================================== */
-:root before adding one-off values.
+  - Use the variables in :root before adding one-off values.
   - Keep section comments in place so future updates are easy to scan.
   - Prefer semantic class names tied to content purpose, not temporary appearance.
   - Keep responsive adjustments near the bottom unless they belong to a very specific component.
@@ -174,14 +149,6 @@ img { max-width: 100%; }
 }
 
 .eyebrow,
-/* ==========================================================
-   CHAPTER NOTES · THE COVER
-
-   The hero is the front cover. Typography and identity carry the
-   message; visual effects create publication atmosphere. Test this
-   carefully at small sizes because a cover fails if the name breaks
-   poorly or the promise becomes hard to read.
-   ========================================================== */
 .hero-tags,
 .section-kicker,
 .section-title-row p,
@@ -349,13 +316,6 @@ img { max-width: 100%; }
 }
 
 /* 05 HEADER */
-/* ==========================================================
-   CHAPTER NOTES · RUNNING HEAD / SITE HEADER
-
-   The header behaves like a publication running head: always nearby,
-   quiet, useful, and structured. It should guide the reader without
-   competing with the cover or feature stories.
-   ========================================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -680,21 +640,7 @@ h3 {
 }
 
 /* Services */
-/* ==========================================================
-   CHAPTER NOTES · AREAS OF PRACTICE GRID
-
-   These cards turn capabilities into readable editorial departments.
-   The goal is quick comprehension: what Adam does, who it helps, and
-   why the capability matters.
-   ========================================================== */
 .service-grid,
-/* ==========================================================
-   CHAPTER NOTES · FEATURE STORY SYSTEM
-
-   Featured projects are designed as article teasers, not thumbnails.
-   Each card should introduce a problem, approach, and outcome before
-   asking the visitor to open the full story.
-   ========================================================== */
 .featured-grid,
 .education-awards-grid {
   display: grid;
@@ -926,21 +872,7 @@ h3 {
   margin-bottom: 34px;
 }
 
-/* ==========================================================
-   CHAPTER NOTES · ARCHIVE BROWSER
-
-   This is the back-issue browser. It shows breadth and production
-   history. The selected issue should feel intentional, organized, and
-   easier to explore than a loose gallery.
-   ========================================================== */
 .archive-browser,
-/* ==========================================================
-   CHAPTER NOTES · PRODUCTION NOTES
-
-   Skills are grouped into usable editorial tabs instead of dumped into
-   one long list. The aim is to make craft visible without making the
-   reader work too hard.
-   ========================================================== */
 .skills-browser {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -1176,13 +1108,6 @@ h3 {
 .experience-rail span:nth-child(4n+3) { color: var(--black); border-color: rgba(0,0,0,.24); }
 .experience-rail span:nth-child(4n+4) { color: #9c8200; border-color: rgba(255,212,0,.46); }
 
-/* ==========================================================
-   CHAPTER NOTES · CAREER RECORD
-
-   Experience entries are treated like a professional timeline feature.
-   The design should make progression clear while leaving room for
-   details, keywords, and context.
-   ========================================================== */
 .experience-list {
   display: grid;
   gap: 26px;
@@ -2724,13 +2649,6 @@ section[tabindex="-1"]:focus-visible {
 .section-folio span:first-child,.footer-folio span:first-child{color:var(--magenta);font-size:13px}
 .margin-note{position:absolute;right:max(18px,calc((100vw - 1180px)/2));max-width:160px;font:800 10px/1.45 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:rgba(17,17,17,.38);writing-mode:vertical-rl;transform:rotate(180deg);pointer-events:none}
 .margin-reader{margin-top:60px}.margin-production{margin-top:90px}
-/* ==========================================================
-   CHAPTER NOTES · COLOPHON
-
-   The colophon is the quiet final page. It credits the system behind
-   the system: typography, build choices, optimization, accessibility,
-   and the editorial design language.
-   ========================================================== */
 .colophon-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .colophon-grid article{background:rgba(255,255,255,.62);border:var(--rule);padding:clamp(22px,3vw,34px);box-shadow:6px 6px 0 rgba(0,0,0,.05)}
 .colophon-grid h4{margin:0 0 12px;font:950 11px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--magenta)}
@@ -2808,14 +2726,6 @@ html {
 
 /* v5.2.2 Archive editorial issue overlay */
 /* EDITING NOTE: New reusable archive issue overlay used by the Feature Read Feature buttons. */
-/* ==========================================================
-   CHAPTER NOTES · SPECIAL INSERT OVERLAY
-
-   The archive issue overlay is the mini-publication layer. It lets
-   project stories expand without breaking the main page rhythm.
-   Treat it like a feature spread: title, editor's note, gallery,
-   sidebar, and navigation.
-   ========================================================== */
 .archive-issue-overlay{position:fixed;inset:0;z-index:1000;display:none}
 .archive-issue-overlay.is-open{display:block}
 .archive-issue-backdrop{position:absolute;inset:0;background:rgba(17,17,17,.72);backdrop-filter:blur(4px)}
@@ -3151,12 +3061,6 @@ Editing:
 • Keep downloadable resources generic: no employer-owned content,
   no licensed fonts unless the license permits redistribution.
 ======================================================= */
-/* ==========================================================
-   CHAPTER NOTES · RESOURCES
-
-   The resource section should feel generous and practical. It extends
-   the portfolio from proof of work into shared production knowledge.
-   ========================================================== */
 .resources {
   position: relative;
 }
