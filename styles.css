@@ -3187,6 +3187,13 @@ Editing:
     grid-template-columns: 1fr;
   }
 }
+
+/* Square Archive Gallery Images */
+
+.archive-ad-thumb {
+  aspect-ratio: auto;
+}
+
 .archive-ad-art {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -3194,6 +3201,15 @@ Editing:
   place-items: center;
   overflow: hidden;
   background: #fff;
-  border-top: 3px solid var(--black);
-  border-bottom: 3px solid var(--black);
+  border: 0;
+}
+
+.archive-ad-thumb.has-image img,
+.archive-ad-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #fff;
 }
