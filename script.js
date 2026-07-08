@@ -1,3 +1,28 @@
+/*****************************************************************
+
+BACKSTAGE SCRIPT NOTES
+
+This JavaScript file is the stage manager for the portfolio issue.
+The HTML provides the editorial structure. The CSS provides the visual
+language. This file handles the moving parts: tabs, overlays, galleries,
+scroll effects, counters, and small interactions that make the page feel
+alive.
+
+Philosophy:
+Use JavaScript to improve the experience, not to hide the content. The page
+should remain understandable as structured HTML even when interaction is not
+available.
+
+Before changing interaction code, test:
+• Keyboard navigation
+• Escape key behavior
+• Focus returning after overlays close
+• Mobile viewport behavior
+• Reduced-motion preferences
+• Whether the content still makes sense without the effect
+
+*****************************************************************/
+
 /*
   ╔══════════════════════════════════════════════════════════════╗
   ║ JAVASCRIPT BACKSTAGE CREW                                  ║
@@ -74,6 +99,15 @@ els.sections = els.navLinks.map(link => $(link.getAttribute("href"))).filter(Boo
 // and which deeper archive issue should open when someone asks for more.
 // issueKey tells the Open button which Archive Issue Overlay story to load.
 // ARCHIVE DATA MODEL: each object describes one archive category shown in the interface.
+/*****************************************************************
+ARCHIVE PROJECTS · BACK-ISSUE INDEX
+
+These entries power the archive browser preview. The archive is intentionally
+organized by communication discipline so visitors can find relevant proof
+quickly.
+
+Keep titles short, descriptions concrete, and proof points useful.
+*****************************************************************/
 const archiveProjects = [
   {
     title: "Advertising Campaigns",
@@ -321,6 +355,13 @@ function initPointer() {
 
 // PROOF POINT COUNTERS
 // Animates the numbers only when they enter view so the proof points feel discovered, not shouted.
+/*****************************************************************
+PROOF COUNTERS
+
+The counters add a little editorial motion to the proof points. They should
+support credibility, not feel like inflated dashboard metrics. Keep the
+numbers defensible and easy to explain.
+*****************************************************************/
 function initCounters() {
   if (!("IntersectionObserver" in window)) {
     $$(".counter").forEach(animateCounter);
@@ -865,7 +906,20 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     return order.map((index) => DEMO_ADS[index]);
   }
 
-  const ARCHIVE_ISSUES = {
+  /*****************************************************************
+ARCHIVE ISSUES · THE EDITORIAL DATABASE
+
+This object is the content desk for the feature overlays. The homepage keeps
+only the teaser copy; this data supplies the fuller magazine-style reading
+experience.
+
+When adding a new issue, think like an editor:
+• What is the story?
+• What does the work prove?
+• Which images support the point?
+• What should a recruiter/client understand after reading it?
+*****************************************************************/
+const ARCHIVE_ISSUES = {
     /* =======================================================
     ARCHIVE ISSUE CONTENT
 
