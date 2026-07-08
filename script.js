@@ -1107,12 +1107,37 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
   let currentGallery = [];
   let currentGalleryIndex = 0;
 
+  /*
+    FEATURE VS. ARCHIVE ISSUE NAVIGATION
+
+    The same overlay is used in two different places:
+    1. Feature cards near the top of the page.
+    2. Archive category cards farther down the page.
+
+    The Previous / Next buttons should stay inside whichever family
+    opened the overlay. If someone opens Camp Perry from the Feature
+    section, Next should go to North Coast Business Journal, not jump
+    into the archive category rotation.
+  */
+  const FEATURE_ISSUE_KEYS = [
+    "advertising-healthcare",
+    "business-publication",
+    "newspaper-production",
+    "parent-magazine"
+  ];
+
   function getArchiveIssueKeys() {
     return archiveProjects.map(project => project.issueKey).filter(key => ARCHIVE_ISSUES[key]);
   }
 
+  function getSiblingIssueKeys() {
+    return FEATURE_ISSUE_KEYS.includes(currentIssueKey)
+      ? FEATURE_ISSUE_KEYS.filter(key => ARCHIVE_ISSUES[key])
+      : getArchiveIssueKeys();
+  }
+
   function goToSiblingIssue(direction) {
-    const keys = getArchiveIssueKeys();
+    const keys = getSiblingIssueKeys();
     const currentIndex = keys.indexOf(currentIssueKey);
     const nextIndex = currentIndex < 0 ? 0 : (currentIndex + direction + keys.length) % keys.length;
     setIssueContent(keys[nextIndex]);
@@ -1170,10 +1195,13 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     const list = overlay.querySelector(".archive-issue-sidebar ul");
     list.innerHTML = issue.shows.map(item => `<li>${item}</li>`).join("");
 
-    const issueKeys = getArchiveIssueKeys();
+    const featureIssueKeys = FEATURE_ISSUE_KEYS.filter(key => ARCHIVE_ISSUES[key]);
+    const archiveIssueKeys = getArchiveIssueKeys();
+    const isFeatureIssue = featureIssueKeys.includes(issueKey);
+    const issueKeys = isFeatureIssue ? featureIssueKeys : archiveIssueKeys;
     const issueNumber = issueKeys.indexOf(issueKey) + 1;
     overlay.querySelector(".archive-issue-footer span").textContent = issueNumber > 0
-      ? `Issue ${String(issueNumber).padStart(2, "0")} of ${String(issueKeys.length).padStart(2, "0")} · ${issue.title}`
+      ? `${isFeatureIssue ? "Feature" : "Issue"} ${String(issueNumber).padStart(2, "0")} of ${String(issueKeys.length).padStart(2, "0")} · ${issue.title}`
       : `Feature overlay · ${issue.title}`;
   }
 
