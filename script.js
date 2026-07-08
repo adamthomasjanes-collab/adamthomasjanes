@@ -900,12 +900,13 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Camp Perry Lodging & Conference Center",
       subtitle: "Brand system · WordPress website · photography · collateral",
       noteTitle: "Project Story",
-      paragraphs: [
-        "A complete brand and web communications launch for a hospitality and conference center, combining logo design, WordPress website development, photography, SEO-focused content, email marketing, brochures, sales collateral, and digital communications.",
-        "This feature shows how one communication system can connect the public-facing website, printed collateral, email materials, photography, and sales support into a clearer, more consistent brand presence."
-      ],
+     paragraphs: [
+"A complete communications system for a hospitality and conference center, combining brand identity, a custom WordPress website, professional real estate photography, SEO-focused content, automated reservation emails, brochures, and customer-facing collateral into one cohesive guest experience.",
+
+"The project unified every major guest touchpoint—from discovering the property online to receiving reservation confirmations, arriving on site, and interacting with printed materials. Beyond design, the work included professional real estate photography, Lightroom image editing, responsive MJML email development integrated with the reservation management system, SEO copywriting, and production-ready print collateral that reinforced a consistent brand experience across digital and physical channels."
+],
       sidebarTitle: "Production Notes",
-      details: [["Role", "Brand development, WordPress website, photography, content, collateral, and digital communications."], ["Tools", "WordPress, Adobe Creative Cloud, photography, SEO-focused content, email templates, and print production workflows."], ["Outcome", "Created a unified digital and print presence that improved visibility, brand consistency, and customer-facing communication."]],
+      details: [["Role", "Brand strategy • WordPress development • Professional real estate photography • Lightroom image editing • Content strategy • SEO copywriting • Email development (MJML) • Print design • Production management"], ["Tools", "WordPress • Adobe InDesign • Photoshop • Lightroom • Illustrator • MJML • HTML/CSS • Reservation Management Software • Google Analytics • SEO"], ["Outcome", "Created a unified communications system spanning web, print, photography, and automated customer emails, improving brand consistency while streamlining reservation confirmations and cancellations through integrated MJML email templates."]],
       shows: ["Brand system thinking", "Web and print consistency", "Hospitality communication", "Client-facing collateral"],
       gallery: [
         /*
