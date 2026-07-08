@@ -1159,9 +1159,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       }).join("");
     }
 
-    overlay.querySelector(".archive-issue-note").textContent = issue.gallery?.some(item => item.src)
-      ? "Demo images are temporary placeholders for testing. Replace the files/captions in script.js when final portfolio images are ready."
-      : "Editing note: swap these labeled frames for real thumbnails later; the overlay behavior is already wired up.";
+   overlay.querySelector(".archive-issue-note").textContent = issue.gallery?.some(item => item.src)
+  ? "Gallery images are curated project samples. Click any thumbnail to view the full image."
+  : "Gallery frames are ready for final project images.";
     overlay.querySelector(".archive-issue-sidebar h3").textContent = issue.sidebarTitle;
 
     const dl = overlay.querySelector(".archive-issue-sidebar dl");
