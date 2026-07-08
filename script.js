@@ -1,4 +1,20 @@
 /*
+═══════════════════════════════════════════════════════════════
+JAVASCRIPT CHAPTER NOTES · THE BACKSTAGE CREW
+
+The JavaScript should feel like stage management, not a magic trick.
+It opens the archive overlays, swaps issue copy, moves the gallery,
+animates counters, watches scroll position, and supports keyboard
+navigation. The content remains in or near the HTML; the script adds
+pacing, interaction, and polish.
+
+First rule for future edits:
+If an interaction breaks, the page should still communicate clearly.
+Progressive enhancement matters more than cleverness.
+═══════════════════════════════════════════════════════════════
+*/
+
+/*
   ╔══════════════════════════════════════════════════════════════╗
   ║ JAVASCRIPT BACKSTAGE CREW                                  ║
   ╚══════════════════════════════════════════════════════════════╝

@@ -510,7 +510,25 @@
 <!-- MAIN CONTENT: all visible portfolio sections live inside this element. -->
 <main id="main-content" tabindex="-1">
  <!-- COVER STORY / HERO: first impression, brand promise, résumé download, and portrait. -->
- <section id="top" class="hero section" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 00 · THE COVER
+
+Every publication earns attention at the cover. This hero section
+is the portfolio cover: name, discipline, mood, and promise.
+
+The goal is not to say everything at once. The goal is to make a
+visitor understand, within a few seconds, that Adam works where
+communication, publication design, web systems, and production craft
+meet.
+
+Design note:
+The typography carries the authority. The portrait, CMYK accents,
+running head, and folio details make the page feel like a printed
+piece without sacrificing accessible, readable HTML.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="top" class="hero section" tabindex="-1">
  <div class="container hero-grid">
  <div>
  <p class="eyebrow">Issue No. 01 · Summer 2026 · Portfolio as Publication</p>
@@ -538,7 +556,25 @@
  </section>
 
  <!-- POSITIONING FEATURE: turns the résumé summary into reader-friendly portfolio copy. -->
- <section class="positioning section">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 01 · THE OPENING FEATURE
+
+This is the plain-English thesis of the site: Adam makes complex
+information clear.
+
+A portfolio can easily become a wall of attractive samples. This
+section slows the reader down and explains the through-line behind
+all of the work: organizing scattered information into publications,
+websites, campaigns, collateral, and systems that people can actually
+use.
+
+Editorial purpose:
+Before asking the visitor to judge individual projects, give them the
+lens they should use to understand the body of work.
+═══════════════════════════════════════════════════════════════
+-->
+<section class="positioning section">
  <div class="container split-intro">
  <p class="section-kicker">Opening Feature · Designed for Clarity</p>
  <div>
@@ -563,7 +599,18 @@
  </div>
  </section>
 
- <section class="pull-quote-section section" aria-label="Design belief">
+ <!--
+═══════════════════════════════════════════════════════════════
+INTERLUDE · THE DESIGN BELIEF
+
+A short pull quote works like a magazine pause: a little room to
+breathe, a little statement of values.
+
+This one is intentionally direct. It captures the working method:
+organize information, respect the reader, design with purpose.
+═══════════════════════════════════════════════════════════════
+-->
+<section class="pull-quote-section section" aria-label="Design belief">
   <div class="container">
    <blockquote class="editorial-pullquote">
     <p>“Organize the information. Respect the reader. Design with purpose.”</p>
@@ -573,7 +620,19 @@
  </section>
 
  <!-- EDITOR'S LETTER: a human note that explains the philosophy behind the work. -->
- <section class="editors-letter section ruled" aria-labelledby="editors-letter-title">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 02 · EDITOR’S LETTER
+
+The Editor’s Letter gives the portfolio a human voice.
+
+This is not a resume bullet list. It is a brief statement of craft:
+the medium changes, but the responsibility stays the same. Whether
+the work becomes a magazine, proposal, WordPress site, or email, the
+same values apply: hierarchy, accuracy, rhythm, usefulness, and care.
+═══════════════════════════════════════════════════════════════
+-->
+<section class="editors-letter section ruled" aria-labelledby="editors-letter-title">
   <div class="container editors-letter-grid">
    <p class="section-kicker">Editor’s Letter</p>
    <div>
@@ -586,7 +645,23 @@
  </section>
 
  <!-- DEPARTMENT 01 / AREAS OF PRACTICE: the clearest version of “what do you actually do?” -->
- <section id="services" class="services section ruled editorial-number-section" data-section-number="01" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 03 · AREAS OF PRACTICE
+
+This section translates a broad career into clear service lanes.
+
+The cards are written less like a menu and more like an editorial
+index: publication systems, web communications, marketing
+communications, and brand/visual systems.
+
+Maintenance note:
+If Adam’s positioning changes later, this is one of the first places
+to update. The cards should always reflect the kind of work he wants
+more of, not only the work he has already done.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="services" class="services section ruled editorial-number-section" data-section-number="01" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
  <h3 id="services-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">01 · Areas of Practice</h3>
@@ -642,7 +717,20 @@
 
  <aside class="margin-note margin-reader" aria-hidden="true">Reader first. Structure second. Design with purpose.</aside>
  <!-- PRINT LANGUAGE INTERLUDE: reinforces the design principle before the portfolio pieces. -->
- <section class="print-language section ruled">
+ <!--
+═══════════════════════════════════════════════════════════════
+INTERLUDE · PRINT LANGUAGE
+
+This is a small love letter to the production world: CMYK, grids,
+registration marks, and the discipline of making things ready to
+publish.
+
+It also reminds the reader that the visual style is not random. The
+site borrows from print because Adam’s strongest foundation is
+editorial and publication design.
+═══════════════════════════════════════════════════════════════
+-->
+<section class="print-language section ruled">
  <div class="container print-system-panel">
  <div class="print-system-left">
  <p class="section-kicker">Editor’s Note</p>
@@ -672,7 +760,28 @@
  
 <!-- FEATURED WORK: strongest curated projects for recruiters and clients. -->
 <!-- DEPARTMENT 02 / FEATURE STORIES: four strongest narrative examples, built like magazine features. -->
- <section id="featured" class="featured-projects section ruled editorial-number-section" data-section-number="02" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 04 · FEATURE STORIES
+
+Every portfolio has projects. This portfolio treats them as stories.
+
+Each feature card follows an editorial rhythm:
+
+Challenge → Solution → Result
+
+That structure helps a hiring manager or client understand more than
+what the finished piece looked like. It shows how Adam thinks, how he
+frames communication problems, and how design becomes a practical
+answer rather than decoration.
+
+Interaction note:
+The “Read Feature” buttons open the newer archive issue overlay, so
+all long-form project storytelling can live in one reusable magazine-
+style component.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="featured" class="featured-projects section ruled editorial-number-section" data-section-number="02" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
  <h3 id="featured-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">02 · Features</h3>
@@ -815,7 +924,24 @@
  
 <!-- ARCHIVE SECTION: broader body of work organized as editorial categories. -->
 <!-- DEPARTMENT 03 / ARCHIVE BROWSER: broader proof of range without overwhelming the homepage. -->
- <section id="archive" class="portfolio-archive section ruled editorial-number-section" data-section-number="03" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 05 · FROM THE ARCHIVE
+
+Not every project belongs on the cover, but a career is built from
+consistent production over time.
+
+This archive is organized by type of communication rather than by
+strict chronology. That helps visitors quickly find the evidence they
+care about: advertising, hospitality, publications, identity, web,
+photography, collateral, editorial features, and awards.
+
+Design metaphor:
+Think of this section like flipping through back issues in a studio
+archive. It is meant to show range, volume, and repeated craft.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="archive" class="portfolio-archive section ruled editorial-number-section" data-section-number="03" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
  <h3 id="archive-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">03 · From the Archive</h3>
@@ -905,7 +1031,24 @@
  Keep the filename the same and the download button will keep working.
 ======================================================= -->
  <!-- DEPARTMENT 04 / RESOURCES: makes the portfolio useful, not just promotional. -->
- <section id="resources" class="resources section ruled editorial-number-section" data-section-number="04" tabindex="-1" aria-labelledby="resources-title">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 06 · RESOURCES / SHARING THE TOOLBOX
+
+This section turns the portfolio from a showcase into a useful
+resource.
+
+A downloadable InDesign newspaper template reinforces Adam’s
+publication-design credibility while giving visitors something
+practical to take with them.
+
+Important reminder:
+Only share cleaned, generic, rights-safe templates here. Remove any
+client-owned, employer-owned, licensed, or sensitive content before
+publishing a downloadable file.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="resources" class="resources section ruled editorial-number-section" data-section-number="04" tabindex="-1" aria-labelledby="resources-title">
   <div class="container">
    <div class="section-title-row">
     <h3 id="resources-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">04 · Resources</h3>
@@ -954,7 +1097,22 @@
  </section>
 
  <!-- DEPARTMENT 05 / PROCESS: shows how Adam thinks, not just what he made. -->
- <section id="process" class="process section ruled editorial-number-section" data-section-number="05" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 07 · PROCESS
+
+Good communication rarely happens by accident.
+
+This section explains Adam’s working philosophy without turning it
+into agency jargon. The process is not “make it pretty.” It is:
+understand the audience, organize the information, design the system,
+make it accessible, make it searchable, and leave it maintainable.
+
+The tabbed interaction lets the section feel active while keeping all
+important ideas present in real HTML.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="process" class="process section ruled editorial-number-section" data-section-number="05" tabindex="-1">
   <div class="container">
    <div class="section-title-row">
     <div>
@@ -1021,7 +1179,24 @@
 
  <aside class="margin-note margin-production" aria-hidden="true">Production is where good design proves itself.</aside>
  <!-- DEPARTMENT 06 / CAREER RECORD: résumé experience translated into scannable web sections. -->
- <section id="experience" class="experience section ruled editorial-number-section" data-section-number="06" tabindex="-1" aria-label="Professional history">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 08 · CAREER RECORD
+
+Resumes list jobs. Stories explain progression.
+
+This section shows how Adam’s publication-production foundation grew
+into broader communications work: independent client projects,
+hospitality branding and digital marketing, teaching web/media skills,
+and high-volume editorial design.
+
+Editorial choice:
+The writing emphasizes responsibilities and outcomes, but keeps the
+focus on transferable strengths: clarity, systems, deadlines,
+production accuracy, and communication across print and digital work.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="experience" class="experience section ruled editorial-number-section" data-section-number="06" tabindex="-1" aria-label="Professional history">
  <div class="container">
  <div class="section-title-row">
  <h3 id="experience-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">06 · Career Record</h3>
@@ -1099,7 +1274,22 @@
  </section>
 
  <!-- DEPARTMENT 07 / PRODUCTION NOTES: skill groups presented as working capabilities. -->
- <section id="skills" class="skills section ruled editorial-number-section" data-section-number="07" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 09 · PRODUCTION NOTES
+
+This is the craft drawer.
+
+The skills are grouped as production notes because Adam’s value is not
+just knowing tools. It is knowing how to use tools to create clear,
+consistent, publishable communication.
+
+The tabs keep the section compact while allowing the reader to scan
+publication design, web/WordPress, marketing communications, Adobe
+production, and project management as separate but connected strengths.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="skills" class="skills section ruled editorial-number-section" data-section-number="07" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
  <h3 id="skills-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">07 · Production Notes</h3>
@@ -1146,7 +1336,19 @@
  </section>
 
  <!-- DEPARTMENT 08 / EDUCATION + RECOGNITION: credentials, awards, and publication history. -->
- <section id="education" class="education-awards editorial-number-section section ruled" data-section-number="08" tabindex="-1" aria-label="Education, awards and publications">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 10 · EDUCATION, AWARDS & PUBLICATIONS
+
+Credentials belong near the end because the work has already made the
+case.
+
+This chapter supports the story with formal education, recognition,
+and publication history. It gives the reader proof without interrupting
+the main project narrative too early.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="education" class="education-awards editorial-number-section section ruled" data-section-number="08" tabindex="-1" aria-label="Education, awards and publications">
  <div class="container">
  <div class="education-awards-grid">
  <div>
@@ -1182,7 +1384,21 @@
  </div>
  </section>
 
- <section class="seo-footer-copy section">
+ <!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 11 · QUIET SEO SUPPORT
+
+This paragraph is intentionally visible, readable copy—not hidden text.
+
+It reinforces the main professional themes in natural language so
+search engines and human readers both get a clear summary of Adam’s
+services and experience.
+
+Rule:
+SEO copy should clarify the page, not stuff it with disconnected terms.
+═══════════════════════════════════════════════════════════════
+-->
+<section class="seo-footer-copy section">
  <div class="container seo-box">
  <p>
  Adam Thomas Janes helps organizations make complex information clear. His work spans publication design, Adobe InDesign production, WordPress websites, web content, long-form documents, print-ready collateral, integrated marketing campaigns, SEO-focused content, email marketing, and visual communication systems for government, hospitality, publishing, and business organizations.
@@ -1190,7 +1406,23 @@
  </div>
  </section>
  <!-- COLOPHON: a deliberate nod to print tradition and a transparent note about the build. -->
- <section id="colophon" class="colophon section ruled editorial-number-section" data-section-number="10" aria-labelledby="colophon-title" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+FINAL CHAPTER · COLOPHON
+
+Traditional books and magazines often end with a colophon: a quiet
+note about how the work was made.
+
+That is why this portfolio ends here. The colophon turns the site’s
+construction into part of the story: semantic HTML, modern CSS, vanilla
+JavaScript, structured data, responsive design, accessibility,
+performance, and long-term maintainability.
+
+If someone is curious enough to inspect the source, these notes are
+for them.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="colophon" class="colophon section ruled editorial-number-section" data-section-number="10" aria-labelledby="colophon-title" tabindex="-1">
   <div class="container">
    <div class="section-title-row">
     <h3 id="colophon-title" class="registration-section section-slide-title unified-title-rise">Colophon</h3>
@@ -1211,7 +1443,19 @@
  
 <!-- FOOTER: final contact path and lightweight credibility details. -->
 <!-- CONTACT / FINAL CALL: where the reader knows exactly how to reach Adam. -->
- <footer id="contact" class="footer editorial-number-section" data-section-number="09" tabindex="-1">
+ <!--
+═══════════════════════════════════════════════════════════════
+EPILOGUE · NEXT ISSUE / CONTACT
+
+A portfolio should not end with a dead stop. It should end with an
+invitation.
+
+The footer keeps the call to action clear: contact Adam, download the
+resume, visit LinkedIn, or review Behance. The language stays aligned
+with the site’s central promise: let’s build something clear.
+═══════════════════════════════════════════════════════════════
+-->
+<footer id="contact" class="footer editorial-number-section" data-section-number="09" tabindex="-1">
  <div class="container footer-grid">
  <div>
  <h2>Let’s<br>Build Something Clear</h2>

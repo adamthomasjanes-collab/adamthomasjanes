@@ -1,4 +1,20 @@
 /*
+═══════════════════════════════════════════════════════════════
+CSS CHAPTER NOTES · HOW TO READ THIS STYLESHEET
+
+This stylesheet should be read like the production notes for a printed
+issue. The rules do more than decorate the page: they create the paper
+texture, editorial rhythm, CMYK atmosphere, responsive grids, motion
+system, overlays, and accessibility states that make the portfolio feel
+like a publication.
+
+Safe editing principle:
+Change comments freely. Change selectors carefully. Many interactions
+in script.js rely on the class names defined here.
+═══════════════════════════════════════════════════════════════
+*/
+
+/*
   ╔══════════════════════════════════════════════════════════════╗
   ║ STYLE GUIDE WITH A PERSONALITY                              ║
   ╚══════════════════════════════════════════════════════════════╝

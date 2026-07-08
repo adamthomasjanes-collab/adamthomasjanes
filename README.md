@@ -170,3 +170,9 @@ Repository workflow reminder: edit locally, commit to GitHub, and let Netlify de
 ## Backstage documentation
 
 See `BACKSTAGE_NOTES.md` for a plain-English tour of the project structure, the portfolio-as-publication concept, and the commenting philosophy used across the HTML, CSS, and JavaScript.
+
+## Source-code chapter notes
+
+This version includes editorial-style chapter notes throughout the source. They are written for anyone who opens the repository for the first time and wants to understand the intent behind the portfolio, not just the mechanics of the code.
+
+See [`CHAPTER_NOTES.md`](CHAPTER_NOTES.md) for the full map.

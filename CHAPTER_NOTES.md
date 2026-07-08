@@ -1,63 +1,28 @@
 # Chapter Notes
 
-This portfolio is documented like an editorial publication. The comments in
-`index.html`, `styles.css`, and `script.js` are intentionally more expressive
-than normal engineering notes because the source code is part of the story.
+This repository documents the portfolio like a small editorial publication. The comments in `index.html`, `styles.css`, and `script.js` are intentionally written as chapter notes rather than plain maintenance labels.
 
-## The idea
+## Why this exists
 
-The public site presents Adam Thomas Janes as a communications and marketing
-professional who makes complex information clear. The codebase should prove
-that same skill through structure, naming, documentation, and maintainability.
+Adam Thomas Janes’s portfolio is built around one promise: **make complex information clear**. The source code should support that promise too. A designer, developer, recruiter, or future collaborator who opens the files should understand not only what each section does, but why it exists.
 
-## Commenting style
+## Chapter map
 
-The comments are written as chapter notes:
+- **Chapter 00 · The Cover** — Hero, identity, and first impression.
+- **Chapter 01 · The Opening Feature** — The positioning statement and core value proposition.
+- **Chapter 02 · Editor’s Letter** — The human voice behind the work.
+- **Chapter 03 · Areas of Practice** — The main service lanes.
+- **Chapter 04 · Feature Stories** — The major portfolio case-story cards.
+- **Chapter 05 · From the Archive** — Broader body of work and supporting evidence.
+- **Chapter 06 · Resources** — Downloadable production tools and practical value.
+- **Chapter 07 · Process** — How the work gets made.
+- **Chapter 08 · Career Record** — Professional history and progression.
+- **Chapter 09 · Production Notes** — Skills, tools, and working craft.
+- **Chapter 10 · Education, Awards & Publications** — Supporting credentials.
+- **Chapter 11 · Quiet SEO Support** — Natural-language reinforcement for search and readers.
+- **Final Chapter · Colophon** — How the site itself was made.
+- **Epilogue · Contact** — The next step for visitors.
 
-- **The Cover** explains the hero section.
-- **Feature Stories** explains the case-study teasers.
-- **From the Archive** explains the back-issue browser.
-- **Sharing the Toolbox** explains downloadable resources.
-- **How the Work Gets Made** explains the process tabs.
-- **Career Record** explains the professional history section.
-- **Production Notes** explains skills and craft.
-- **Colophon** explains the final back-matter section.
-- **Special Insert** explains the reusable archive overlay.
+## Maintenance rule
 
-## Why this matters
-
-Most visitors will never inspect the source. But the people who do—designers,
-developers, hiring managers, technical teammates, or unusually curious
-recruiters—should find a codebase that feels intentional.
-
-The documentation demonstrates:
-
-- editorial thinking
-- communication clarity
-- maintainability
-- accessibility awareness
-- SEO awareness
-- production discipline
-- care for handoff and future updates
-
-## Rule of thumb for future edits
-
-When adding comments, do not only explain what changed. Explain why the choice
-exists and what a future editor should protect.
-
-Bad:
-
-```html
-<!-- Featured cards -->
-```
-
-Better:
-
-```html
-<!--
-CHAPTER · FEATURE STORIES
-These cards introduce projects as editorial case studies. Preserve the
-Challenge → Solution → Result rhythm so visitors understand the thinking,
-not just the finished visuals.
--->
-```
+The working CSS and JavaScript have been preserved from the stable uploaded version. The chapter-note pass adds documentation and narrative comments without restructuring the site or changing the visual system.
