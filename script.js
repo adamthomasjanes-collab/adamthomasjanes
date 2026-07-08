@@ -908,37 +908,57 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       details: [["Role", "Brand development, WordPress website, photography, content, collateral, and digital communications."], ["Tools", "WordPress, Adobe Creative Cloud, photography, SEO-focused content, email templates, and print production workflows."], ["Outcome", "Created a unified digital and print presence that improved visibility, brand consistency, and customer-facing communication."]],
       shows: ["Brand system thinking", "Web and print consistency", "Hospitality communication", "Client-facing collateral"],
       gallery: [
-  {
-    label: "Logo",
-    src: "assets/camp-perry/camp-perry-logo.png",
-    alt: "Camp Perry Lodging and Conference Center logo design"
-  },
-  {
-    label: "Website",
-    src: "assets/camp-perry/camp-perry-website.png",
-    alt: "Camp Perry Lodging and Conference Center website design"
-  },
-  {
-    label: "Brochure",
-    src: "assets/camp-perry/camp-perry-brochure.png",
-    alt: "Camp Perry Lodging and Conference Center brochure design"
-  },
-  {
-    label: "Photo",
-    src: "assets/camp-perry/camp-perry-photography.jpg",
-    alt: "Camp Perry Lodging and Conference Center photography"
-  },
-  {
-    label: "Email",
-    src: "assets/camp-perry/camp-perry-email.png",
-    alt: "Camp Perry Lodging and Conference Center email design"
-  },
-  {
-    label: "Collateral",
-    src: "assets/camp-perry/camp-perry-collateral.png",
-    alt: "Camp Perry Lodging and Conference Center marketing collateral"
-  }
-]
+        /*
+          THUMBNAIL SYSTEM / CAMP PERRY
+
+          thumb = the small square image used in the visible gallery card.
+          src   = the larger/full image used when someone clicks the thumbnail.
+
+          Put thumbnail files here:
+          assets/camp-perry/thumbs/
+
+          Keep thumbnails square when possible, around 600×600px.
+          Keep the full images larger and more detailed.
+
+          If a thumb file is missing, the script falls back to src automatically.
+        */
+        {
+          label: "Primary Brand Identity",
+          thumb: "assets/camp-perry/thumbs/camp-perry-logo-thumb.png",
+          src: "assets/camp-perry/camp-perry-logo.png",
+          alt: "Camp Perry Lodging and Conference Center logo design"
+        },
+        {
+          label: "Responsive Website",
+          thumb: "assets/camp-perry/thumbs/camp-perry-website-thumb.png",
+          src: "assets/camp-perry/camp-perry-website.png",
+          alt: "Camp Perry Lodging and Conference Center website design"
+        },
+        {
+          label: "Printed Brochure",
+          thumb: "assets/camp-perry/thumbs/camp-perry-brochure-thumb.png",
+          src: "assets/camp-perry/camp-perry-brochure.png",
+          alt: "Camp Perry Lodging and Conference Center brochure design"
+        },
+        {
+          label: "Location Photography",
+          thumb: "assets/camp-perry/thumbs/camp-perry-photography-thumb.png",
+          src: "assets/camp-perry/camp-perry-photography.jpg",
+          alt: "Camp Perry Lodging and Conference Center photography"
+        },
+        {
+          label: "Reservation Email",
+          thumb: "assets/camp-perry/thumbs/camp-perry-email-thumb.png",
+          src: "assets/camp-perry/camp-perry-email.png",
+          alt: "Camp Perry Lodging and Conference Center email design"
+        },
+        {
+          label: "Marketing Collateral",
+          thumb: "assets/camp-perry/thumbs/camp-perry-collateral-thumb.png",
+          src: "assets/camp-perry/camp-perry-collateral.png",
+          alt: "Camp Perry Lodging and Conference Center marketing collateral"
+        }
+      ]
     },
     "business-publication": {
       kicker: "Feature Story / Publication Design",
@@ -1124,7 +1144,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
        card titles stay aligned and easy to scan.
 
        To add real work later, edit ARCHIVE_ISSUES[issueKey].gallery above:
-       { src: "assets/example.png", label: "Project Name", alt: "Alt text" }
+       { thumb: "assets/example-thumb.png", src: "assets/example.png", label: "Project Name", alt: "Alt text" }
     */
     if (adGrid) {
       adGrid.innerHTML = currentGallery.map((item, index) => {
@@ -1132,7 +1152,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         const itemNumber = String(index + 1).padStart(3, "0");
 
         if (item.src) {
-          return `<button type="button" class="archive-ad-thumb has-image" data-ad-index="${index}"><span class="archive-ad-art"><img src="${item.src}" alt="${item.alt || label}"></span><span class="archive-ad-caption"><small>${itemNumber}</small><strong>${label}</strong></span></button>`;
+          return `<button type="button" class="archive-ad-thumb has-image" data-ad-index="${index}"><span class="archive-ad-art"><img src="${item.thumb || item.src}" alt="${item.alt || label}" loading="lazy" decoding="async"></span><span class="archive-ad-caption"><small>${itemNumber}</small><strong>${label}</strong></span></button>`;
         }
 
         return `<button type="button" class="archive-ad-thumb" data-ad-index="${index}"><span class="archive-ad-art archive-ad-placeholder"><span>${label}</span></span><span class="archive-ad-caption"><small>${itemNumber}</small><strong>${label}</strong></span></button>`;
