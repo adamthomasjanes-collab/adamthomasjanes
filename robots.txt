@@ -1,3 +1,7 @@
+# Adam Thomas Janes portfolio robots.txt
+# Purpose: allow normal indexing while pointing crawlers to the sitemap.
+# Update the Sitemap URL if the public domain changes.
+
 User-agent: *
 Allow: /
 

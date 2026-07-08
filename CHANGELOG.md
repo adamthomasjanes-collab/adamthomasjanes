@@ -495,3 +495,19 @@ The menu should land where the reader visually expects: on the section title.
 - Added a Newspaper Production Template download card.
 - Included a placeholder ZIP at `assets/templates/newspaper-indesign-template.zip` so the download link works until the real InDesign package is swapped in.
 - Added HTML/CSS notes explaining how to replace the placeholder with the final cleaned template.
+
+---
+
+## Maintainer Notes
+
+This document is part of the Adam Thomas Janes portfolio repository and is intentionally written as a handoff artifact, not just a short project note. Keep notes plain, explicit, and useful for future editing. When the portfolio changes, update this file if the change affects launch readiness, content strategy, design decisions, technical setup, or recruiter-facing presentation.
+
+Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
+
+## GitHub / Netlify Launch Prep
+
+- Added expanded comments and maintainer notes across HTML, CSS, JavaScript, Markdown, plain-text, XML, JSON, SVG, and hosting configuration files.
+- Added `netlify.toml` so deployment from the repository root is explicit.
+- Added a lightweight `404.html` fallback page for broken or outdated links.
+- Confirmed the project remains a static website suitable for GitHub source control and Netlify hosting.
+

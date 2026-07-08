@@ -13,5 +13,10 @@
       "type": "image/svg+xml",
       "purpose": "any"
     }
+  ],
+  "categories": [
+    "portfolio",
+    "business",
+    "design"
   ]
 }

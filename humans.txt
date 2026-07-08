@@ -37,3 +37,6 @@ Focus: JavaScript-free navigation with dedicated anchor targets.
 /* CURRENT RELEASE */
 Release: v5.2.0
 Focus: JavaScript-free heading-based navigation anchors.
+
+Maintenance note:
+This file is intentionally plain text so it can be read in GitHub, VS Code, Netlify deploy previews, or a simple file browser. Keep instructions explicit and update them whenever related assets or launch workflow changes.

@@ -1,3 +1,12 @@
+# ============================================================
+# ADAM THOMAS JANES PORTFOLIO — APACHE FALLBACK NOTES
+# ============================================================
+# Netlify does not require this file for the normal GitHub -> Netlify deployment.
+# It is included as portable documentation in case the static site is ever hosted
+# on Apache/cPanel-style hosting. Keep the comments so future hosting decisions
+# are easier to audit.
+# ============================================================
+
 # Optional Apache production hints
 # Enable compression and browser caching where supported by your host.
 

@@ -1,17 +1,62 @@
 /*
+  ╔══════════════════════════════════════════════════════════════╗
+  ║ JAVASCRIPT BACKSTAGE CREW                                  ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  This file is the quiet crew behind the portfolio: it moves the spotlight, opens
+  the archive spreads, swaps issue content, animates counters, manages keyboard
+  behavior, and makes the static HTML feel like a living publication.
+
+  Rule of thumb: the page should still make sense without this file. JavaScript
+  is here to add polish, pacing, and interaction — not to hide essential content
+  from people or search engines.
+
+  ============================================================
+  JAVASCRIPT MAINTENANCE NOTES
+  ============================================================
+  File: script.js
+  Purpose: Adds progressive interaction to the static portfolio.
+
+  Important principle:
+  - The site should still communicate Adam's work if JavaScript fails.
+  - JavaScript enhances navigation, modals, archive overlays, progress indicators, and lightbox behavior.
+
+  Data-editing guide:
+  - archiveProjects controls the archive category cards and overlay content.
+  - featured/story overlay logic should stay synchronized with matching buttons in index.html.
+  - demo images can be replaced later with final portfolio artwork without changing the whole interaction system.
+
+  Debugging guide:
+  - If a button stops opening an overlay, first check its data-* attribute in index.html.
+  - If an archive category opens the wrong story, check the order and issueKey values in archiveProjects.
+  - If keyboard focus feels trapped, check dialog open/close routines and lastDialogTrigger.
+
+  Accessibility guide:
+  - Preserve escape-key closing behavior.
+  - Preserve focus returns after closing overlays.
+  - Keep aria-hidden / dialog state management aligned with visible state.
+
+  Comments are intentionally extensive for GitHub review, future editing, and portfolio handoff.
+  ============================================================
+*/
+
+/*
   Adam Thomas Janes Portfolio
   Version 2 Architecture JavaScript
 */
 
+// DOM HELPERS: tiny stagehands. They fetch elements without dragging in a whole framework for a one-page portfolio.
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
 
+// SHARED UI STATE: the site’s memory. Which archive item is active? Who opened the dialog? Where should focus return?
 const state = {
   projectIndex: 0,
   archiveIndex: 0,
   lastDialogTrigger: null
 };
 
+// CACHED ELEMENTS: frequently used page pieces gathered once so the rest of the file can read like choreography instead of scavenger hunting.
 const els = {
   nav: $(".nav"),
   navToggle: $(".nav-toggle"),
@@ -23,9 +68,12 @@ const els = {
 
 els.sections = els.navLinks.map(link => $(link.getAttribute("href"))).filter(Boolean);
 
-// EDITING NOTE: These are the tabs/cards in “03 · From the Archive”.
-// Add new archive pieces here, then add a matching button in index.html with the same order/index.
+// ARCHIVE DATA / THE MINI CARD CATALOG
+// These objects feed the “03 · From the Archive” browser. Think of each entry as
+// a shelf label in a studio archive: title, category, proof points, visual class,
+// and which deeper archive issue should open when someone asks for more.
 // issueKey tells the Open button which Archive Issue Overlay story to load.
+// ARCHIVE DATA MODEL: each object describes one archive category shown in the interface.
 const archiveProjects = [
   {
     title: "Advertising Campaigns",
@@ -113,6 +161,8 @@ function requestScrollUpdate() {
   });
 }
 
+// INITIALIZATION / LIGHTS UP
+// Runs once after the DOM is ready and wires together every interactive department.
 function init() {
   initNav();
   initPointer();
@@ -128,6 +178,8 @@ function init() {
   requestScrollUpdate();
 }
 
+// NAVIGATION BEHAVIOR
+// Smoothly moves readers through the one-page “issue” and keeps the section indicator honest.
 function initNav() {
   els.navToggle?.addEventListener("click", () => {
     const open = els.nav.classList.toggle("is-open");
@@ -142,6 +194,8 @@ function initNav() {
   });
 }
 
+// SCROLL PROGRESS + HEADER MOOD
+// Turns scrolling into a subtle progress bar and lets the header react as the reader moves.
 function updateScrollState() {
   const y = scrollY;
   const doc = document.documentElement.scrollHeight - innerHeight;
@@ -224,6 +278,8 @@ function updateFeatured() {
   });
 }
 
+// CUSTOM POINTER SPOTLIGHT
+// Adds a small editorial flourish on pointer devices without blocking normal cursor behavior.
 function initPointer() {
   if (!matchMedia("(pointer:fine)").matches) return;
 
@@ -263,6 +319,8 @@ function initPointer() {
   });
 }
 
+// PROOF POINT COUNTERS
+// Animates the numbers only when they enter view so the proof points feel discovered, not shouted.
 function initCounters() {
   if (!("IntersectionObserver" in window)) {
     $$(".counter").forEach(animateCounter);
@@ -385,6 +443,8 @@ function closeProject() {
   restoreDialogFocus();
 }
 
+// ARCHIVE BROWSER
+// Powers the left-side archive tabs, preview panel, and next/previous controls.
 function initArchive() {
   $$(".archive-item").forEach((button, index) => {
     button.addEventListener("click", () => renderArchive(index));

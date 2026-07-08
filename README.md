@@ -156,3 +156,17 @@ Navigation now targets visible section headings directly, with no JavaScript nav
 ## v5.2.2 Archive Editorial Issue Overlay
 
 The Archive now includes a working editorial issue overlay for Advertising Design Series. This establishes the future pattern: Archive card → issue overlay → individual work sample.
+
+---
+
+## Maintainer Notes
+
+This document is part of the Adam Thomas Janes portfolio repository and is intentionally written as a handoff artifact, not just a short project note. Keep notes plain, explicit, and useful for future editing. When the portfolio changes, update this file if the change affects launch readiness, content strategy, design decisions, technical setup, or recruiter-facing presentation.
+
+Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
+
+
+
+## Backstage documentation
+
+See `BACKSTAGE_NOTES.md` for a plain-English tour of the project structure, the portfolio-as-publication concept, and the commenting philosophy used across the HTML, CSS, and JavaScript.

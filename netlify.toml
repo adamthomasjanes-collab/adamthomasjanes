@@ -1,0 +1,24 @@
+# ============================================================
+# Netlify configuration for Adam Thomas Janes portfolio
+# ============================================================
+# This is a static HTML/CSS/JS site. No build step is required.
+# Netlify should publish the repository root because index.html lives here.
+# Keep this file in the repo so deployment expectations are explicit.
+
+[build]
+  publish = "."
+
+# Security/SEO-friendly headers for static deployment.
+# These are conservative defaults and can be adjusted later if new integrations need them.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache long-lived static assets. HTML remains uncached by default so edits appear quickly.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

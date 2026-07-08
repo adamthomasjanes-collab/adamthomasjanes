@@ -1,9 +1,51 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  ADAM THOMAS JANES — PORTFOLIO WEBSITE
+  ============================================================
+  File: index.html
+  Purpose: Single-page portfolio for Adam Thomas Janes.
+
+  Launch/hosting context:
+  - This file is intended to sit at the root of the GitHub repository.
+  - Netlify can publish directly from the repository root with no build command.
+  - Keep index.html in the root unless the Netlify publish directory is changed.
+
+  Editing guide:
+  - Major page sections are labeled with editorial-style comments.
+  - Content is intentionally real HTML text for accessibility and SEO.
+  - Avoid turning headings or body copy into images; recruiters and search engines need readable text.
+  - When adding a project card, also confirm any matching JavaScript data in script.js.
+  - When adding images, use useful alt text and keep file names descriptive.
+
+  SEO guide:
+  - Update <title>, meta description, canonical URL, Open Graph text, and schema when the public domain changes.
+  - The current canonical assumes https://adamthomasjanes.com/.
+  - Keep important keywords natural: communications, publication design, web communications, content strategy, SEO, WordPress, Adobe InDesign.
+
+  Accessibility guide:
+  - Buttons that open dialogs should keep clear aria labels.
+  - Decorative visuals should stay hidden from assistive technology when appropriate.
+  - Interactive overlays should remain keyboard accessible.
+
+  Maintenance note:
+  - Comments are intentionally generous because this portfolio doubles as a working artifact and handoff file.
+  - Future editors should preserve the comment system so the site remains easy to audit, update, and explain.
+  ============================================================
+-->
+
 <html lang="en">
 <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+ <!--
+  SEO + SOCIAL PREVIEW DESK
+  This block is the publication masthead for search engines and social platforms.
+  The page title and description should read like a clear professional positioning
+  statement, not a keyword-stuffed flyer left under a windshield wiper.
+ -->
  <title>Adam Thomas Janes | Communications, Publication Design & Web Communications</title>
  <meta name="description" content="Adam Thomas Janes helps organizations make complex information clear through publication design, web communications, marketing communications, Adobe InDesign production, WordPress, SEO, accessibility-minded structure, and editorial communication systems." />
  <meta name="keywords" content="communications and marketing professional, publication designer, editorial designer, Adobe InDesign, WordPress, web communications, HTML CSS, Divi Builder, SEO, email marketing, content strategy, publication design, editorial systems, long-document design, magazine design, newspaper design, proposal designer, document designer, marketing communications, visual communications, brand development, prepress, print production, website content" />
@@ -17,6 +59,13 @@
  <meta name="twitter:card" content="summary_large_image" />
  <meta name="twitter:title" content="Adam Thomas Janes | Publication Design & Web Communications" />
  <meta name="twitter:description" content="Publication design, web communications, marketing communications, Adobe InDesign, WordPress, SEO, and visual systems built to make information clear." />
+
+ <!--
+  STRUCTURED DATA / MACHINE-READABLE RESUME
+  Search engines do not “see” the portfolio the way humans do. This JSON-LD block
+  acts like a neatly labeled press kit: who Adam is, what he knows, what work is
+  featured, and how the page sections relate to one another.
+ -->
  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -391,7 +440,37 @@
  <meta name="theme-color" content="#ff006e" />
 </head>
 
-<body data-site-version="5.2.7">
+<body data-site-version="5.2.8">
+ <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║ BACKSTAGE TOUR: HOW THIS ONE-PAGE PORTFOLIO IS ORGANIZED    ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  Welcome to the working file behind Adam Thomas Janes' portfolio.
+  This site is intentionally built like a small editorial publication:
+  cover story, departments, features, archive, production notes, and
+  colophon. The comments are written for the next person opening the
+  file cold — including future Adam at 1:17 a.m. trying to remember
+  why a modal button exists.
+
+  QUICK MAP
+  • <head> = search engines, social previews, structured data, fonts, favicon.
+  • hero = the “cover” of the issue.
+  • services = what Adam does.
+  • featured = four portfolio feature stories.
+  • archive = broader body of work and category browser.
+  • resources = downloadable production tools/templates.
+  • process = how Adam thinks and works.
+  • experience/skills/education = resume content translated into web form.
+  • overlays near the bottom = reusable dialogs powered by script.js.
+
+  MAINTENANCE PHILOSOPHY
+  This is not trying to be clever for clever's sake. The goal is clarity:
+  semantic HTML, human-readable class names, visible text for SEO, and
+  comments that explain the intent behind the structure — not just what
+  line to edit.
+ -->
+
  <a class="skip-link" href="#main-content">Skip to main content</a>
  <div class="paper-spotlight" aria-hidden="true"></div>
  <div class="scroll-progress" aria-hidden="true"></div>
@@ -408,6 +487,9 @@
  <span class="drift-mark drift-three"></span>
  </div>
 
+ 
+<!-- SITE HEADER / PRIMARY NAVIGATION: brand mark, section links, and mobile menu toggle. -->
+<!-- SITE HEADER / TABLE OF CONTENTS: sticky navigation for the publication-style sections. -->
  <header class="site-header">
  <div class="container header-inner">
  <a class="logo" href="#top" aria-label="Adam Thomas Janes home"><img src="assets/atj-custom-mark.svg" alt="ATJ" class="site-logo-mark" width="86" height="39"></a>
@@ -424,7 +506,10 @@
  </nav>
  </div>
  </header>
- <main id="main-content" tabindex="-1">
+ 
+<!-- MAIN CONTENT: all visible portfolio sections live inside this element. -->
+<main id="main-content" tabindex="-1">
+ <!-- COVER STORY / HERO: first impression, brand promise, résumé download, and portrait. -->
  <section id="top" class="hero section" tabindex="-1">
  <div class="container hero-grid">
  <div>
@@ -452,6 +537,7 @@
  </div>
  </section>
 
+ <!-- POSITIONING FEATURE: turns the résumé summary into reader-friendly portfolio copy. -->
  <section class="positioning section">
  <div class="container split-intro">
  <p class="section-kicker">Opening Feature · Designed for Clarity</p>
@@ -486,6 +572,7 @@
   </div>
  </section>
 
+ <!-- EDITOR'S LETTER: a human note that explains the philosophy behind the work. -->
  <section class="editors-letter section ruled" aria-labelledby="editors-letter-title">
   <div class="container editors-letter-grid">
    <p class="section-kicker">Editor’s Letter</p>
@@ -498,6 +585,7 @@
   </div>
  </section>
 
+ <!-- DEPARTMENT 01 / AREAS OF PRACTICE: the clearest version of “what do you actually do?” -->
  <section id="services" class="services section ruled editorial-number-section" data-section-number="01" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
@@ -553,6 +641,7 @@
  </section>
 
  <aside class="margin-note margin-reader" aria-hidden="true">Reader first. Structure second. Design with purpose.</aside>
+ <!-- PRINT LANGUAGE INTERLUDE: reinforces the design principle before the portfolio pieces. -->
  <section class="print-language section ruled">
  <div class="container print-system-panel">
  <div class="print-system-left">
@@ -580,14 +669,22 @@
  </div>
  </section>
 
+ 
+<!-- FEATURED WORK: strongest curated projects for recruiters and clients. -->
+<!-- DEPARTMENT 02 / FEATURE STORIES: four strongest narrative examples, built like magazine features. -->
  <section id="featured" class="featured-projects section ruled editorial-number-section" data-section-number="02" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
  <h3 id="featured-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">02 · Features</h3>
  </div>
 
- <!-- EDITING NOTE: Each “Read Feature” button below opens the newer archive issue overlay.
-      To change which overlay copy appears, edit the button's data-archive-issue value and the ARCHIVE_ISSUES object in script.js. -->
+ <!--
+  FEATURE CARD BUTTONS / STORY ROUTING
+  Each “Read Feature” button is a doorway into the magazine-style overlay at the
+  bottom of this file. The button itself does not contain the long story copy; it
+  carries a data-archive-issue key that script.js uses to load the right issue.
+  That keeps the visible card concise and the deeper case-study content reusable.
+ -->
  <div class="featured-grid">
  <article class="featured-card cmyk-stack magenta-stack parallax-card" data-speed="-0.035">
  <div class="featured-media thumb-architecture"></div>
@@ -652,9 +749,13 @@
  </div>
  </section>
 
- <!-- EDITING NOTE: This older feature story pop-up is intentionally left in the file as a backup,
-      but the JavaScript no longer opens it from the “Read Feature” buttons.
-      The live feature experience now uses #archive-issue-overlay near the bottom of this file. -->
+ <!--
+  RETIRED FEATURE READER / SAFETY NET
+  This older reader is the design equivalent of keeping the original InDesign file
+  after exporting the final PDF. It is not the live experience, but it preserves
+  previous story structure in case a future redesign wants to reuse pieces of it.
+  The current “Read Feature” experience uses #archive-issue-overlay instead.
+ -->
  <section id="project-reader" class="project-reader" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Featured story reader">
  <button class="project-reader-close" type="button" aria-label="Close project">×</button>
  <button class="project-reader-nav project-reader-prev" type="button" aria-label="Previous featured project">‹</button>
@@ -711,6 +812,9 @@
  </div>
  </section>
 
+ 
+<!-- ARCHIVE SECTION: broader body of work organized as editorial categories. -->
+<!-- DEPARTMENT 03 / ARCHIVE BROWSER: broader proof of range without overwhelming the homepage. -->
  <section id="archive" class="portfolio-archive section ruled editorial-number-section" data-section-number="03" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
@@ -776,7 +880,7 @@
  </ul>
  <div class="archive-controls">
  <button class="archive-prev" type="button">Previous</button>
- <!-- EDITING NOTE: This button opens the newer Archive Issue Overlay, not the older image lightbox. script.js updates data-archive-issue as tabs change. -->
+ <!-- This button opens the full archive “issue,” turning a preview card into a mini case-study spread. script.js swaps the issue key as archive tabs change. -->
  <button class="archive-open" type="button" data-archive-issue="archive-advertising" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Open</button>
  <button class="archive-next" type="button">Next</button>
  </div>
@@ -800,6 +904,7 @@
  with the real packaged InDesign template when ready.
  Keep the filename the same and the download button will keep working.
 ======================================================= -->
+ <!-- DEPARTMENT 04 / RESOURCES: makes the portfolio useful, not just promotional. -->
  <section id="resources" class="resources section ruled editorial-number-section" data-section-number="04" tabindex="-1" aria-labelledby="resources-title">
   <div class="container">
    <div class="section-title-row">
@@ -848,6 +953,7 @@
  <button class="archive-lightbox-nav archive-lightbox-next" type="button" aria-label="Next project">›</button>
  </section>
 
+ <!-- DEPARTMENT 05 / PROCESS: shows how Adam thinks, not just what he made. -->
  <section id="process" class="process section ruled editorial-number-section" data-section-number="05" tabindex="-1">
   <div class="container">
    <div class="section-title-row">
@@ -914,6 +1020,7 @@
  </section>
 
  <aside class="margin-note margin-production" aria-hidden="true">Production is where good design proves itself.</aside>
+ <!-- DEPARTMENT 06 / CAREER RECORD: résumé experience translated into scannable web sections. -->
  <section id="experience" class="experience section ruled editorial-number-section" data-section-number="06" tabindex="-1" aria-label="Professional history">
  <div class="container">
  <div class="section-title-row">
@@ -991,6 +1098,7 @@
  </div>
  </section>
 
+ <!-- DEPARTMENT 07 / PRODUCTION NOTES: skill groups presented as working capabilities. -->
  <section id="skills" class="skills section ruled editorial-number-section" data-section-number="07" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
@@ -1037,6 +1145,7 @@
  </div>
  </section>
 
+ <!-- DEPARTMENT 08 / EDUCATION + RECOGNITION: credentials, awards, and publication history. -->
  <section id="education" class="education-awards editorial-number-section section ruled" data-section-number="08" tabindex="-1" aria-label="Education, awards and publications">
  <div class="container">
  <div class="education-awards-grid">
@@ -1080,6 +1189,7 @@
  </p>
  </div>
  </section>
+ <!-- COLOPHON: a deliberate nod to print tradition and a transparent note about the build. -->
  <section id="colophon" class="colophon section ruled editorial-number-section" data-section-number="10" aria-labelledby="colophon-title" tabindex="-1">
   <div class="container">
    <div class="section-title-row">
@@ -1098,6 +1208,9 @@
 
  </main>
 
+ 
+<!-- FOOTER: final contact path and lightweight credibility details. -->
+<!-- CONTACT / FINAL CALL: where the reader knows exactly how to reach Adam. -->
  <footer id="contact" class="footer editorial-number-section" data-section-number="09" tabindex="-1">
  <div class="container footer-grid">
  <div>
@@ -1120,7 +1233,7 @@
  </div>
  </footer>
 <script src="script.js" defer></script>
- <!-- EDITING NOTE: Main feature overlay. The visible text is filled/updated by script.js so all four Feature cards can reuse this one overlay. -->
+ <!-- MAIN STORY OVERLAY: one reusable “magazine spread” that serves feature stories and archive entries. Content lives in script.js so the HTML stays structural. -->
  <div class="archive-issue-overlay" id="archive-issue-overlay" aria-hidden="true">
   <!-- =======================================================
   ARCHIVE ISSUE OVERLAY
