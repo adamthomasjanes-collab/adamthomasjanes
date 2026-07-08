@@ -907,7 +907,38 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       sidebarTitle: "Production Notes",
       details: [["Role", "Brand development, WordPress website, photography, content, collateral, and digital communications."], ["Tools", "WordPress, Adobe Creative Cloud, photography, SEO-focused content, email templates, and print production workflows."], ["Outcome", "Created a unified digital and print presence that improved visibility, brand consistency, and customer-facing communication."]],
       shows: ["Brand system thinking", "Web and print consistency", "Hospitality communication", "Client-facing collateral"],
-      gallery: [{label:"Logo"},{label:"Website"},{label:"Brochure"},{label:"Photo"},{label:"Email"},{label:"Collateral"}]
+      gallery: [
+  {
+    label: "Logo",
+    src: "assets/camp-perry/camp-perry-logo.png",
+    alt: "Camp Perry Lodging and Conference Center logo design"
+  },
+  {
+    label: "Website",
+    src: "assets/camp-perry/camp-perry-website.png",
+    alt: "Camp Perry Lodging and Conference Center website design"
+  },
+  {
+    label: "Brochure",
+    src: "assets/camp-perry/camp-perry-brochure.png",
+    alt: "Camp Perry Lodging and Conference Center brochure design"
+  },
+  {
+    label: "Photo",
+    src: "assets/camp-perry/camp-perry-photography.jpg",
+    alt: "Camp Perry Lodging and Conference Center photography"
+  },
+  {
+    label: "Email",
+    src: "assets/camp-perry/camp-perry-email.png",
+    alt: "Camp Perry Lodging and Conference Center email design"
+  },
+  {
+    label: "Collateral",
+    src: "assets/camp-perry/camp-perry-collateral.png",
+    alt: "Camp Perry Lodging and Conference Center marketing collateral"
+  }
+]
     },
     "business-publication": {
       kicker: "Feature Story / Publication Design",
