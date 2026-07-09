@@ -40,7 +40,7 @@ Progressive enhancement matters more than cleverness.
   Data-editing guide:
   - archiveProjects controls the archive category cards and overlay content.
   - featured/story overlay logic should stay synchronized with matching buttons in index.html.
-  - demo images can be replaced later with final portfolio artwork without changing the whole interaction system.
+  - archive sample images can be replaced later with final portfolio artwork without changing the whole interaction system.
 
   Debugging guide:
   - If a button stops opening an overlay, first check its data-* attribute in index.html.
@@ -95,7 +95,7 @@ const archiveProjects = [
     title: "Advertising Campaigns",
     type: "Advertising / Print Campaigns",
     desc: "A concentrated gallery of local and regional advertising work, built to demonstrate strong hierarchy, client-focused messaging, production speed, and print-ready design judgment.",
-    points: ["Demo ad gallery wired for lightbox testing", "Campaign, seasonal, and restaurant examples", "Strongest print advertising examples can replace demos later"],
+    points: ["Archive sample gallery wired for lightbox testing", "Campaign, seasonal, and restaurant examples", "Strongest print advertising examples can replace sample images later"],
     thumb: "thumb-ads",
     issueKey: "archive-advertising"
   },
@@ -868,7 +868,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
   if (!overlay) return;
 
 
-  const DEMO_ADS = [
+  const ARCHIVE_SAMPLE_ADS = [
     { label: "Tin Goose Memorial Day", src: "assets/ad-print-design-america-holiday(1).png", alt: "Tin Goose Diner Memorial Day advertisement" },
     { label: "Rosie’s Christmas Lunch", src: "assets/ad-print-design-bar-christmas(1).png", alt: "Rosie’s Bar and Grill Christmas lunch advertisement" },
     { label: "Beer Thirty St. Patrick’s", src: "assets/ad-print-design-bar-stpatrick(1).png", alt: "Beer Thirty St. Patrick’s party advertisement" },
@@ -877,8 +877,8 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     { label: "Crow’s Nest Seafood", src: "assets/ad-print-design-restaurant-seafood(1).png", alt: "Crow’s Nest Restaurant seafood special advertisement" }
   ];
 
-  function demoAdGallery(order = [3, 0, 5, 1, 2, 4]) {
-    return order.map((index) => DEMO_ADS[index]);
+  function sampleAdGallery(order = [3, 0, 5, 1, 2, 4]) {
+    return order.map((index) => ARCHIVE_SAMPLE_ADS[index]);
   }
 
   const ARCHIVE_ISSUES = {
@@ -895,7 +895,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       { label: "Cover" }
     ======================================================= */
 
-    "advertising-healthcare": {
+    "camp-perry-brand-system": {
       kicker: "Feature Story / Brand Development",
       title: "Camp Perry Lodging & Conference Center",
       subtitle: "Brand system · WordPress website · photography · collateral",
@@ -906,7 +906,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
 "The project unified every major guest touchpoint—from discovering the property online to receiving reservation confirmations, arriving on site, and interacting with printed materials. Beyond design, the work included professional real estate photography, Lightroom image editing, responsive MJML email development integrated with the reservation management system, SEO copywriting, and production-ready print collateral that reinforced a consistent brand experience across digital and physical channels."
 ],
       sidebarTitle: "Production Notes",
-      details: [["Role", "Brand strategy • WordPress development • Professional real estate photography • Lightroom image editing • Content strategy • SEO copywriting • Email development (MJML) • Print design • Production management"], ["Tools", "WordPress • Adobe InDesign • Photoshop • Lightroom • Illustrator • MJML • HTML/CSS • Reservation Management Software • Google Analytics • SEO"], ["Outcome", "Created a unified communications system spanning web, print, photography, and automated customer emails, improving brand consistency while streamlining reservation confirmations and cancellations through integrated MJML email templates."]],
+      details: [["Role", "Brand strategy • WordPress development • Professional real estate photography • Lightroom image editing • Content strategy • SEO copywriting • Email development (MJML) • Print design • Print production"], ["Tools", "WordPress • Adobe InDesign • Photoshop • Lightroom • Illustrator • MJML • HTML/CSS • Reservation Management Software • Google Analytics • SEO"], ["Outcome", "Created a unified communications system spanning web, print, photography, and automated customer emails, improving brand consistency while streamlining reservation confirmations and cancellations through integrated MJML email templates."]],
       shows: ["Brand system thinking", "Web and print consistency", "Hospitality communication", "Client-facing collateral"],
       gallery: [
         /*
@@ -961,7 +961,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         }
       ]
     },
-    "business-publication": {
+    "north-coast-business-journal": {
       kicker: "Feature Story / Publication Design",
       title: "North Coast Business Journal",
       subtitle: "Monthly business publication design",
@@ -972,7 +972,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       shows: ["Editorial hierarchy", "Business publication polish", "Ad integration", "Deadline production"],
       gallery: [{label:"Cover"},{label:"Feature"},{label:"Ad"},{label:"Grid"},{label:"Spread"},{label:"Output"}]
     },
-    "newspaper-production": {
+    "beacon-newspaper-production": {
       kicker: "Feature Story / Newspaper Production",
       title: "The Beacon Newspaper",
       subtitle: "Weekly newspaper production",
@@ -983,7 +983,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       shows: ["Fast production", "Print discipline", "Ad layout", "Weekly deadlines"],
       gallery: [{label:"Front"},{label:"Local"},{label:"Ad"},{label:"Photo"},{label:"Page"},{label:"Press"}]
     },
-    "parent-magazine": {
+    "ncpn-parent-magazine": {
       kicker: "Feature Story / Magazine Design",
       title: "NCPN Parent Magazine",
       subtitle: "Monthly parenting magazine layout",
@@ -1000,22 +1000,22 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Advertising Campaigns",
       subtitle: "Print campaigns · client ads · award-winning layouts",
       noteTitle: "Issue Cover",
-      paragraphs: ["This issue gathers the strongest advertising-style examples into one working gallery so the archive can feel like a real printed issue instead of a static list.", "The six demo ads are temporary and are placed throughout the site to test thumbnail sizing, overlay behavior, keyboard navigation, and the full-size lightbox experience."],
+      paragraphs: ["This issue gathers the strongest advertising-style examples into one working gallery so the archive can feel like a real printed issue instead of a static list.", "The six archive sample ads keep the gallery, overlay behavior, keyboard navigation, and full-size lightbox experience active while final images are selected."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Advertising layout, client communication, publication production, and print preparation."], ["Best Use", "Use this as the master ad gallery for the strongest single ads and campaign sets."], ["Demo Status", "Temporary images are included only to test the lightbox and archive experience."]],
+      details: [["Role", "Advertising layout, client communication, publication production, and print preparation."], ["Best Use", "Use this as the master ad gallery for the strongest single ads and campaign sets."], ["Asset Status", "Archive sample images are included so the lightbox and archive experience remain fully testable."]],
       shows: ["Print advertising", "Client goals", "Sales support", "Award-style proof"],
-      gallery: demoAdGallery()
+      gallery: sampleAdGallery()
     },
     "archive-restaurant-hospitality": {
       kicker: "Archive Issue / Restaurant & Hospitality",
       title: "Restaurant & Hospitality",
       subtitle: "Restaurants · diners · taverns · event promotions",
       noteTitle: "Issue Cover",
-      paragraphs: ["Restaurant and hospitality advertising needs to communicate quickly: what is happening, when it happens, where to go, and why it is worth attention.", "This issue uses the demo ads to show how seasonal events, food specials, entertainment, and location details can live together in a working gallery."],
+      paragraphs: ["Restaurant and hospitality advertising needs to communicate quickly: what is happening, when it happens, where to go, and why it is worth attention.", "This issue uses archive sample ads to show how seasonal events, food specials, entertainment, and location details can live together in a working gallery."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Event advertising, food promotion layouts, seasonal campaigns, and local business communication."], ["Best Use", "Swap in real restaurant, tourism, lodging, and hospitality examples later."], ["Demo Status", "Temporary restaurant ads are active so every thumbnail can open a lightbox."]],
+      details: [["Role", "Event advertising, food promotion layouts, seasonal campaigns, and local business communication."], ["Best Use", "Swap in real restaurant, tourism, lodging, and hospitality examples later."], ["Asset Status", "Archive sample restaurant ads are active so every thumbnail can open a lightbox."]],
       shows: ["Restaurant advertising", "Seasonal campaigns", "Promotional hierarchy", "Local business needs"],
-      gallery: demoAdGallery([0,1,2,3,5])
+      gallery: sampleAdGallery([0,1,2,3,5])
     },
     "archive-publication-design": {
       kicker: "Archive Issue / Publication Design",
@@ -1024,9 +1024,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["Recurring publication work shows more than single-piece design. It shows systems, pacing, consistency, deadlines, and the ability to manage editorial and advertising content together.", "Use this issue for North Coast Business Journal, HOMES, The Beacon, and NCPN examples as those assets are prepared."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Editorial layout, ad placement, issue pacing, page composition, and prepress output."], ["Best Use", "Add covers, spreads, front pages, and recurring department examples."], ["Demo Status", "Temporary ads fill the gallery until publication screenshots are added."]],
+      details: [["Role", "Editorial layout, ad placement, issue pacing, page composition, and prepress output."], ["Best Use", "Add covers, spreads, front pages, and recurring department examples."], ["Asset Status", "Archive sample images fill the gallery until publication screenshots are added."]],
       shows: ["Publication systems", "Editorial hierarchy", "Ad integration", "Deadline production"],
-      gallery: demoAdGallery([4,0,1,2,3,5])
+      gallery: sampleAdGallery([4,0,1,2,3,5])
     },
     "archive-brand-identity": {
       kicker: "Archive Issue / Brand Identity",
@@ -1035,9 +1035,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["Brand identity work belongs in the archive because it supports the bigger communications story: consistent visuals across print, web, signage, advertising, and collateral.", "This issue is ready for logo tiles, before-and-after refreshes, brand color systems, and real-world application examples."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Logo design, visual identity, brand refreshes, and applied communication systems."], ["Best Use", "Add identity tiles, mockups, and one-sentence captions explaining each design problem."], ["Demo Status", "Ad examples are only placeholders until identity assets are dropped in."]],
+      details: [["Role", "Logo design, visual identity, brand refreshes, and applied communication systems."], ["Best Use", "Add identity tiles, mockups, and one-sentence captions explaining each design problem."], ["Asset Status", "Archive sample images are used until identity assets are added."]],
       shows: ["Logo systems", "Brand consistency", "Visual communication", "Applied identity"],
-      gallery: demoAdGallery([0,4,1,5,2,3])
+      gallery: sampleAdGallery([0,4,1,5,2,3])
     },
     "archive-web-digital": {
       kicker: "Archive Issue / Web & Digital",
@@ -1046,9 +1046,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["This issue positions Adam as a communications and marketing professional who can support websites, email, content, SEO, and digital updates — not only visual design.", "Add screenshots of websites, email campaigns, page refreshes, landing sections, analytics wins, or content before-and-after examples."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "WordPress updates, web content, SEO-minded copy, email content, and digital communication support."], ["Best Use", "Strong support for digital marketing, communications, and coordinator roles."], ["Demo Status", "Temporary images keep the gallery functional until screenshots are ready."]],
+      details: [["Role", "WordPress updates, web content, SEO-minded copy, email content, and digital communication support."], ["Best Use", "Strong support for digital marketing, communications, and coordinator roles."], ["Asset Status", "Archive sample images keep the gallery functional until screenshots are ready."]],
       shows: ["Digital communication", "Website maintenance", "SEO content", "Email marketing"],
-      gallery: demoAdGallery([4,0,5,1,2,3])
+      gallery: sampleAdGallery([4,0,5,1,2,3])
     },
     "archive-photography": {
       kicker: "Archive Issue / Photography",
@@ -1057,9 +1057,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["Photography adds proof that Adam can support the full communication package: images for websites, brochures, editorial layouts, hospitality marketing, and brand storytelling.", "This issue can eventually hold location photos, staff images, room photography, product shots, and edited visual assets."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Photography, image selection, editing, optimization, and placement across marketing materials."], ["Best Use", "Add real photo examples with captions about where each image was used."], ["Demo Status", "Ads are placeholders for now so the overlay can be tested end-to-end."]],
+      details: [["Role", "Photography, image selection, editing, optimization, and placement across marketing materials."], ["Best Use", "Add real photo examples with captions about where each image was used."], ["Asset Status", "Archive sample images keep the overlay testable end-to-end."]],
       shows: ["Marketing photography", "Image preparation", "Visual storytelling", "Cross-channel use"],
-      gallery: demoAdGallery([5,0,1,4,2,3])
+      gallery: sampleAdGallery([5,0,1,4,2,3])
     },
     "archive-marketing-collateral": {
       kicker: "Archive Issue / Marketing Collateral",
@@ -1068,9 +1068,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["Marketing collateral is where design, copy, audience, and business goals have to meet in a practical format people can actually use.", "This issue is ready for brochures, flyers, sell sheets, conference materials, rack cards, postcards, and sales support pieces."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Brochure design, sales support materials, print communication, layout, and production."], ["Best Use", "Use this as proof for marketing coordinator and communications roles."], ["Demo Status", "Temporary ad examples stand in for collateral until final images are chosen."]],
+      details: [["Role", "Brochure design, sales support materials, print communication, layout, and production."], ["Best Use", "Use this as proof for marketing coordinator and communications roles."], ["Asset Status", "Archive sample images stand in for collateral until final images are chosen."]],
       shows: ["Sales support", "Clear messaging", "Brochure systems", "Print production"],
-      gallery: demoAdGallery([0,5,4,1,2,3])
+      gallery: sampleAdGallery([0,5,4,1,2,3])
     },
     "archive-editorial-features": {
       kicker: "Archive Issue / Editorial Features",
@@ -1079,9 +1079,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["Editorial features show the ability to guide a reader through a story, not just decorate a page. The work is hierarchy, pacing, images, captions, pull quotes, and structure.", "Use this issue for magazine features, newspaper feature pages, business stories, parent magazine spreads, and strong editorial layouts."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Feature layout, story hierarchy, image placement, and reader-friendly pacing."], ["Best Use", "Add spreads and note what made the article easier to scan or understand."], ["Demo Status", "Temporary examples keep the gallery live while editorial images are gathered."]],
+      details: [["Role", "Feature layout, story hierarchy, image placement, and reader-friendly pacing."], ["Best Use", "Add spreads and note what made the article easier to scan or understand."], ["Asset Status", "Archive sample images keep the gallery live while editorial images are gathered."]],
       shows: ["Feature pacing", "Reader hierarchy", "Editorial polish", "Story structure"],
-      gallery: demoAdGallery([4,1,0,2,5,3])
+      gallery: sampleAdGallery([4,1,0,2,5,3])
     },
     "archive-awards": {
       kicker: "Archive Issue / Awards",
@@ -1090,9 +1090,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["This issue gives hiring managers and clients a fast way to see proof of quality: award-winning ads, strongest print examples, and the pieces Adam wants people to notice first.", "Keep this issue selective. It should feel like a highlight reel, not a storage drawer."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Award-winning advertising and strongest portfolio highlights."], ["Best Use", "Keep only the clearest, most impressive examples here."], ["Demo Status", "Temporary ads are included while award-specific images and captions are selected."]],
+      details: [["Role", "Award-winning advertising and strongest portfolio highlights."], ["Best Use", "Keep only the clearest, most impressive examples here."], ["Asset Status", "Archive sample images are included while award-specific images and captions are selected."]],
       shows: ["Recognition", "Strongest examples", "Fast proof", "Portfolio highlights"],
-      gallery: demoAdGallery([3,0,2,1,5,4])
+      gallery: sampleAdGallery([3,0,2,1,5,4])
     }
   };
 
@@ -1121,10 +1121,10 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     into the archive category rotation.
   */
   const FEATURE_ISSUE_KEYS = [
-    "advertising-healthcare",
-    "business-publication",
-    "newspaper-production",
-    "parent-magazine"
+    "camp-perry-brand-system",
+    "north-coast-business-journal",
+    "beacon-newspaper-production",
+    "ncpn-parent-magazine"
   ];
 
   function getArchiveIssueKeys() {
@@ -1145,7 +1145,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
   }
 
   function setIssueContent(issueKey) {
-    const issue = ARCHIVE_ISSUES[issueKey] || ARCHIVE_ISSUES["advertising-healthcare"];
+    const issue = ARCHIVE_ISSUES[issueKey] || ARCHIVE_ISSUES["camp-perry-brand-system"];
     currentIssueKey = issueKey;
     currentGallery = issue.gallery || [];
 
@@ -1165,8 +1165,8 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
        v5.2.6 update:
        Each gallery button now has a square .archive-ad-art area. Images use
        object-fit: contain so the full portfolio piece stays visible. Any
-       leftover space around the image is intentionally black, like a contact
-       sheet or gallery mat. The caption sits below the square image area so
+       the square thumb area remains clean and consistent, like an
+       editorial contact sheet. The caption sits below the square image area so
        card titles stay aligned and easy to scan.
 
        To add real work later, edit ARCHIVE_ISSUES[issueKey].gallery above:
@@ -1208,7 +1208,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
 
   function openIssue(event) {
     if (event) event.preventDefault();
-    const issueKey = event?.currentTarget?.dataset?.archiveIssue || "advertising-healthcare";
+    const issueKey = event?.currentTarget?.dataset?.archiveIssue || "camp-perry-brand-system";
     setIssueContent(issueKey);
     lastFocus = document.activeElement;
     overlay.classList.add("is-open");

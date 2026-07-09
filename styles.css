@@ -2776,13 +2776,13 @@ body.archive-issue-open{overflow:hidden}
 /* =======================================================
 ARCHIVE POLISH PASS — DEMO IMAGE GALLERIES
 
-Temporary ad images are now used throughout the archive overlay so
+Archive sample ad images are now used throughout the archive overlay so
 Adam can test real thumbnail crops and lightbox behavior before the
 final portfolio assets are selected.
 
-To replace demo images:
+To replace archive sample images:
 1. Put optimized image files in /assets.
-2. Edit DEMO_ADS or the gallery arrays in script.js.
+2. Edit ARCHIVE_SAMPLE_ADS or the gallery arrays in script.js.
 3. Keep image alt text meaningful.
 ======================================================= */
 .archive-ad-grid {
@@ -2915,7 +2915,7 @@ To replace demo images:
   }
 }
 
-/* Demo archive preview covers. These replace abstract gray placeholder blocks
+/* Archive sample preview covers. These replace abstract gray placeholder blocks
    in the “03 · From the Archive” preview panel while the final work is chosen. */
 .archive-preview-image.thumb-ads,
 .archive-preview-image.thumb-awards,

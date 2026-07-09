@@ -460,7 +460,7 @@ The menu should land where the reader visually expects: on the section title.
 ## v5.2.2 — Archive Editorial Issue Overlay
 
 - Added a working editorial overlay for Advertising Design Series.
-- Added Issue 01 — Healthcare with Editor’s Note, six placeholder ad frames, Production Notes, and issue navigation.
+- Added Issue 01 — Camp Perry with Editor’s Note, six placeholder ad frames, Production Notes, and issue navigation.
 - Established the Archive card → issue overlay → individual work sample pattern.
 
 ## v5.2.4 — Archive Open Overlay Wiring
@@ -469,14 +469,14 @@ The menu should land where the reader visually expects: on the section title.
 - Added editing comments in `index.html` and `script.js` explaining where to add/remove archive tabs and how `data-archive-issue` connects to overlay copy.
 - Added six archive-specific overlay stories in `script.js` so each Archive tab can open with appropriate copy.
 
-## v5.2.5 — Archive Demo Image + Overlay Polish Pass
+## v5.2.5 — Archive Archive Sample Image + Overlay Polish Pass
 
-- Added the six temporary demo ad images to `/assets`.
+- Added the six temporary archive sample ad images to `/assets`.
 - Expanded “03 · From the Archive” from six items to nine portfolio archive issues.
 - Wired the Archive `Open` button to the reusable archive issue overlay for all nine issues.
 - Added real image thumbnails inside archive issue overlays for lightbox testing.
 - Added a nested full-size image viewer for archive issue thumbnails.
-- Replaced abstract preview placeholders with temporary demo ad imagery where practical.
+- Replaced abstract preview placeholders with temporary archive sample ad imagery where practical.
 - Added heavier comments and editing notes in HTML, CSS, and JavaScript.
 - Added `README-DEVELOPER.md` with guidance for future edits.
 

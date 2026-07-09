@@ -15,7 +15,7 @@ This version adds a more complete **03 · From the Archive** system.
   8. Editorial Features
   9. Awards
 - The Archive **Open** button launches the reusable archive issue overlay.
-- Temporary demo ads are used as thumbnails so the lightbox can be tested with real images.
+- Archive sample ads are used as thumbnails so the lightbox can be tested with real images while final project assets are selected.
 - The archive issue overlay now includes a nested image viewer for individual ad thumbnails.
 - Extra comments were added in `index.html`, `styles.css`, and `script.js` to make on-the-fly edits easier.
 
@@ -52,11 +52,11 @@ Edit `ARCHIVE_ISSUES` near the bottom of `script.js`.
 
 The `issueKey` from `archiveProjects` must match one of the keys in `ARCHIVE_ISSUES`.
 
-## Where to replace the demo ads
+## Where to replace archive sample images
 
-The temporary ads are listed in `DEMO_ADS` near the bottom of `script.js`.
+The temporary ads are listed in `ARCHIVE_SAMPLE_ADS` near the bottom of `script.js`.
 
-To replace a demo image:
+To replace an archive sample image:
 
 1. Put the optimized image in `/assets`.
 2. Change the `src` value.
