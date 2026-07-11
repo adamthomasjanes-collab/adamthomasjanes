@@ -56,7 +56,7 @@
  <meta property="og:description" content="Publication design, web communications, marketing communications, Adobe InDesign, WordPress, SEO, and visual systems built to make information easier to understand." />
  <meta property="og:type" content="website" />
  <meta property="og:url" content="https://adamthomasjanes.com/" />
- <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:card" content="summary" />
  <meta name="twitter:title" content="Adam Thomas Janes | Publication Design & Web Communications" />
  <meta name="twitter:description" content="Publication design, web communications, marketing communications, Adobe InDesign, WordPress, SEO, and visual systems built to make information clear." />
 
@@ -79,7 +79,6 @@
       "jobTitle": "Communications & Marketing Professional specializing in Publication Design, Web Communications and Editorial Systems",
       "description": "Communications and marketing professional who helps organizations make complex information clear through publications, websites, campaigns, and visual communication systems.",
       "email": "mailto:AdamThomasJanes@gmail.com",
-      "telephone": "419-341-8519",
       "url": "https://adamthomasjanes.com/",
       "image": "https://adamthomasjanes.com/assets/adam-headshot.png",
       "sameAs": [
@@ -400,7 +399,7 @@
         },
         {
           "@type": "WebPageElement",
-          "name": "Process",
+          "name": "Method",
           "url": "https://adamthomasjanes.com/#process"
         },
         {
@@ -486,28 +485,74 @@
  <span class="drift-mark drift-three"></span>
  </div>
 
+<!--
+  EDITORIAL UTILITY RAIL
+
+  The cover stays focused on the publication narrative while three practical
+  actions remain available at the page edge. On desktop, Résumé and LinkedIn
+  use animated black tabs that reveal their labels on hover or keyboard focus;
+  Email uses a compact envelope tab. On smaller screens, the rail simplifies
+  to one compact Résumé button.
+-->
+<aside class="editorial-utility" aria-label="Portfolio utilities">
+  <a class="editorial-utility-item editorial-utility-featured editorial-utility-resume" href="assets/Adam-Thomas-Janes-Resume.pdf" download aria-label="Download Adam Thomas Janes resume PDF">
+    <span class="editorial-utility-collapsed-label" aria-hidden="true">
+      <svg class="editorial-utility-tab-icon" viewBox="0 0 24 24" width="15" height="15" focusable="false">
+        <path d="M7 3.5h7l3 3V20.5H7zM14 3.5v4h4M9.5 12h5M9.5 15h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Resume</span>
+    </span>
+    <span class="editorial-utility-expanded-label">
+      <svg class="editorial-utility-symbol" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+        <path d="M7 3.5h7l3 3V20.5H7zM14 3.5v4h4M9.5 12h5M9.5 15h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Resume</span>
+    </span>
+  </a>
+  <a class="editorial-utility-item editorial-utility-featured editorial-utility-linkedin" href="https://linkedin.com/in/adamthomasjanes" target="_blank" rel="noopener noreferrer" aria-label="Open Adam Thomas Janes on LinkedIn">
+    <span class="editorial-utility-collapsed-label" aria-hidden="true">
+      <span class="editorial-utility-tab-linkedin" aria-hidden="true">in</span>
+      <span>LinkedIn</span>
+    </span>
+    <span class="editorial-utility-expanded-label">
+      <span class="editorial-linkedin-mark" aria-hidden="true">in</span>
+      <span>LinkedIn</span>
+    </span>
+  </a>
+  <a class="editorial-utility-item editorial-utility-email" href="mailto:AdamThomasJanes@gmail.com" aria-label="Email Adam Thomas Janes">
+    <span class="editorial-utility-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" focusable="false" aria-hidden="true">
+        <path d="M3 5.5h18v13H3zM4.5 7l7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="editorial-utility-expanded-label"><span>Email</span></span>
+  </a>
+</aside>
+
  
 <!-- SITE HEADER / PRIMARY NAVIGATION: brand mark, section links, and mobile menu toggle. -->
 <!-- SITE HEADER / TABLE OF CONTENTS: sticky navigation for the publication-style sections. -->
  <header class="site-header">
  <div class="container header-inner">
  <a class="logo" href="#top" aria-label="Adam Thomas Janes home"><img src="assets/atj-custom-mark.svg" alt="ATJ" class="site-logo-mark" width="86" height="39"></a>
- <nav class="nav" aria-label="Primary">
- <a href="#services"><span class="nav-num">01</span>Practice</a>
- <a href="#featured"><span class="nav-num">02</span>Features</a>
+ <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+ <nav class="nav" id="primary-navigation" aria-label="Primary">
+ <a href="#featured"><span class="nav-num">01</span>Features</a>
+ <a href="#services"><span class="nav-num">02</span>Practice</a>
  <a href="#archive"><span class="nav-num">03</span>Archive</a>
- <a href="#resources"><span class="nav-num">04</span>Resources</a>
- <a href="#process"><span class="nav-num">05</span>Process</a>
- <a href="#experience"><span class="nav-num">06</span>Timeline</a>
+ <a href="#process"><span class="nav-num">04</span>Method</a>
+ <a href="#experience"><span class="nav-num">05</span>Timeline</a>
+ <a href="#resources"><span class="nav-num">06</span>Resources</a>
  <a href="#skills"><span class="nav-num">07</span>Notes</a>
  <a href="#colophon"><span class="nav-num">08</span>Colophon</a>
+ <a class="nav-resume-mobile" href="assets/Adam-Thomas-Janes-Resume.pdf" download>Résumé PDF</a>
  </nav>
  </div>
  </header>
  
 <!-- MAIN CONTENT: all visible portfolio sections live inside this element. -->
 <main id="main-content" tabindex="-1">
- <!-- COVER STORY / HERO: first impression, brand promise, résumé download, and portrait. -->
+ <!-- COVER / OPENING SPREAD: first impression, brand promise, and portrait. Résumé access lives in the persistent utility rail. -->
  <!--
 ═══════════════════════════════════════════════════════════════
 CHAPTER 00 · THE COVER
@@ -537,13 +582,17 @@ piece without sacrificing accessible, readable HTML.
  <div class="cover-meta-strip" aria-label="Portfolio edition details"><span>Communications</span><span>Publication Design</span><span>Web Systems</span><span>Reader-First Production</span></div>
  <div class="hero-identity scroll-text slide-from-right">
  <p class="hero-subhead">I make complex information clear.</p>
- <p class="hero-tags">Publication Design · Web Communications · WordPress · Adobe InDesign · Marketing Communications · Visual Systems</p>
- <a class="top-resume-download" href="assets/Adam-Thomas-Janes-Resume.pdf" download aria-label="Download Adam Thomas Janes resume PDF">Download Resume</a>
+ <p class="hero-credibility">Editorial judgment · Web fluency · Production discipline.</p>
+ <p class="hero-tags">Publications · Websites · Campaigns · Communication Systems</p>
+ <div class="hero-actions">
+  <a class="button-link hero-primary-action" href="#featured">View selected work</a>
+  <a class="hero-contact-action" href="#contact">Start a conversation</a>
+ </div>
  </div>
  </div>
  <div class="hero-side">
  <figure class="headshot-card cmyk-stack key-stack parallax-card" data-speed="-0.045">
- <img src="assets/adam-headshot.png" alt="Black and white portrait of Adam Thomas Janes" loading="lazy" decoding="async">
+ <img src="assets/adam-headshot.png" alt="Black and white portrait of Adam Thomas Janes" fetchpriority="high" decoding="async">
  </figure>
  <div class="accent-mark" aria-hidden="true"></div>
  <div class="hero-motion-stack" aria-hidden="true">
@@ -576,10 +625,9 @@ lens they should use to understand the body of work.
  <div class="container split-intro">
  <p class="section-kicker">Opening Feature · Designed for Clarity</p>
  <div>
- <h2 class="scroll-text slide-from-left">I turn scattered content into publications, websites, campaigns, and communication materials people can actually use.</h2>
- <p class="scroll-text slide-from-right">My work sits where communication strategy meets production. I organize information, create hierarchy, choose the right medium, and build polished materials for print, web, and digital use. That can mean an InDesign publication, a WordPress website, a proposal, a sales piece, an email campaign, or a complete visual system.</p>
- <p class="scroll-text slide-from-right">I am especially strong in InDesign-driven work: publications, reports, magazines, newspapers, proposals, collateral, and long-form documents where typography, consistency, deadlines, and production accuracy matter.</p>
- <p class="scroll-text slide-from-right">Every project starts the same way: understand the audience, organize the information, then design something people can actually read, use, and trust.</p>
+ <h2 class="scroll-text slide-from-left">I turn complex content into clear publications, websites, campaigns, and communication systems.</h2>
+ <p class="scroll-text slide-from-right">My work combines communication strategy, editorial design, web fluency, and production discipline. I organize information, establish hierarchy, choose the right medium, and build materials people can read, use, and trust.</p>
+ <p class="scroll-text slide-from-right">My background was built in deadline-driven publishing, where design has to remain clear, accurate, repeatable, and ready for production. Over eighteen years, that foundation has expanded across WordPress, marketing communications, brand development, digital media education, and client-facing design.</p>
  <div class="quick-proof">
  <span>18+ Years in Communications</span>
  <span>Print + Web Systems</span>
@@ -642,10 +690,112 @@ same values apply: hierarchy, accuracy, rhythm, usefulness, and care.
   </div>
  </section>
 
- <!-- DEPARTMENT 01 / AREAS OF PRACTICE: the clearest version of “what do you actually do?” -->
+ <!-- DEPARTMENT 01 / FEATURE STORIES: strongest selected work appears before the service inventory. -->
  <!--
 ═══════════════════════════════════════════════════════════════
-CHAPTER 01 · COMMUNICATIONS PRACTICE
+CHAPTER 01 · FEATURE STORIES
+
+Every portfolio has projects. This portfolio treats them as stories.
+
+Each feature card follows an editorial rhythm:
+
+Challenge → Solution → Result
+
+That structure helps a hiring manager or client understand more than
+what the finished piece looked like. It shows how Adam thinks, how he
+frames communication problems, and how design becomes a practical
+answer rather than decoration.
+
+Interaction note:
+The “Read Feature” buttons open the newer archive issue overlay, so
+all long-form project storytelling can live in one reusable magazine-
+style component.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="featured" class="featured-projects section ruled editorial-number-section" data-section-number="01" tabindex="-1">
+ <div class="container">
+ <div class="section-title-row">
+  <div class="section-title-copy">
+   <p class="chapter-eyebrow">Selected Work in Context</p>
+   <h2 id="featured-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">01 · Features</h2>
+  </div>
+  <p class="chapter-running-thought">Four projects showing strategy through production.</p>
+ </div>
+
+ <!--
+  FEATURE CARD BUTTONS / STORY ROUTING
+  Each “Read Feature” button is a doorway into the magazine-style overlay at the
+  bottom of this file. The button itself does not contain the long story copy; it
+  carries a data-archive-issue key that script.js uses to load the right issue.
+  That keeps the visible card concise and the deeper case-study content reusable.
+ -->
+ <div class="featured-grid">
+ <article class="featured-card cmyk-stack magenta-stack parallax-card" data-speed="-0.035">
+ <div class="featured-media thumb-architecture"></div>
+ <p class="image-caption">Feature 01 · Brand system, website, photography, collateral</p>
+ <div class="featured-copy">
+ <p class="case-meta">Feature Story / Brand + Web Communications</p>
+ <h3>Camp Perry Lodging &amp; Conference Center</h3>
+ <div class="case-mini">
+ <p><strong>Challenge</strong> Camp Perry needed more than separate marketing pieces. It needed one clear public-facing identity.</p>
+ <p><strong>Solution</strong> Built the logo, WordPress website, photography, brochures, sales collateral, and digital materials around one consistent communication system.</p>
+ <p><strong>Result</strong> Created one consistent communication system across the website, photography, print collateral, SEO content, and automated reservation emails—giving guests a clearer experience from discovery through arrival.</p>
+ </div>
+ <button data-archive-issue="camp-perry-brand-system" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
+ </div>
+ </article>
+
+ <article class="featured-card cmyk-stack cyan-stack parallax-card" data-speed="0.028">
+ <div class="featured-media thumb-business"></div>
+ <p class="image-caption">Feature 02 · Monthly business publication design</p>
+ <div class="featured-copy">
+ <p class="case-meta">Feature Story / Publication Design / Business Media</p>
+ <h3>North Coast Business Journal</h3>
+ <div class="case-mini">
+ <p><strong>Challenge</strong> A business publication has to feel credible before the reader reaches the first paragraph.</p>
+ <p><strong>Solution</strong> Designed editorial layouts, advertising placement, typography, image preparation, and print-ready production files.</p>
+ <p><strong>Result</strong> Sustained a credible monthly publication through repeatable layouts, disciplined typography, coordinated advertising, and dependable print-ready production.</p>
+ </div>
+ <button data-archive-issue="north-coast-business-journal" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
+ </div>
+ </article>
+
+ <article class="featured-card cmyk-stack yellow-stack parallax-card" data-speed="-0.024">
+ <div class="featured-media thumb-newspaper"></div>
+ <p class="image-caption">Feature 03 · Weekly newspaper production</p>
+ <div class="featured-copy">
+ <p class="case-meta">Feature Story / Weekly Newspaper / Production</p>
+ <h3>The Beacon Newspaper</h3>
+ <div class="case-mini">
+ <p><strong>Challenge</strong> A weekly newspaper rewards speed, accuracy, and calm production habits.</p>
+ <p><strong>Solution</strong> Managed page composition, advertising design, typography, image prep, and print-ready files on a weekly schedule.</p>
+ <p><strong>Result</strong> Kept weekly pages moving reliably from composition through press while balancing editorial priorities, advertiser needs, accuracy, and immovable deadlines.</p>
+ </div>
+ <button data-archive-issue="beacon-newspaper-production" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
+ </div>
+ </article>
+
+ <article class="featured-card cmyk-stack key-stack parallax-card" data-speed="0.032">
+ <div class="featured-media thumb-parent"></div>
+ <p class="image-caption">Feature 04 · Monthly parenting magazine layout</p>
+ <div class="featured-copy">
+ <p class="case-meta">Feature Story / Magazine Design / Visual Storytelling</p>
+ <h3>NCPN Parent Magazine</h3>
+ <div class="case-mini">
+ <p><strong>Challenge</strong> Family-focused content needs to feel approachable, organized, and easy to move through.</p>
+ <p><strong>Solution</strong> Built readable magazine layouts using editorial pacing, typography, image placement, and advertising support.</p>
+ <p><strong>Result</strong> Built a repeatable, audience-friendly layout system that made recurring editorial content easier to navigate while supporting advertisers and monthly production.</p>
+ </div>
+ <button data-archive-issue="ncpn-parent-magazine" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
+ </div>
+ </article>
+ </div>
+ </div>
+ </section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 02 · COMMUNICATIONS PRACTICE
 
 This section translates a broad career into clear service lanes.
 
@@ -659,19 +809,19 @@ to update. The cards should always reflect the kind of work he wants
 more of, not only the work he has already done.
 ═══════════════════════════════════════════════════════════════
 -->
-<section id="services" class="services section ruled editorial-number-section" data-section-number="01" tabindex="-1">
+<section id="services" class="services section ruled editorial-number-section" data-section-number="02" tabindex="-1">
  <div class="container">
  <div class="section-title-row">
   <div class="section-title-copy">
    <p class="chapter-eyebrow">How I Help Organizations</p>
-   <h3 id="services-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">01 · Communications Practice</h3>
+   <h2 id="services-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">02 · Communications Practice</h2>
   </div>
   <p class="chapter-running-thought">Reader-first thinking. Production-ready execution.</p>
  </div>
 
  <div class="service-grid">
  <article class="service-card cmyk-hover magenta-accent service-rise-card" data-speed="0.022">
- <h2>Publication Design &amp; Editorial Systems</h2>
+ <h3>Publication Design &amp; Editorial Systems</h3>
  <p>Magazines, newspapers, reports, proposals, sales collateral, and long-form documents designed in Adobe InDesign with strong typography, clear hierarchy, production speed, and prepress knowledge.</p>
  <ul>
  <li>Adobe InDesign layout systems</li>
@@ -682,7 +832,7 @@ more of, not only the work he has already done.
  </article>
 
  <article class="service-card cmyk-hover yellow-accent service-rise-card" data-speed="-0.026">
- <h2>Web &amp; WordPress Communications</h2>
+ <h3>Web &amp; WordPress Communications</h3>
  <p>WordPress websites, Divi layouts, SEO-focused pages, HTML/CSS refinements, email campaigns, and digital updates that make content easier to find, read, and maintain.</p>
  <ul>
  <li>WordPress and Divi Builder websites</li>
@@ -693,7 +843,7 @@ more of, not only the work he has already done.
  </article>
 
  <article class="service-card cmyk-hover cyan-accent service-rise-card" data-speed="0.018">
- <h2>Marketing Communications</h2>
+ <h3>Marketing Communications</h3>
  <p>Messaging, campaigns, sales collateral, presentations, and internal or external communications that help organizations explain what they do clearly and consistently.</p>
  <ul>
  <li>Brand messaging and positioning</li>
@@ -704,7 +854,7 @@ more of, not only the work he has already done.
  </article>
 
  <article class="service-card cmyk-hover key-accent service-rise-card" data-speed="-0.02">
- <h2>Brand &amp; Visual Systems</h2>
+ <h3>Brand &amp; Visual Systems</h3>
  <p>Brand identities, visual systems, photography direction, and print or digital materials that give an organization a consistent voice across every touchpoint.</p>
  <ul>
  <li>Brand identity and visual systems</li>
@@ -760,109 +910,7 @@ editorial and publication design.
  </section>
 
  
-<!-- FEATURED WORK: strongest curated projects for recruiters and clients. -->
-<!-- DEPARTMENT 02 / FEATURE STORIES: four strongest narrative examples, built like magazine features. -->
- <!--
-═══════════════════════════════════════════════════════════════
-CHAPTER 02 · FEATURE STORIES
-
-Every portfolio has projects. This portfolio treats them as stories.
-
-Each feature card follows an editorial rhythm:
-
-Challenge → Solution → Result
-
-That structure helps a hiring manager or client understand more than
-what the finished piece looked like. It shows how Adam thinks, how he
-frames communication problems, and how design becomes a practical
-answer rather than decoration.
-
-Interaction note:
-The “Read Feature” buttons open the newer archive issue overlay, so
-all long-form project storytelling can live in one reusable magazine-
-style component.
-═══════════════════════════════════════════════════════════════
--->
-<section id="featured" class="featured-projects section ruled editorial-number-section" data-section-number="02" tabindex="-1">
- <div class="container">
- <div class="section-title-row">
-  <div class="section-title-copy">
-   <p class="chapter-eyebrow">Selected Work in Context</p>
-   <h3 id="featured-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">02 · Features</h3>
-  </div>
-  <p class="chapter-running-thought">Four projects showing strategy through production.</p>
- </div>
-
- <!--
-  FEATURE CARD BUTTONS / STORY ROUTING
-  Each “Read Feature” button is a doorway into the magazine-style overlay at the
-  bottom of this file. The button itself does not contain the long story copy; it
-  carries a data-archive-issue key that script.js uses to load the right issue.
-  That keeps the visible card concise and the deeper case-study content reusable.
- -->
- <div class="featured-grid">
- <article class="featured-card cmyk-stack magenta-stack parallax-card" data-speed="-0.035">
- <div class="featured-media thumb-architecture"></div>
- <p class="image-caption">Feature 01 · Brand system, website, photography, collateral</p>
- <div class="featured-copy">
- <p class="case-meta">Feature Story / Brand + Web Communications</p>
- <h2>Camp Perry Lodging &amp; Conference Center</h2>
- <div class="case-mini">
- <p><strong>Challenge</strong> Camp Perry needed more than separate marketing pieces. It needed one clear public-facing identity.</p>
- <p><strong>Solution</strong> Built the logo, WordPress website, photography, brochures, sales collateral, and digital materials around one consistent communication system.</p>
- <p><strong>Result</strong> Created a more consistent public-facing presence across print, web, and digital channels.</p>
- </div>
- <button data-archive-issue="camp-perry-brand-system" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
- </div>
- </article>
-
- <article class="featured-card cmyk-stack cyan-stack parallax-card" data-speed="0.028">
- <div class="featured-media thumb-business"></div>
- <p class="image-caption">Feature 02 · Monthly business publication design</p>
- <div class="featured-copy">
- <p class="case-meta">Feature Story / Publication Design / Business Media</p>
- <h2>North Coast Business Journal</h2>
- <div class="case-mini">
- <p><strong>Challenge</strong> A business publication has to feel credible before the reader reaches the first paragraph.</p>
- <p><strong>Solution</strong> Designed editorial layouts, advertising placement, typography, image preparation, and print-ready production files.</p>
- <p><strong>Result</strong> Supported recurring publication quality through consistent layouts, typography, image preparation, and print-ready production.</p>
- </div>
- <button data-archive-issue="north-coast-business-journal" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
- </div>
- </article>
-
- <article class="featured-card cmyk-stack yellow-stack parallax-card" data-speed="-0.024">
- <div class="featured-media thumb-newspaper"></div>
- <p class="image-caption">Feature 03 · Weekly newspaper production</p>
- <div class="featured-copy">
- <p class="case-meta">Feature Story / Weekly Newspaper / Production</p>
- <h2>The Beacon Newspaper</h2>
- <div class="case-mini">
- <p><strong>Challenge</strong> A weekly newspaper rewards speed, accuracy, and calm production habits.</p>
- <p><strong>Solution</strong> Managed page composition, advertising design, typography, image prep, and print-ready files on a weekly schedule.</p>
- <p><strong>Result</strong> Maintained reliable weekly production while supporting editorial needs, advertising goals, and print deadlines.</p>
- </div>
- <button data-archive-issue="beacon-newspaper-production" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
- </div>
- </article>
-
- <article class="featured-card cmyk-stack key-stack parallax-card" data-speed="0.032">
- <div class="featured-media thumb-parent"></div>
- <p class="image-caption">Feature 04 · Monthly parenting magazine layout</p>
- <div class="featured-copy">
- <p class="case-meta">Feature Story / Magazine Design / Visual Storytelling</p>
- <h2>NCPN Parent Magazine</h2>
- <div class="case-mini">
- <p><strong>Challenge</strong> Family-focused content needs to feel approachable, organized, and easy to move through.</p>
- <p><strong>Solution</strong> Built readable magazine layouts using editorial pacing, typography, image placement, and advertising support.</p>
- <p><strong>Result</strong> Delivered consistent, audience-friendly magazine layouts that supported editorial content, advertisers, and readers.</p>
- </div>
- <button data-archive-issue="ncpn-parent-magazine" class="project-trigger" type="button" aria-haspopup="dialog" aria-controls="archive-issue-overlay">Read Feature</button>
- </div>
- </article>
- </div>
- </div>
- </section>
+ 
 
 
 
@@ -890,7 +938,7 @@ archive. It is meant to show range, volume, and repeated craft.
  <div class="section-title-row">
   <div class="section-title-copy">
    <p class="chapter-eyebrow">Selected Back Issues</p>
-   <h3 id="archive-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">03 · From the Archive</h3>
+   <h2 id="archive-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">03 · From the Archive</h2>
   </div>
   <p class="chapter-running-thought">Smaller projects. The same attention to detail.</p>
  </div>
@@ -913,7 +961,7 @@ archive. It is meant to show range, volume, and repeated craft.
  3. Add a matching issue in ARCHIVE_ISSUES in script.js.
  ======================================================= -->
  <button class="archive-item is-active color-cyan" type="button" data-archive-index="0">
- <span>01</span><strong>Marketing Campaigns Campaigns</strong><em>Print Campaigns / Awards</em>
+ <span>01</span><strong>Marketing Campaigns</strong><em>Print Campaigns / Awards</em>
  </button>
  <button class="archive-item color-magenta" type="button" data-archive-index="1">
  <span>02</span><strong>Restaurant &amp; Hospitality</strong><em>Client Marketing Campaigns</em>
@@ -934,7 +982,7 @@ archive. It is meant to show range, volume, and repeated craft.
  <span>07</span><strong>Marketing Collateral</strong><em>Brochures / Sales Support</em>
  </button>
  <button class="archive-item color-key" type="button" data-archive-index="7">
- <span>09</span><strong>Editorial Features</strong><em>Story Layout / Pacing</em>
+ <span>08</span><strong>Editorial Features</strong><em>Story Layout / Pacing</em>
  </button>
  <button class="archive-item color-cyan" type="button" data-archive-index="8">
  <span>09</span><strong>Awards</strong><em>Recognition / Strongest Work</em>
@@ -945,7 +993,7 @@ archive. It is meant to show range, volume, and repeated craft.
  <div class="archive-preview-image thumb-ads" aria-hidden="true"></div>
  <div class="archive-preview-copy">
  <p class="section-kicker archive-preview-type">Marketing Campaigns / Print Campaigns</p>
- <h2 class="archive-preview-title">Marketing Campaigns Design Series</h2>
+ <h3 class="archive-preview-title">Marketing Campaigns Design Series</h3>
  <p class="archive-preview-description">Created hundreds of print advertisements for businesses across diverse industries, collaborating directly with sales teams, business owners, and clients to develop effective advertising solutions aligned with their objectives.</p>
  <ul class="archive-preview-points">
  <li>MACPA First Place — Single Ads, Large Space</li>
@@ -964,184 +1012,90 @@ archive. It is meant to show range, volume, and repeated craft.
  </div>
  </section>
 
- <!-- =======================================================
- RESOURCES SECTION / DOWNLOADABLE TEMPLATE
-
- This section is intentionally simple and easy to maintain.
- Adam can add production resources here over time: InDesign
- templates, checklists, layout guides, press release templates,
- publication planning worksheets, etc.
-
- IMPORTANT EDITING NOTE:
- Replace the placeholder ZIP at:
- assets/templates/newspaper-indesign-template.zip
- with the real packaged InDesign template when ready.
- Keep the filename the same and the download button will keep working.
-======================================================= -->
- <!-- DEPARTMENT 04 / RESOURCES: makes the portfolio useful, not just promotional. -->
+ <!-- DEPARTMENT 04 / METHOD: explains how the work moves from understanding to launch. -->
  <!--
 ═══════════════════════════════════════════════════════════════
-CHAPTER 04 · RESOURCES / REFERENCE LIBRARY
-
-This section turns the portfolio from a showcase into a useful
-resource.
-
-A downloadable InDesign newspaper template reinforces Adam’s
-publication-design credibility while giving visitors something
-practical to take with them.
-
-Important reminder:
-Only share cleaned, generic, rights-safe templates here. Remove any
-client-owned, employer-owned, licensed, or sensitive content before
-publishing a downloadable file.
-═══════════════════════════════════════════════════════════════
--->
-<section id="resources" class="resources section ruled editorial-number-section" data-section-number="04" tabindex="-1" aria-labelledby="resources-title">
-  <div class="container">
-   <div class="section-title-row">
-    <div class="section-title-copy">
-     <p class="chapter-eyebrow">Tools for Better Communication</p>
-     <h3 id="resources-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">04 · Reference Library</h3>
-    </div>
-    <p class="chapter-running-thought">Practical resources built from real production work.</p>
-   </div>
-
-   <div class="resource-intro">
-    <h2>Tools built for real communication work.</h2>
-    <p>These downloadable resources translate years of publication, production, brand, and web experience into practical starting points. Each public file should be cleaned, generic, rights-safe, and accompanied by brief instructions before it is released.</p>
-   </div>
-
-   <div class="resource-library" aria-label="Downloadable resource library">
-    <article class="resource-card resource-card-featured">
-     <p class="resource-number">001 / Adobe InDesign</p>
-     <h2>Newspaper Starter Template</h2>
-     <p>A reusable editorial system with modular columns, recurring styles, headline hierarchy, caption treatments, and print-ready production structure.</p>
-     <ul><li>INDD package</li><li>Paragraph and character styles</li><li>Setup instructions</li></ul>
-     <a class="resource-card-action" href="assets/templates/newspaper-indesign-template.zip" download>Download Template</a>
-    </article>
-
-    <article class="resource-card">
-     <p class="resource-number">002 / Adobe InDesign</p>
-     <h2>Magazine Starter Template</h2>
-     <p>A flexible magazine foundation for covers, feature stories, recurring sections, editorial pacing, and advertisement integration.</p>
-     <ul><li>Master pages</li><li>Editorial grid</li><li>Type-style system</li></ul>
-     <span class="resource-card-action is-coming-soon" aria-label="Magazine Starter Template is in production">In Production</span>
-    </article>
-
-    <article class="resource-card">
-     <p class="resource-number">003 / Brand Systems</p>
-     <h2>Brand Style Guide Template</h2>
-     <p>A clear framework for documenting logo use, color, typography, imagery, voice, and practical brand applications.</p>
-     <ul><li>Identity standards</li><li>Usage examples</li><li>Editable guide structure</li></ul>
-     <span class="resource-card-action is-coming-soon" aria-label="Brand Style Guide Template is in production">In Production</span>
-    </article>
-
-    <article class="resource-card">
-     <p class="resource-number">004 / Production</p>
-     <h2>Production &amp; Preflight Checklist</h2>
-     <p>A repeatable final-review checklist for links, images, fonts, color, bleeds, page geometry, proofing, and delivery.</p>
-     <ul><li>Print checklist</li><li>Preflight sequence</li><li>Handoff review</li></ul>
-     <span class="resource-card-action is-coming-soon" aria-label="Production and Preflight Checklist is in production">In Production</span>
-    </article>
-
-    <article class="resource-card">
-     <p class="resource-number">005 / Print Output</p>
-     <h2>Press-Ready PDF Settings</h2>
-     <p>A practical reference for selecting export standards, preserving bleeds, managing marks, checking color, and packaging reliable final PDFs.</p>
-     <ul><li>Export reference</li><li>PDF/X guidance</li><li>Quality-control notes</li></ul>
-     <span class="resource-card-action is-coming-soon" aria-label="Press-Ready PDF Settings is in production">In Production</span>
-    </article>
-
-    <article class="resource-card">
-     <p class="resource-number">006 / Web Planning</p>
-     <h2>SEO Page Planning Worksheet</h2>
-     <p>A reader-first planning sheet for search intent, page purpose, headings, metadata, internal links, proof points, and calls to action.</p>
-     <ul><li>Search-intent prompt</li><li>Content hierarchy</li><li>Metadata planning</li></ul>
-     <span class="resource-card-action is-coming-soon" aria-label="SEO Page Planning Worksheet is in production">In Production</span>
-    </article>
-   </div>
-
-   <p class="resource-library-note">More tools will be added as they are cleaned, documented, and prepared for public use. Need a custom publication or communication system? <a href="#contact">Start a conversation.</a></p>
-  </div>
- </section>
-
-
-
- <!-- DEPARTMENT 05 / PROCESS: shows how Adam thinks, not just what he made. -->
- <!--
-═══════════════════════════════════════════════════════════════
-CHAPTER 05 · PROCESS
+CHAPTER 04 · METHOD
 
 Good communication rarely happens by accident.
 
-This section explains Adam’s working philosophy without turning it
-into agency jargon. The process is not “make it pretty.” It is:
-understand the audience, organize the information, design the system,
-make it accessible, make it searchable, and leave it maintainable.
+This chapter turns philosophy into a practical working method. It does
+not repeat the services listed in Practice. Instead, it shows how a
+project moves from audience understanding and strategic decisions
+through structure, design, production, and launch.
 
-The tabbed interaction lets the section feel active while keeping all
-important ideas present in real HTML.
+The six-step sequence mirrors a real project lifecycle. Each tab adds
+just enough detail to explain what happens at that stage without
+turning the chapter into agency jargon.
 ═══════════════════════════════════════════════════════════════
 -->
-<section id="process" class="process section ruled editorial-number-section" data-section-number="05" tabindex="-1">
+<section id="process" class="process section ruled editorial-number-section" data-section-number="04" tabindex="-1">
   <div class="container">
    <div class="section-title-row">
     <div class="section-title-copy">
-     <p class="chapter-eyebrow">What Clients Can Expect</p>
-     <h3 id="process-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">05 · Process</h3>
+     <p class="chapter-eyebrow">How Every Project Begins</p>
+     <h2 id="process-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">04 · Method</h2>
     </div>
-    <p class="chapter-running-thought">Good communication is thoughtful communication.</p>
+    <p class="chapter-running-thought">Thoughtful work follows a thoughtful process.</p>
    </div>
 
    <div class="process-intro">
-    <p>Every project should be clear, accessible, easy to maintain, and built with the reader in mind. That applies whether the final piece is a publication, website, campaign, proposal, or digital asset.</p>
+    <p>The medium may change, but the working sequence stays grounded: understand the people involved, define the communication problem, organize the information, develop the system, prepare it carefully, and launch work that can keep working.</p>
+   </div>
+
+   <div class="process-diagram" aria-label="Project workflow from discovery through launch">
+    <span class="process-diagram-step"><small>01</small><strong>Discover</strong></span>
+    <span class="process-diagram-arrow" aria-hidden="true">→</span>
+    <span class="process-diagram-step"><small>02</small><strong>Strategy</strong></span>
+    <span class="process-diagram-arrow" aria-hidden="true">→</span>
+    <span class="process-diagram-step"><small>03</small><strong>Structure</strong></span>
+    <span class="process-diagram-arrow" aria-hidden="true">→</span>
+    <span class="process-diagram-step"><small>04</small><strong>Design</strong></span>
+    <span class="process-diagram-arrow" aria-hidden="true">→</span>
+    <span class="process-diagram-step"><small>05</small><strong>Produce</strong></span>
+    <span class="process-diagram-arrow" aria-hidden="true">→</span>
+    <span class="process-diagram-step"><small>06</small><strong>Launch</strong></span>
    </div>
 
    <div class="process-shell">
     <div class="process-track" role="tablist" aria-label="Communication process">
-     <button class="process-step is-active" type="button" role="tab" aria-selected="true" data-process="discover"><span>01</span>Communication First</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="research"><span>02</span>Real People</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="strategy"><span>03</span>Production Ready</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="copy"><span>04</span>Accessible</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="design"><span>05</span>Search-Friendly</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="deliver"><span>06</span>Maintainable</button>
-     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="optimize"><span>07</span>Long-Term Thinking</button>
+     <button class="process-step is-active" type="button" role="tab" aria-selected="true" data-process="discover"><span>01</span>Discover</button>
+     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="strategy"><span>02</span>Strategy</button>
+     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="structure"><span>03</span>Structure</button>
+     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="design"><span>04</span>Design</button>
+     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="produce"><span>05</span>Produce</button>
+     <button class="process-step" type="button" role="tab" aria-selected="false" data-process="launch"><span>06</span>Launch</button>
     </div>
 
     <div class="process-panel">
      <article class="process-content is-active" role="tabpanel" data-process-panel="discover">
-      <h2>Communication First</h2>
-      <p>I organize information before I design it. Clear communication creates better results than visual decoration alone.</p>
-     </article>
-
-     <article class="process-content" role="tabpanel" data-process-panel="research">
-      <h2>Built for Real People</h2>
-      <p>I think about the people using the work: how they read, scan, navigate, search, and find what they need. The reader’s experience shapes the structure.</p>
+      <h3>Discover</h3>
+      <p>I begin by listening: who the audience is, what they need, what the organization is trying to accomplish, and what constraints could shape the work. The first deliverable is understanding.</p>
      </article>
 
      <article class="process-content" role="tabpanel" data-process-panel="strategy">
-      <h2>Production Ready</h2>
-      <p>I enjoy the details that happen after the design is approved: clean files, consistent styles, production checks, prepress, web-ready assets, and work that is ready to publish.</p>
+      <h3>Strategy</h3>
+      <p>I define the communication problem before choosing the medium. Goals, priorities, messages, channels, responsibilities, and measures of success give the project a useful direction.</p>
      </article>
 
-     <article class="process-content" role="tabpanel" data-process-panel="copy">
-      <h2>Accessible by Design</h2>
-      <p>Accessibility is not something to bolt on at the end. Clear hierarchy, semantic structure, keyboard navigation, readable typography, and thoughtful interactions are part of the design process.</p>
+     <article class="process-content" role="tabpanel" data-process-panel="structure">
+      <h3>Structure</h3>
+      <p>I organize the material into a clear hierarchy: what comes first, what supports it, how readers move through the information, and what system will keep the content consistent.</p>
      </article>
 
      <article class="process-content" role="tabpanel" data-process-panel="design">
-      <h2>Search-Friendly</h2>
-      <p>For websites, I think beyond appearance. Metadata, structured data, semantic HTML, page hierarchy, readable content, and performance help search engines understand the page and help people find it.</p>
+      <h3>Design</h3>
+      <p>I translate the structure into an editorial and visual system—typography, grids, page or interface patterns, imagery, and interactions—then refine it through review and collaboration.</p>
      </article>
 
-     <article class="process-content" role="tabpanel" data-process-panel="deliver">
-      <h2>Easy to Maintain</h2>
-      <p>I try to build work that can keep working after handoff: organized files, reusable styles, clear content structure, practical WordPress updates, and systems that can grow over time.</p>
+     <article class="process-content" role="tabpanel" data-process-panel="produce">
+      <h3>Produce</h3>
+      <p>I build the final work with production in mind: clean files, reusable styles, accessible structure, image preparation, preflight, responsive behavior, and careful quality checks.</p>
      </article>
 
-     <article class="process-content" role="tabpanel" data-process-panel="optimize">
-      <h2>Long-Term Thinking</h2>
-      <p>The goal is not just to deliver a design. It is to create communication that can be used, updated, expanded, and trusted after the first version is finished.</p>
+     <article class="process-content" role="tabpanel" data-process-panel="launch">
+      <h3>Launch</h3>
+      <p>I deliver, publish, or deploy the work with practical documentation and a plan for maintenance. The goal is communication that remains useful after the first release.</p>
      </article>
     </div>
    </div>
@@ -1149,10 +1103,10 @@ important ideas present in real HTML.
  </section>
 
  <aside class="margin-note margin-production" aria-hidden="true">Production is where good design proves itself.</aside>
- <!-- DEPARTMENT 06 / CAREER RECORD: résumé experience translated into scannable web sections. -->
+ <!-- DEPARTMENT 05 / CAREER RECORD: résumé experience translated into scannable web sections. -->
  <!--
 ═══════════════════════════════════════════════════════════════
-CHAPTER 06 · CAREER TIMELINE
+CHAPTER 05 · CAREER TIMELINE
 
 Resumes list jobs. Stories explain progression.
 
@@ -1167,12 +1121,12 @@ focus on transferable strengths: clarity, systems, deadlines,
 production accuracy, and communication across print and digital work.
 ═══════════════════════════════════════════════════════════════
 -->
-<section id="experience" class="experience section ruled editorial-number-section" data-section-number="06" tabindex="-1" aria-label="Professional history">
+<section id="experience" class="experience section ruled editorial-number-section" data-section-number="05" tabindex="-1" aria-label="Professional history">
  <div class="container">
  <div class="section-title-row">
   <div class="section-title-copy">
    <p class="chapter-eyebrow">Career Progression</p>
-   <h3 id="experience-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">06 · Career Timeline</h3>
+   <h2 id="experience-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">05 · Career Timeline</h2>
   </div>
   <p class="chapter-running-thought">Eighteen years of continuous communications practice.</p>
  </div>
@@ -1196,7 +1150,7 @@ production accuracy, and communication across print and digital work.
  <article class="experience-item cmyk-stack magenta-stack">
  <div>
  <p class="case-meta">Jan 2007 – Present / Tiffin, Ohio</p>
- <h2>Independent Creative &amp; Design Consultant</h2>
+ <h3>Independent Creative &amp; Design Consultant</h3>
  <h4>Creative Marketing Professional · Freelancer</h4>
  </div>
  <div>
@@ -1209,7 +1163,7 @@ production accuracy, and communication across print and digital work.
  <article class="experience-item cmyk-stack yellow-stack">
  <div>
  <p class="case-meta">Mar 2018 – Mar 2020 / Port Clinton, Ohio</p>
- <h2>Digital Marketing Specialist</h2>
+ <h3>Digital Marketing Specialist</h3>
  <h4>InGenesis / Camp Perry Lodging &amp; Conference Center</h4>
  </div>
  <div>
@@ -1222,12 +1176,13 @@ production accuracy, and communication across print and digital work.
  <article class="experience-item cmyk-stack key-stack">
  <div>
  <p class="case-meta">Aug 2017 – Apr 2018 / Fremont, Ohio</p>
- <h2>Adjunct Professor of Digital Media Technology</h2>
+ <h3>Adjunct Professor of Digital Media Technology</h3>
  <h4>Terra State Community College</h4>
  </div>
  <div>
  <p>Instructed undergraduate Digital Media Technology courses focused on web design, HTML/CSS, WordPress, Adobe Brackets, Emmet, Photoshop, graphic design, and digital communications.</p>
  <p>Developed curricula, syllabi, assignments, examinations, instructional materials, and recorded lectures while managing multiple courses with enrollments of up to 60 students.</p>
+ <p>Teaching strengthened a skill that runs through all of my work: explaining technical and visual ideas in ways people can understand and apply.</p>
  <div class="experience-keywords"><span>Web Design</span><span>HTML/CSS</span><span>WordPress</span><span>Curriculum Development</span><span>Digital Media</span><span>Photoshop</span><span>Student Mentorship</span><span>Instructional Design</span><span>Recorded Lectures</span></div>
  </div>
  </article>
@@ -1235,7 +1190,7 @@ production accuracy, and communication across print and digital work.
  <article class="experience-item cmyk-stack cyan-stack">
  <div>
  <p class="case-meta">Jun 2014 – Jun 2017 / Catawba Island, Ohio</p>
- <h2>Graphic &amp; Editorial Designer</h2>
+ <h3>Graphic &amp; Editorial Designer</h3>
  <h4>Schaffner Publications Inc.</h4>
  </div>
  <div>
@@ -1246,6 +1201,155 @@ production accuracy, and communication across print and digital work.
  </article>
  </div>
  </div>
+ </section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+EDUCATION & RECOGNITION · SUPPORTING SPREAD
+
+Credentials belong near the end because the work has already made the
+case.
+
+This supporting spread strengthens the story with formal education, recognition,
+and publication history. It gives the reader proof without interrupting
+the main project narrative too early.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="education" class="education-awards section ruled" tabindex="-1" aria-label="Education, awards and publications">
+ <div class="container">
+ <div class="education-awards-grid education-layout-rebalanced">
+ <div class="education-credentials-column">
+  <h2 class="registration-section section-slide-title unified-title-rise">Education &amp; Recognition</h2>
+  <p class="education-foundation">A career built through publishing, communications, web practice, and formal digital-media study. My web-development and design education explains why the work moves comfortably between editorial structure, interface thinking, technical production, and visual communication.</p>
+  <article>
+   <h3>B.F.A. in Web Development</h3>
+   <p><strong>International Academy of Design &amp; Technology · 2011</strong><br>Cum Laude · 3.68 GPA</p>
+   <p>Upper-division study expanded a web-design foundation into development, systems, programming, security, mobile applications, database work, and professional production.</p>
+  </article>
+  <article>
+   <h3>A.S. in Web Design</h3>
+   <p><strong>International Academy of Design &amp; Technology · 2009</strong><br>Magna Cum Laude · 3.89 GPA</p>
+   <p>Built a formal foundation in visual communication and web production through dedicated study in typography, page layout, interface design, programming, multimedia, and portfolio presentation.</p>
+  </article>
+ </div>
+
+ <aside class="education-highlights-panel" aria-labelledby="education-highlights-title">
+  <p class="section-kicker">Selected Coursework</p>
+  <h4 id="education-highlights-title">Education Highlights</h4>
+  <p class="education-highlights-intro">Selected coursework grouped by the disciplines it strengthened—from editorial craft and interface design to development, security, and professional practice.</p>
+  <ul class="education-highlights-grid">
+   <li><strong>Typography &amp; Editorial Design</strong><span>Designing with Type, Page Layout, Design Fundamentals, and digital imaging.</span></li>
+   <li><strong>Interface &amp; Web Design</strong><span>Interface Design, Webmastering I &amp; II, Programming for the Internet, and professional portfolio presentation.</span></li>
+   <li><strong>Web Development</strong><span>Markup Languages, server-side scripting, programming concepts, open-source systems, and database management.</span></li>
+   <li><strong>Operations &amp; Security</strong><span>Website Operations and Security, systems analysis, and production-minded technical workflows.</span></li>
+   <li><strong>Mobile &amp; Interactive Media</strong><span>Interactive Mobile Application, multimedia design, and audio/video for the web.</span></li>
+   <li><strong>Project &amp; Professional Practice</strong><span>Project Management for Graphic Design and a six-credit Web Development Internship.</span></li>
+  </ul>
+ </aside>
+
+ <div class="awards-publications-panel">
+  <h2 class="registration-section section-slide-title unified-title-rise">Awards &amp; Publications</h2>
+  <div class="awards-publications-layout">
+   <div class="award-card-grid">
+    <article><strong>First Place</strong><span>Single Ads · Large Space · MACPA · 2017</span></article>
+    <article><strong>Second Place</strong><span>Restaurant Marketing Campaigns Design · MACPA · 2017</span></article>
+    <article><strong>Second Place</strong><span>Single Ads · Small Space · MACPA · 2016</span></article>
+   </div>
+   <ul class="plain-list publication-list">
+    <li>HOMES — Monthly Real Estate Publication</li>
+    <li>NCPN Parent Magazine — Monthly Parenting Publication</li>
+    <li>North Coast Business Journal — Monthly Business Publication</li>
+    <li>The Beacon Newspaper — Weekly Community Newspaper</li>
+   </ul>
+  </div>
+ </div>
+ </div>
+ </section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+CHAPTER 06 · RESOURCES / REFERENCE LIBRARY
+
+This section turns the portfolio from a showcase into a useful
+resource.
+
+A downloadable InDesign newspaper template reinforces Adam’s
+publication-design credibility while giving visitors something
+practical to take with them.
+
+Important reminder:
+Only share cleaned, generic, rights-safe templates here. Remove any
+client-owned, employer-owned, licensed, or sensitive content before
+publishing a downloadable file.
+═══════════════════════════════════════════════════════════════
+-->
+<section id="resources" class="resources section ruled editorial-number-section" data-section-number="06" tabindex="-1" aria-labelledby="resources-title">
+  <div class="container">
+   <div class="section-title-row">
+    <div class="section-title-copy">
+     <p class="chapter-eyebrow">Tools for Better Communication</p>
+     <h2 id="resources-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">06 · Reference Library</h2>
+    </div>
+     <p class="chapter-running-thought">Preview library · practical resources currently in production.</p>
+   </div>
+
+   <div class="resource-intro">
+     <h3>Tools built for real communication work.</h3>
+     <p>This preview library shows practical resources being developed from years of publication, production, brand, and web experience. Downloads will be activated as each file is cleaned, documented, and prepared for public use.</p>
+   </div>
+
+   <div class="resource-library" aria-label="Downloadable resource library">
+    <article class="resource-card resource-card-featured">
+     <p class="resource-number">001 / Adobe InDesign</p>
+     <h3>Newspaper Starter Template</h3>
+     <p>A reusable editorial system with modular columns, recurring styles, headline hierarchy, caption treatments, and print-ready production structure.</p>
+     <ul><li>INDD package</li><li>Paragraph and character styles</li><li>Setup instructions</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="Newspaper Starter Template is coming first">Coming First</span>
+    </article>
+
+    <article class="resource-card">
+     <p class="resource-number">002 / Adobe InDesign</p>
+     <h3>Magazine Starter Template</h3>
+     <p>A flexible magazine foundation for covers, feature stories, recurring sections, editorial pacing, and advertisement integration.</p>
+     <ul><li>Master pages</li><li>Editorial grid</li><li>Type-style system</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="Magazine Starter Template is in development">In Development</span>
+    </article>
+
+    <article class="resource-card">
+     <p class="resource-number">003 / Brand Systems</p>
+     <h3>Brand Style Guide Template</h3>
+     <p>A clear framework for documenting logo use, color, typography, imagery, voice, and practical brand applications.</p>
+     <ul><li>Identity standards</li><li>Usage examples</li><li>Editable guide structure</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="Brand Style Guide Template is in development">In Development</span>
+    </article>
+
+    <article class="resource-card">
+     <p class="resource-number">004 / Production</p>
+     <h3>Production &amp; Preflight Checklist</h3>
+     <p>A repeatable final-review checklist for links, images, fonts, color, bleeds, page geometry, proofing, and delivery.</p>
+     <ul><li>Print checklist</li><li>Preflight sequence</li><li>Handoff review</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="Production and Preflight Checklist is planned">Planned</span>
+    </article>
+
+    <article class="resource-card">
+     <p class="resource-number">005 / Print Output</p>
+     <h3>Press-Ready PDF Settings</h3>
+     <p>A practical reference for selecting export standards, preserving bleeds, managing marks, checking color, and packaging reliable final PDFs.</p>
+     <ul><li>Export reference</li><li>PDF/X guidance</li><li>Quality-control notes</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="Press-Ready PDF Settings is planned">Planned</span>
+    </article>
+
+    <article class="resource-card">
+     <p class="resource-number">006 / Web Planning</p>
+     <h3>SEO Page Planning Worksheet</h3>
+     <p>A reader-first planning sheet for search intent, page purpose, headings, metadata, internal links, proof points, and calls to action.</p>
+     <ul><li>Search-intent prompt</li><li>Content hierarchy</li><li>Metadata planning</li></ul>
+     <span class="resource-card-action is-coming-soon" aria-label="SEO Page Planning Worksheet is planned">Planned</span>
+    </article>
+   </div>
+
+   <p class="resource-library-note">More tools will be added as they are cleaned, documented, and prepared for public use. Need a custom publication or communication system? <a href="#contact">Start a conversation.</a></p>
+  </div>
  </section>
 
  <!-- DEPARTMENT 07 / PRODUCTION NOTES: skill groups presented as working capabilities. -->
@@ -1269,7 +1373,7 @@ production, and project management as separate but connected strengths.
  <div class="section-title-row">
   <div class="section-title-copy">
    <p class="chapter-eyebrow">Inside the Toolbox</p>
-   <h3 id="skills-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">07 · Production Notes</h3>
+   <h2 id="skills-title" class="scroll-text slide-from-left registration-section section-slide-title unified-title-rise">07 · Production Notes</h2>
   </div>
   <p class="chapter-running-thought">The craft, systems, and skills behind the work.</p>
  </div>
@@ -1285,27 +1389,27 @@ production, and project management as separate but connected strengths.
 
  <div class="skill-stage">
  <article class="skill-panel is-active" role="tabpanel" data-skill-panel="communications">
- <h2>Publication Design</h2>
+ <h3>Publication Design</h3>
  <p>Design magazines, newspapers, reports, proposals, sales collateral, and long-form documents in Adobe InDesign—combining strong typography, editorial layout, production speed, and prepress knowledge.</p>
  <div class="skill-chip-row"><span>Adobe InDesign</span><span>Editorial Layout</span><span>Long Documents</span><span>Prepress</span></div>
  </article>
  <article class="skill-panel" role="tabpanel" data-skill-panel="digital">
- <h2>Web &amp; WordPress Communications</h2>
+ <h3>Web &amp; WordPress Communications</h3>
  <p>Build and maintain WordPress and open-source CMS communication systems using Divi, SEO, content strategy, HTML/CSS refinement, email marketing, analytics, and practical website operations. Formal study in interface design, markup languages, open-source systems, and website security supports the professional practice.</p>
  <div class="skill-chip-row"><span>WordPress + Open Source CMS</span><span>Interface Design</span><span>HTML/CSS</span><span>SEO</span></div>
  </article>
  <article class="skill-panel" role="tabpanel" data-skill-panel="publication">
- <h2>Marketing Communications</h2>
+ <h3>Marketing Communications</h3>
  <p>Develop marketing communications that combine strategic messaging, copywriting, press release writing, AI-assisted workflows, proofreading, visual storytelling, brand messaging, and audience-focused campaign communications.</p>
  <div class="skill-chip-row"><span>Brand Messaging</span><span>Copywriting</span><span>Audience Engagement</span><span>Internal / External Comms</span></div>
  </article>
  <article class="skill-panel" role="tabpanel" data-skill-panel="production">
- <h2>Design &amp; Production</h2>
+ <h3>Design &amp; Production</h3>
  <p>Produce print and digital materials with deep InDesign experience, plus Photoshop, Illustrator, Lightroom, Acrobat, typography, photography, prepress, advertising design, sales collateral, and web-ready assets.</p>
  <div class="skill-chip-row"><span>InDesign</span><span>Photoshop</span><span>Illustrator</span><span>Acrobat</span></div>
  </article>
  <article class="skill-panel" role="tabpanel" data-skill-panel="project">
- <h2>Project Management</h2>
+ <h3>Project Management</h3>
  <p>Coordinate multiple projects, manage deadlines, communicate with clients and stakeholders, protect quality, and move work from planning through production. Formal coursework in Project Management for Graphic Design complements years of hands-on publication, web, and client-workflow experience.</p>
  <div class="skill-chip-row"><span>Creative Project Management</span><span>Stakeholders</span><span>Deadlines</span><span>Quality Control</span></div>
  </article>
@@ -1315,69 +1419,7 @@ production, and project management as separate but connected strengths.
  </section>
 
  <!-- EDUCATION + RECOGNITION SPREAD: credentials, awards, and publication history. -->
- <!--
-═══════════════════════════════════════════════════════════════
-EDUCATION & RECOGNITION · SUPPORTING SPREAD
-
-Credentials belong near the end because the work has already made the
-case.
-
-This supporting spread strengthens the story with formal education, recognition,
-and publication history. It gives the reader proof without interrupting
-the main project narrative too early.
-═══════════════════════════════════════════════════════════════
--->
-<section id="education" class="education-awards section ruled" tabindex="-1" aria-label="Education, awards and publications">
- <div class="container">
- <div class="education-awards-grid">
- <div>
- <h3 class="registration-section section-slide-title unified-title-rise">Education & Recognition</h3>
- <p class="education-foundation">Formal education established the foundation in typography, publication design, interface design, web development, programming, and digital production that continues to inform my professional practice.</p>
- <article>
- <h2>B.F.A. in Web Development</h2>
- <p><strong>International Academy of Design &amp; Technology · 2011</strong><br>Cum Laude · 3.68 GPA</p>
- <p>Upper-division study expanded a web-design foundation into development, systems, programming, security, mobile applications, database work, and professional production.</p>
- </article>
- <article>
- <h2>A.S. in Web Design</h2>
- <p><strong>International Academy of Design &amp; Technology · 2009</strong><br>Magna Cum Laude · 3.89 GPA</p>
- <p>Built a formal foundation in visual communication and web production through dedicated study in typography, page layout, interface design, programming, multimedia, and portfolio presentation.</p>
- </article>
-
- </div>
-
- <div>
- <h3 class="registration-section section-slide-title unified-title-rise">Awards &amp; Publications</h3>
- <div class="award-card-grid">
- <article><strong>First Place</strong><span>Single Ads · Large Space · MACPA · 2017</span></article>
- <article><strong>Second Place</strong><span>Restaurant Marketing Campaigns Design · MACPA · 2017</span></article>
- <article><strong>Second Place</strong><span>Single Ads · Small Space · MACPA · 2016</span></article>
- </div>
-
- <ul class="plain-list publication-list">
- <li>HOMES — Monthly Real Estate Publication</li>
- <li>NCPN Parent Magazine — Monthly Parenting Publication</li>
- <li>North Coast Business Journal — Monthly Business Publication</li>
- <li>The Beacon Newspaper — Weekly Community Newspaper</li>
- </ul>
- </div>
-
- <section class="education-highlights-panel" aria-labelledby="education-highlights-title">
-  <p class="section-kicker">Selected Coursework</p>
-  <h4 id="education-highlights-title">Education Highlights</h4>
-  <p class="education-highlights-intro">Selected coursework grouped by the disciplines it strengthened—from editorial craft and interface design to development, security, and professional practice.</p>
-  <ul class="education-highlights-grid">
-   <li><strong>Typography &amp; Editorial Design</strong><span>Designing with Type, Page Layout, Design Fundamentals, and digital imaging.</span></li>
-   <li><strong>Interface &amp; Web Design</strong><span>Interface Design, Webmastering I &amp; II, Programming for the Internet, and professional portfolio presentation.</span></li>
-   <li><strong>Web Development</strong><span>Markup Languages, server-side scripting, programming concepts, open-source systems, and database management.</span></li>
-   <li><strong>Operations &amp; Security</strong><span>Website Operations and Security, systems analysis, and production-minded technical workflows.</span></li>
-   <li><strong>Mobile &amp; Interactive Media</strong><span>Interactive Mobile Application, multimedia design, and audio/video for the web.</span></li>
-   <li><strong>Project &amp; Professional Practice</strong><span>Project Management for Graphic Design and a six-credit Web Development Internship.</span></li>
-  </ul>
- </section>
- </div>
- </div>
- </section>
+ 
 
  <!--
 ═══════════════════════════════════════════════════════════════
@@ -1422,7 +1464,7 @@ for them.
    <div class="section-title-row">
     <div class="section-title-copy">
      <p class="chapter-eyebrow">Behind the Publication</p>
-     <h3 id="colophon-title" class="registration-section section-slide-title unified-title-rise">08 · Colophon</h3>
+     <h2 id="colophon-title" class="registration-section section-slide-title unified-title-rise">08 · Colophon</h2>
     </div>
     <p class="chapter-running-thought">The production details behind Issue No. 01.</p>
    </div>

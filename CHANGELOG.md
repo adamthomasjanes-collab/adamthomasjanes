@@ -1,3 +1,75 @@
+## v5.8.0 — Evidence-First Positioning
+
+- Reframed the core professional narrative around editorial judgment, web fluency, and production discipline.
+- Moved Features ahead of Communications Practice so visitors encounter evidence before a service inventory.
+- Moved Education directly after Career Timeline and reframed it as the foundation for a hybrid print/web practice.
+- Moved the Reference Library after Career and Education as a later authority-building preview.
+- Tightened the opening positioning copy and reduced repeated philosophy language.
+- Rewrote feature results to distinguish deliverables from communication, audience, and operational outcomes.
+- Connected teaching experience directly to Adam's ability to explain technical and visual ideas clearly.
+- Renumbered navigation and chapters to match the new reading order.
+
+## v5.7.2 — Semantic Hierarchy & Resource Roadmap
+
+- Replaced the contradictory featured-resource “Available” badge with “Coming First.”
+- Assigned Coming First, In Development, and Planned states across the Reference Library.
+- Rebuilt visible chapter and card headings with a native H1 → H2 → H3 hierarchy.
+- Raised the desktop hero actions into a typical laptop viewport.
+- Moved mobile résumé access into the navigation menu and removed the content-covering fixed control on phones.
+- Increased navigation-number and image-caption text sizes.
+
+## v5.7.1 — Reference Library Preview
+
+- Restored the Reference Library and its navigation entry for the pre-launch portfolio.
+- Clarified that the resource cards are a preview of materials currently in production.
+- Restored the eight-chapter numbering system.
+
+## v5.7.0 — Focus, Navigation & Accessibility
+
+- Added a compact, accessible mobile navigation toggle.
+- Added direct hero actions for selected work and contact.
+- Removed editorial interludes and unavailable resources from the public reading order while retaining them in source.
+- Corrected duplicated archive copy and archive numbering.
+- Added Open Graph metadata and resilient bookmarked-chapter positioning.
+- Upgraded tabs and dialogs for stronger keyboard and assistive-technology behavior.
+- Made counters resolve immediately when reduced motion is requested.
+- Reduced the mobile résumé utility footprint.
+
+## v5.6.5 — Milestone Audit Cleanup
+
+- Replaced visitor-facing archive development language with polished portfolio copy.
+- Added optimized WebP versions of the two largest Camp Perry gallery images and updated the gallery to use them.
+- Replaced the outdated newspaper-template editing note with the current inactive-resource policy.
+- Confirmed the opening proof label reads “18+ Years in Communications.”
+- Revalidated JavaScript syntax, internal anchors, duplicate IDs, local references, and CSS balance.
+
+## 5.6.3 — Slower Magenta Utility Tabs
+
+- Slowed the desktop Resume, LinkedIn, and Email tab expansion and label transitions.
+- Simplified the animated perimeter to magenta and black only.
+- Rotated the collapsed Resume and LinkedIn labels 180 degrees from the previous orientation so they read inward from the right edge.
+- Preserved the compact mobile Resume control and reduced-motion fallback.
+
+## 5.6.2 — Inward-Facing Animated Utility Tabs
+
+- Flipped the collapsed Resume and LinkedIn labels so their letterforms face inward toward the publication.
+- Rebuilt the animated perimeter treatment to echo the original cover resume button more clearly.
+- Added a staged hover/focus sequence: border energy first, tab expansion second, label reveal last.
+- Added document and LinkedIn marks to the expanded labels and retained the envelope icon for Email.
+- Increased spacing between utility tabs and preserved the compact mobile Resume control.
+
+# Changelog
+
+## v5.5.0 — Practice / Method Editorial Separation
+
+**Goal:** Remove the only significant copy overlap between what Adam offers and how he works.
+
+- Renamed Chapter 05 from **Process** to **Method** in navigation, structured data, and visible chapter copy.
+- Reframed Practice as the service/capability chapter and Method as the operational project lifecycle.
+- Replaced seven value-oriented tabs with six practical stages: Discover, Strategy, Structure, Design, Produce, and Launch.
+- Rewrote every Method panel to describe what happens after engagement rather than repeat capabilities.
+- Updated the process diagram, responsive grid, editorial comments, and supporting documentation.
+
 ## 2026-07-11 — Navigation and source-code prepress
 
 - Removed the retired feature-reader HTML and JavaScript, plus its dedicated CSS.
@@ -621,3 +693,34 @@ Repository workflow reminder: edit locally, commit to GitHub, and let Netlify de
 - Kept native browser anchors and CSS smooth scrolling as the only navigation mechanism.
 - Added `aria-current="location"` to the active chapter link for assistive technology.
 - Did not restore the retired moving slider, timers, custom scrolling, or manual destination calculations.
+
+## 2026-07-11 — Editorial rendition: chapter rhythm, process map, education integration, ghost folios
+- Increased breathing room at numbered chapter openings.
+- Added a compact six-stage process diagram before the interactive process principles.
+- Integrated Education Highlights into the education column beneath the degree cards.
+- Added one-time, reduced-motion-safe ghost-number fade-ins using a presentation-only IntersectionObserver.
+
+## 2026-07-11 — Education spread rebalanced
+- Moved Education Highlights beside the degree credentials as an equal top-row column.
+- Moved Awards & Publications beneath both education columns as a full-width closing section.
+- Added responsive stacking so the layout remains readable on tablets and phones.
+
+## 5.6.0 — Cover utility rail
+- Removed the Download Résumé button from the cover so the opening spread remains focused on the publication narrative.
+- Added a persistent right-edge editorial utility rail on desktop with Résumé, LinkedIn, Email, and Print Issue actions.
+- Added restrained slide-out hover and keyboard-focus behavior.
+- Converted the utility to a compact fixed Résumé button on tablet and mobile.
+- Added print handling with `window.print()` and hid the utility rail from printed output.
+
+
+## 5.6.1 — Refined editorial utility tabs
+- Removed the Print Issue utility.
+- Restyled Resume and LinkedIn as black animated-border edge tabs inspired by the original cover résumé button.
+- Added vertical collapsed labels that expand horizontally on hover or keyboard focus.
+- Replaced the Email text symbol with a proper envelope icon.
+- Preserved a compact animated Resume button on tablet and mobile.
+
+## v5.6.4 — Utility tab alignment and icon pass
+- Centered the collapsed Resume and LinkedIn labels inside identical fixed tab boxes.
+- Added visible Resume and LinkedIn icons to the collapsed desktop tabs.
+- Preserved the slower magenta-only animated border treatment.

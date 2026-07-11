@@ -1,8 +1,8 @@
 {
   "name": "adam-portfolio-site",
-  "version": "5.3.1",
+  "version": "5.8.0",
   "private": false,
-  "description": "Editorial publication-style portfolio with native anchor navigation, lightweight IntersectionObserver chapter tracking, current feature/archive galleries, and synchronized project documentation.",
+  "description": "Editorial publication-style portfolio with inward-facing animated Resume and LinkedIn edge utilities, envelope email access, native anchor navigation, lightweight chapter tracking, and synchronized milestone documentation.",
   "scripts": {
     "serve": "python -m http.server 8080",
     "notes": "No build step required. Open index.html directly or serve locally."

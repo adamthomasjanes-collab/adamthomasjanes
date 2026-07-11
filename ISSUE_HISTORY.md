@@ -1,3 +1,15 @@
+## v5.6.5 — Milestone Audit Cleanup
+
+Editorial and performance cleanup after the utility-tab milestone. Archive language was finalized, the heaviest gallery assets were optimized for delivery, and release documentation was synchronized.
+
+## Revision 5.6.3
+
+Refined the editorial utility stack with slower motion, a magenta-only animated perimeter, and inward-reading vertical labels.
+
+## Revision 5.6.2
+
+The editorial utility stack gained inward-facing labels and a stronger animated-border interaction derived from the original cover resume control.
+
 # Issue History
 
 A publication-style production log for **Issue No. 01 · Summer 2026**. This complements the detailed technical `CHANGELOG.md`.
@@ -63,3 +75,23 @@ The navigation was reduced to native anchors, and deferred chapter rendering was
 
 ## v5.3.1 — Chapter-location cue
 A lightweight active underline was restored using one IntersectionObserver. The browser still owns all anchor movement; the script only identifies the chapter currently occupying the upper reading area.
+
+### Editorial rendition
+Expanded chapter openings, integrated education highlights, introduced a six-stage process diagram, and added restrained ghost-folio entrances.
+
+### Education spread rebalanced
+Education credentials and coursework highlights now share the opening row, with awards and publication history spanning the page beneath them.
+
+## v5.5.0 — Practice / Method Separation
+
+Chapter 05 became Method and was rewritten as a six-stage operational lifecycle, removing overlap with the Communications Practice chapter.
+
+## Revision 5.6.0 — Persistent editorial utilities
+The cover was simplified by moving practical actions into a site-wide utility rail. Desktop readers can reach the résumé, LinkedIn, email, and print controls from any chapter; smaller screens receive one compact résumé button.
+
+
+### v5.6.1
+Refined the editorial utility rail: removed Print Issue, introduced animated black Resume and LinkedIn tabs, and added an envelope icon for Email.
+
+### v5.6.4
+Aligned the edge utility labels and added icons so Resume and LinkedIn read as one consistent tab system.

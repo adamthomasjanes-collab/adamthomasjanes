@@ -7,7 +7,7 @@ This portfolio is intentionally organized as Issue No. 01: a digital publication
 02 Features
 03 Archive
 04 Resources
-05 Process
+05 Method
 06 Timeline
 07 Notes
 08 Colophon
@@ -19,7 +19,7 @@ The first three entries form the primary portfolio story. A subtle divider befor
 02 Feature Stories
 03 Selected Archive
 04 Reference Library
-05 Process
+05 Method
 06 Career Timeline
 07 Production Notes
 Education & Recognition / Awards & Publications — supporting spread, unnumbered

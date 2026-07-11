@@ -25,8 +25,8 @@ Communication before decoration.
 Organize the information. Respect the reader. Design with purpose.
 
 /* CURRENT RELEASE */
-Release: v5.3.0
-Focus: Documentation governance and navigation arrival alignment.
+Release: v5.4.0
+Focus: Milestone audit, archive numbering cleanup, resource truthfulness, and documentation synchronization.
 
 /* MAINTENANCE */
 This file is intentionally plain text. Update the current release and credits only when the public project, production workflow, or contributor information changes.

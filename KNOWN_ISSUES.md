@@ -1,3 +1,15 @@
+## v5.8.0 Status
+
+Initial hash navigation receives one post-layout correction so bookmarked chapter links arrive consistently. The unfinished Reference Library is intentionally visible as a pre-launch preview with roadmap states; downloads remain inactive until each package is verified. The visible heading outline is semantic, and the chapter order now leads with evidence. Outstanding work is primarily adding project-specific visuals or verified metrics and completing downloadable resources.
+
+## v5.6.3 review
+
+No new known issues were introduced by the utility-tab timing, color, or label-orientation changes. Confirm hover and keyboard-focus behavior on desktop during final browser testing.
+
+## Utility controls
+
+No known functional issues. Confirm inward label orientation and hover expansion on at least one Windows browser and one macOS browser before public launch.
+
 # Known Issues
 
 This file tracks items to verify before launch.
@@ -53,7 +65,7 @@ This file tracks items to verify before launch.
 
 ## Verify v5.1.6 menu scrolling
 
-Manually test Practice, Features, Archive, Process, Career Record / History, Production Notes / Notes, Colophon, the logo home link, and the skip link.
+Manually test Practice, Features, Archive, Method, Career Record / History, Production Notes / Notes, Colophon, the logo home link, and the skip link.
 
 ## Verify v5.1.7 CSS-only navigation
 
@@ -95,3 +107,12 @@ The former animated slider could disagree with anchor destinations and backtrack
 ## Verification requested for v5.3.1
 - Scroll through every chapter on desktop and mobile and confirm the underline changes once the next chapter enters the upper reading area.
 - Confirm clicking any chapter still lands correctly because the observer does not control movement.
+
+## Utility rail testing
+- Manually verify the right-edge rail does not overlap browser scrollbars or OS accessibility overlays at unusual zoom levels.
+- Confirm the compact résumé button remains clear of mobile browser controls on representative iOS and Android devices.
+
+
+## Utility rail testing
+- Verify vertical tab labels and animated borders in current Chrome, Edge, Firefox, and Safari.
+- Confirm the compact Resume utility does not cover important content on narrow phones.

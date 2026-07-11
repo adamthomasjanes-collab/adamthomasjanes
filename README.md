@@ -16,9 +16,9 @@ The central brand promise is:
 
 ## Current Version
 
-**v5.1 — Documentation Release**
+**v5.8.0 — Evidence-First Positioning Release**
 
-This release updates the project documentation so the ZIP functions not only as a website package, but as a professional case-study archive.
+This release reorganizes the portfolio around an evidence-first narrative: selected work now precedes the service inventory, career flows into education, resources move later as an authority-building preview, and the copy emphasizes editorial judgment, web fluency, production discipline, repeatable systems, and audience outcomes.
 
 ---
 
@@ -46,7 +46,6 @@ This release updates the project documentation so the ZIP functions not only as 
 - `robots.txt` — search crawler guidance.
 - `sitemap.xml` — site map for indexing.
 - `humans.txt` — human-readable credits and project philosophy.
-- `site.webmanifest` — browser/install metadata.
 - `.htaccess` — optional Apache production hints.
 
 ### Documentation

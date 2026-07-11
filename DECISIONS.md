@@ -1,3 +1,15 @@
+## 2026-07-11 — Optimize delivery assets without discarding source exports
+
+The live gallery now references optimized WebP versions of the two largest Camp Perry images. Original PNG exports remain in the repository as source-quality assets for future editing.
+
+## Utility rail motion and color — v5.6.3
+
+The desktop utility tabs use slower expansion and a single magenta animated border. The vertical labels are rotated to read inward from the right edge. This keeps the interaction aligned with the publication palette and makes the edge controls feel deliberate rather than hurried.
+
+## Utility tabs face inward
+
+Right-edge utility labels rotate toward the page rather than away from it. Resume and LinkedIn share the animated perimeter language of the former cover resume button, while Email remains the quieter supporting action.
+
 # Design Decisions
 
 This file records major decisions behind the Adam Thomas Janes portfolio.
@@ -249,3 +261,26 @@ Primary navigation uses native anchors. Major chapters remain in normal browser 
 
 ## Navigation tracking without navigation control
 Issue No. 01 uses native anchor links for movement and one IntersectionObserver only for the active underline. The observer may change `is-active` and `aria-current`, but it must never call `scrollIntoView`, prevent anchor navigation, calculate destinations, or animate one shared slider between links.
+
+## 2026-07-11 — Add editorial motion without navigation coupling
+Ghost-number motion is handled by a dedicated IntersectionObserver that only toggles a CSS class. It does not share state with navigation, anchors, or section tracking. This preserves reliable navigation while adding atmosphere.
+
+## 2026-07-11 — Integrate coursework with credentials
+Education Highlights now sits inside the education column so formal coursework reads as supporting evidence for the degrees rather than as a detached third feature.
+
+## Education spread hierarchy
+Education credentials and Education Highlights share equal visual weight in the top row. Awards & Publications follows below as the recognition chapter closing the spread. This prevents the coursework summary from feeling isolated and gives the section a clearer reading order.
+
+## Decision: Separate Practice from Method
+
+Practice answers **what Adam offers**. Method answers **how a project moves from discovery through launch**. The Method chapter uses six operational stages and avoids repeating service descriptions or broad communication principles already established earlier in the issue.
+
+## Persistent utilities belong outside the cover
+The résumé is an important hiring utility, but it should not compete with the cover's editorial introduction. Desktop utilities therefore live in a fixed right-edge rail, while smaller screens retain only a compact résumé button. The rail may hold Résumé, LinkedIn, Email, and Print Issue because these are site-wide actions rather than chapter content.
+
+
+## Utility rail refinement
+Résumé and LinkedIn use the original animated-border visual language so persistent utilities feel integrated with the portfolio rather than added on. Print Issue was removed to keep the rail focused on professional contact actions.
+
+### Utility-tab alignment
+Use one shared centered label structure for Resume and LinkedIn rather than positioning each word independently. This prevents different word lengths from shifting vertically.

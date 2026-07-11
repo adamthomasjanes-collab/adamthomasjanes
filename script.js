@@ -94,7 +94,7 @@ const archiveProjects = [
     title: "Advertising Campaigns",
     type: "Advertising / Print Campaigns",
     desc: "A concentrated gallery of local and regional advertising work, built to demonstrate strong hierarchy, client-focused messaging, production speed, and print-ready design judgment.",
-    points: ["Archive sample gallery wired for lightbox testing", "Campaign, seasonal, and restaurant examples", "Strongest print advertising examples can replace sample images later"],
+    points: ["Campaign systems across multiple formats", "Seasonal and hospitality advertising", "Clear hierarchy under real production deadlines"],
     thumb: "thumb-ads",
     issueKey: "archive-advertising"
   },
@@ -348,6 +348,12 @@ function initCounters() {
 function animateCounter(element) {
   const target = Number(element.dataset.target || 0);
   const suffix = element.dataset.suffix || "";
+
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    element.textContent = `${target}${suffix}`;
+    return;
+  }
+
   const start = performance.now();
   const duration = 1400;
 
@@ -362,20 +368,59 @@ function animateCounter(element) {
 }
 
 function initTabs(buttonSelector, panelSelector, buttonData, panelData) {
-  $$(buttonSelector).forEach(button => {
-    button.addEventListener("click", () => {
+  const buttons = $$(buttonSelector);
+  const panels = $$(panelSelector);
+
+  function activate(button, moveFocus = false) {
       const target = button.dataset[buttonData];
 
-      $$(buttonSelector).forEach(item => {
+      buttons.forEach(item => {
         item.classList.remove("is-active");
         item.setAttribute("aria-selected", "false");
+        item.setAttribute("tabindex", "-1");
       });
 
-      $$(panelSelector).forEach(panel => panel.classList.remove("is-active"));
+      panels.forEach(panel => {
+        panel.classList.remove("is-active");
+        panel.hidden = true;
+      });
 
       button.classList.add("is-active");
       button.setAttribute("aria-selected", "true");
-      $(`[data-${panelData}="${target}"]`)?.classList.add("is-active");
+      button.setAttribute("tabindex", "0");
+      const panel = $(`[data-${panelData}="${target}"]`);
+      if (panel) {
+        panel.classList.add("is-active");
+        panel.hidden = false;
+      }
+      if (moveFocus) button.focus();
+  }
+
+  buttons.forEach((button, index) => {
+    const target = button.dataset[buttonData];
+    const panel = $(`[data-${panelData}="${target}"]`);
+    const tabId = `${buttonData}-tab-${target}`;
+    const panelId = `${buttonData}-panel-${target}`;
+
+    button.id = tabId;
+    button.setAttribute("aria-controls", panelId);
+    button.setAttribute("tabindex", button.classList.contains("is-active") ? "0" : "-1");
+    if (panel) {
+      panel.id = panelId;
+      panel.setAttribute("aria-labelledby", tabId);
+      panel.hidden = !panel.classList.contains("is-active");
+    }
+
+    button.addEventListener("click", () => activate(button));
+    button.addEventListener("keydown", (event) => {
+      let nextIndex = null;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % buttons.length;
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + buttons.length) % buttons.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = buttons.length - 1;
+      if (nextIndex === null) return;
+      event.preventDefault();
+      activate(buttons[nextIndex], true);
     });
 
     button.setAttribute("aria-selected", button.classList.contains("is-active") ? "true" : "false");
@@ -387,6 +432,7 @@ function initTabs(buttonSelector, panelSelector, buttonData, panelData) {
 function initArchive() {
   $$(".archive-item").forEach((button, index) => {
     button.addEventListener("click", () => renderArchive(index));
+    button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
   });
 
   $(".archive-prev")?.addEventListener("click", () => renderArchive(state.archiveIndex - 1));
@@ -403,7 +449,11 @@ function renderArchive(index) {
   state.archiveIndex = (index + archiveProjects.length) % archiveProjects.length;
   const project = archiveProjects[state.archiveIndex];
 
-  $$(".archive-item").forEach((button, i) => button.classList.toggle("is-active", i === state.archiveIndex));
+  $$(".archive-item").forEach((button, i) => {
+    const active = i === state.archiveIndex;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
 
   const image = $(".archive-preview-image");
   if (image) image.className = `archive-preview-image ${project.thumb}`;
@@ -714,13 +764,13 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         {
           label: "Responsive Website",
           thumb: "assets/camp-perry/thumbs/thumb_camp-perry-website.png",
-          src: "assets/camp-perry/camp-perry-website.png",
+          src: "assets/camp-perry/camp-perry-website.webp",
           alt: "Camp Perry Lodging and Conference Center website design"
         },
         {
           label: "Printed Brochure",
           thumb: "assets/camp-perry/thumbs/thumb_camp-perry-brochure.png",
-          src: "assets/camp-perry/camp-perry-brochure.png",
+          src: "assets/camp-perry/camp-perry-brochure.webp",
           alt: "Camp Perry Lodging and Conference Center brochure design"
         },
         {
@@ -885,6 +935,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
   const adViewer = overlay.querySelector(".archive-ad-viewer");
   const adViewerImg = overlay.querySelector(".archive-ad-viewer-img");
   const adViewerCaption = overlay.querySelector(".archive-ad-viewer-caption");
+  const backgroundRegions = [...document.body.children].filter((element) => element !== overlay && element.tagName !== "SCRIPT");
   let lastFocus = null;
   let currentIssueKey = "archive-advertising";
   let currentGallery = [];
@@ -1003,6 +1054,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     document.body.classList.add("archive-issue-open");
+    backgroundRegions.forEach((element) => element.inert = true);
     if (firstClose) firstClose.focus();
   }
 
@@ -1011,6 +1063,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     overlay.classList.remove("is-open");
     overlay.setAttribute("aria-hidden", "true");
     document.body.classList.remove("archive-issue-open");
+    backgroundRegions.forEach((element) => element.inert = false);
     if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
   }
 
@@ -1061,9 +1114,72 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
   closeButtons.forEach((button) => button.addEventListener("click", closeIssue));
   document.addEventListener("keydown", (event) => {
     if (!overlay.classList.contains("is-open")) return;
+    if (event.key === "Tab") {
+      const focusable = [...overlay.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')]
+        .filter((element) => !element.hidden && element.getClientRects().length);
+      if (focusable.length) {
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    }
     if (event.key === "Escape" && adViewer?.classList.contains("is-open")) return closeAdViewer();
     if (event.key === "Escape") closeIssue();
     if (event.key === "ArrowLeft" && adViewer?.classList.contains("is-open")) stepAdViewer(-1);
     if (event.key === "ArrowRight" && adViewer?.classList.contains("is-open")) stepAdViewer(1);
   });
 })();;
+
+// Initial browser hash positioning can occur before late-loading layout has
+// settled. Correct it once, after fonts and the first painted layout, without
+// taking over ordinary navigation clicks.
+(function () {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+
+  window.addEventListener("load", async () => {
+    if (document.fonts?.ready) await document.fonts.ready;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      target.scrollIntoView({ block: "start", behavior: "auto" });
+      target.focus({ preventScroll: true });
+    }));
+  }, { once: true });
+})();
+
+
+/* ==========================================================
+   GHOST FOLIO REVEAL
+
+   A single observer adds a quiet entrance to chapter numerals. It
+   does not calculate scroll positions, alter anchors, or control the
+   navigation; it only toggles a presentational class.
+   ========================================================== */
+(() => {
+  const chapters = [...document.querySelectorAll(".editorial-number-section")];
+  if (!chapters.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    chapters.forEach((chapter) => chapter.classList.add("is-ghost-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("is-ghost-visible");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.18
+  });
+
+  chapters.forEach((chapter) => observer.observe(chapter));
+})();

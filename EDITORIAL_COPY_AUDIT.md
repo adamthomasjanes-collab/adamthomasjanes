@@ -14,20 +14,20 @@ Each major chapter may use three distinct layers:
 
 ## Approved chapter labels
 
-- **01 · Communications Practice**
-  - Eyebrow: *How I Help Organizations*
-  - Running thought: *Reader-first thinking. Production-ready execution.*
-- **02 · Feature Stories**
+- **01 · Feature Stories**
   - Eyebrow: *Selected Work in Context*
   - Running thought: *Selected work from an eighteen-year practice.*
+- **02 · Communications Practice**
+  - Eyebrow: *How I Help Organizations*
+  - Running thought: *Reader-first thinking. Production-ready execution.*
 - **03 · From the Archive**
   - Eyebrow: *Selected Back Issues*
-- **04 · Reference Library**
-  - Eyebrow: *Tools for Better Communication*
-- **05 · Process**
+- **04 · Method**
   - Eyebrow: *What Clients Can Expect*
-- **06 · Career Timeline**
+- **05 · Career Timeline**
   - Eyebrow: *Career Progression*
+- **06 · Reference Library**
+  - Eyebrow: *Tools for Better Communication*
 - **07 · Production Notes**
   - Eyebrow: *Inside the Toolbox*
 - **08 · Colophon**
@@ -38,7 +38,7 @@ Each major chapter may use three distinct layers:
 - Do not place a second small magenta label directly below a chapter title if it merely repeats that title.
 - Use magenta for editorial eyebrows, metadata labels, navigation states, and purposeful accents—not duplicate headings.
 - Keep subsection labels only when they add new information, such as *Selected Coursework*, *Role*, *Tools*, or *Outcome*.
-- The Colophon owns ghost number **08**. The contact footer is an epilogue and should not carry another ghost 08.
+- The Colophon owns ghost number **08**. The contact footer is an epilogue and should not carry another ghost number.
 - The site is not offered as an installable web app; no web-manifest link should be added unless that decision changes intentionally.
 
 ## Duplicate-Phrase Rule
