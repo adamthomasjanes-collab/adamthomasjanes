@@ -45,7 +45,7 @@ Progressive enhancement matters more than cleverness.
   Debugging guide:
   - If a button stops opening an overlay, first check its data-* attribute in index.html.
   - If an archive category opens the wrong story, check the order and issueKey values in archiveProjects.
-  - If keyboard focus feels trapped, check dialog open/close routines and lastDialogTrigger.
+  - If an overlay interaction fails, check the shared issue overlay and its focus-return behavior.
 
   Accessibility guide:
   - Preserve escape-key closing behavior.
@@ -67,7 +67,6 @@ const $$ = (selector, context = document) => [...context.querySelectorAll(select
 
 // SHARED UI STATE: the site’s memory. Which archive item is active? Who opened the dialog? Where should focus return?
 const state = {
-  projectIndex: 0,
   archiveIndex: 0,
   lastDialogTrigger: null
 };
@@ -165,8 +164,6 @@ const archiveProjects = [
   }
 ];
 
-const projectOrder = ["camp", "business", "beacon", "ncpn"];
-
 let scrollFrame = null;
 
 function requestScrollUpdate() {
@@ -185,9 +182,7 @@ function init() {
   initCounters();
   initTabs(".process-step", ".process-content", "process", "process-panel");
   initTabs(".skill-tab", ".skill-panel", "skill", "skill-panel");
-  initProjects();
   initArchive();
-  initAccessibility();
   addEventListener("scroll", requestScrollUpdate, { passive: true });
   addEventListener("resize", requestScrollUpdate);
   addEventListener("load", requestScrollUpdate);
@@ -218,25 +213,20 @@ function updateScrollState() {
 
   if (els.progress) els.progress.style.width = `${doc ? (y / doc) * 100 : 0}%`;
 
-  let current = "";
-  els.sections.forEach(section => {
-    if (y >= section.offsetTop - 130) current = section.id;
-  });
+  /*
+    Navigation state is intentionally NOT updated here.
 
-  els.navLinks.forEach(link => {
-    link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
-  });
-
-  updateTocIndicator();
+    The unified navigation controller farther down this file is the only code
+    allowed to choose the active chapter and position the magenta slider.
+    Keeping that responsibility in one place prevents intermediate smooth-scroll
+    positions from pulling the slider away from a link the visitor just clicked.
+  */
   updateAmbientMotion();
   updateSectionTitles();
   updateServices();
   updateFeatured();
 }
 
-function updateTocIndicator() {
-  // Active navigation is handled by the current nav indicator system.
-}
 
 function updateAmbientMotion() {
   const y = scrollY;
@@ -392,73 +382,6 @@ function initTabs(buttonSelector, panelSelector, buttonData, panelData) {
   });
 }
 
-function initProjects() {
-  // EDITING NOTE: The original full-screen project-reader pop-up is now disabled for Feature buttons
-  // that include data-archive-issue. Those buttons are handled by initArchiveIssueOverlay() below.
-  // This keeps only the newer archive issue overlay from opening when someone clicks “Read Feature.”
-  $$(".project-trigger").forEach(button => {
-    if (button.dataset.archiveIssue) return;
-    button.addEventListener("click", () => {
-      state.lastDialogTrigger = button;
-      openProject(button.dataset.project);
-    });
-  });
-
-  $(".project-reader-close")?.addEventListener("click", closeProject);
-  $(".project-reader-prev")?.addEventListener("click", () => setProject(state.projectIndex - 1));
-  $(".project-reader-next")?.addEventListener("click", () => setProject(state.projectIndex + 1));
-
-  $(".project-reader")?.addEventListener("click", event => {
-    if (event.target === $(".project-reader")) closeProject();
-  });
-}
-
-function setProject(index) {
-  state.projectIndex = (index + projectOrder.length) % projectOrder.length;
-  const active = projectOrder[state.projectIndex];
-
-  $$(".project-sheet").forEach(sheet => {
-    sheet.classList.toggle("is-active", sheet.dataset.projectPanel === active);
-  });
-}
-
-function trapDialogFocus(container, event) {
-  const focusables = $$('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])', container)
-    .filter(element => element.offsetParent !== null || element === document.activeElement);
-
-  if (!focusables.length) return;
-
-  const first = focusables[0];
-  const last = focusables[focusables.length - 1];
-
-  if (event.shiftKey && document.activeElement === first) {
-    event.preventDefault();
-    last.focus();
-  } else if (!event.shiftKey && document.activeElement === last) {
-    event.preventDefault();
-    first.focus();
-  }
-}
-
-function openProject(id) {
-  const index = projectOrder.indexOf(id);
-  setProject(index < 0 ? 0 : index);
-
-  const reader = $(".project-reader");
-  reader?.classList.add("is-open");
-  reader?.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  setTimeout(() => $(".project-reader-close")?.focus(), 0);
-}
-
-function closeProject() {
-  const reader = $(".project-reader");
-  reader?.classList.remove("is-open");
-  reader?.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-  restoreDialogFocus();
-}
-
 // ARCHIVE BROWSER
 // Powers the left-side archive tabs, preview panel, and next/previous controls.
 function initArchive() {
@@ -473,25 +396,6 @@ function initArchive() {
   $(".archive-open")?.addEventListener("click", event => {
     state.lastDialogTrigger = event.currentTarget;
   });
-  $(".archive-preview-image")?.addEventListener("click", event => {
-    state.lastDialogTrigger = event.currentTarget;
-    openLightbox();
-  });
-
-  $(".archive-lightbox-close")?.addEventListener("click", closeLightbox);
-  $(".archive-lightbox-prev")?.addEventListener("click", () => {
-    renderArchive(state.archiveIndex - 1);
-    renderLightbox();
-  });
-  $(".archive-lightbox-next")?.addEventListener("click", () => {
-    renderArchive(state.archiveIndex + 1);
-    renderLightbox();
-  });
-
-  $(".archive-lightbox")?.addEventListener("click", event => {
-    if (event.target === $(".archive-lightbox")) closeLightbox();
-  });
-
   renderArchive(0);
 }
 
@@ -514,70 +418,6 @@ function renderArchive(index) {
   $(".archive-preview-description").textContent = project.desc;
   $(".archive-preview-points").innerHTML = project.points.map(point => `<li>${point}</li>`).join("");
 
-  if ($(".archive-lightbox.is-open")) renderLightbox();
-}
-
-function renderLightbox() {
-  const project = archiveProjects[state.archiveIndex];
-  const image = $(".archive-lightbox-image");
-  if (image) image.className = `archive-lightbox-image ${project.thumb}`;
-
-  $(".archive-lightbox-type").textContent = project.type;
-  $(".archive-lightbox-title").textContent = project.title;
-  $(".archive-lightbox-description").textContent = project.desc;
-}
-
-function openLightbox() {
-  renderLightbox();
-
-  const lightbox = $(".archive-lightbox");
-  lightbox?.classList.add("is-open");
-  lightbox?.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  setTimeout(() => $(".archive-lightbox-close")?.focus(), 0);
-}
-
-function closeLightbox() {
-  const lightbox = $(".archive-lightbox");
-  lightbox?.classList.remove("is-open");
-  lightbox?.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-  restoreDialogFocus();
-}
-
-function initAccessibility() {
-  document.addEventListener("keydown", event => {
-    const openProjectDialog = $(".project-reader.is-open");
-    const openArchiveDialog = $(".archive-lightbox.is-open");
-
-    if (event.key === "Tab" && openProjectDialog) trapDialogFocus(openProjectDialog, event);
-    if (event.key === "Tab" && openArchiveDialog) trapDialogFocus(openArchiveDialog, event);
-
-    if (event.key === "Escape") {
-      if (openProjectDialog) closeProject();
-      if (openArchiveDialog) closeLightbox();
-    }
-
-    if (openProjectDialog) {
-      if (event.key === "ArrowRight") setProject(state.projectIndex + 1);
-      if (event.key === "ArrowLeft") setProject(state.projectIndex - 1);
-    }
-
-    if (openArchiveDialog) {
-      if (event.key === "ArrowRight") {
-        renderArchive(state.archiveIndex + 1);
-        renderLightbox();
-      }
-      if (event.key === "ArrowLeft") {
-        renderArchive(state.archiveIndex - 1);
-        renderLightbox();
-      }
-    }
-  });
-}
-
-function restoreDialogFocus() {
-  setTimeout(() => state.lastDialogTrigger?.focus(), 0);
 }
 
 init();
@@ -589,139 +429,81 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
 });
 
 
-// v2.6: stronger active navigation detection, including Contact at page bottom,
-// plus subtle portrait scroll drift.
+// SIMPLE PRIMARY NAVIGATION + SCROLL TRACKING
+// Native anchor links remain responsible for moving through the page. A single
+// IntersectionObserver updates only the modest per-link underline as each
+// chapter enters the upper reading area. There is no moving slider, timer,
+// scrollIntoView call, or custom destination calculation.
 (function () {
-  const nav = document.querySelector(".nav");
-  const indicator = document.querySelector(".nav-toc-indicator");
   const links = [...document.querySelectorAll(".nav a[href^='#']")];
-  const targets = links
-    .map((link) => document.querySelector(link.getAttribute("href")))
+  if (!links.length) return;
+
+  const chapters = links
+    .map((link) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      return target ? { link, target } : null;
+    })
     .filter(Boolean);
 
-  function updateActiveNavV26() {
-    if (!links.length || !targets.length) return;
+  if (!chapters.length) return;
 
-    const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
-    let activeId = nearBottom ? "contact" : "";
+  function activate(link) {
+    links.forEach((item) => {
+      const isActive = item === link;
+      item.classList.toggle("is-active", isActive);
 
-    if (!activeId) {
-      targets.forEach((target) => {
-        const rect = target.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.34) activeId = target.id;
-      });
-    }
-
-    if (!activeId && targets[0]) activeId = targets[0].id;
-
-    links.forEach((link) => {
-      link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);
+      if (isActive) {
+        item.setAttribute("aria-current", "location");
+      } else {
+        item.removeAttribute("aria-current");
+      }
     });
-
-    const active = links.find((link) => link.classList.contains("is-active"));
-    if (nav && indicator && active) {
-      const navRect = nav.getBoundingClientRect();
-      const activeRect = active.getBoundingClientRect();
-      nav.style.setProperty("--toc-left", `${activeRect.left - navRect.left}px`);
-      nav.style.setProperty("--toc-width", `${activeRect.width}px`);
-      nav.style.setProperty("--toc-opacity", "1");
-    }
-
-    const headshot = document.querySelector(".headshot-card");
-    if (headshot) {
-      const drift = Math.max(-8, Math.min(8, window.scrollY * -0.012));
-      headshot.style.setProperty("--portrait-drift", `${drift.toFixed(2)}px`);
-    }
   }
 
-  window.addEventListener("scroll", updateActiveNavV26, { passive: true });
-  window.addEventListener("resize", updateActiveNavV26);
-  window.addEventListener("load", updateActiveNavV26);
-  updateActiveNavV26();
-})();
-
-
-// v2.7: authoritative nav slider fix.
-// This directly tracks the active link, including Contact, and runs after all older nav logic.
-(function () {
-  const nav = document.querySelector(".nav");
-  const links = [...document.querySelectorAll(".nav a[href^='#']")];
-  let indicator = document.querySelector(".nav-toc-indicator");
-
-  if (!nav || !links.length) return;
-
-  if (!indicator) {
-    indicator = document.createElement("span");
-    indicator.className = "nav-toc-indicator";
-    indicator.setAttribute("aria-hidden", "true");
-    nav.appendChild(indicator);
-  }
-
-  const linkTargets = links.map((link) => {
-    const id = link.getAttribute("href").slice(1);
-    return {
-      id,
-      link,
-      target: document.getElementById(id)
-    };
-  }).filter((item) => item.target);
-
-  function setIndicator(link) {
-    if (!link) return;
-
-    const navRect = nav.getBoundingClientRect();
-    const linkRect = link.getBoundingClientRect();
-
-    nav.style.setProperty("--toc-left", `${linkRect.left - navRect.left}px`);
-    nav.style.setProperty("--toc-width", `${linkRect.width}px`);
-    nav.style.setProperty("--toc-opacity", "1");
-  }
-
-  function getActiveItem() {
-    const scrollBottom = window.scrollY + window.innerHeight;
-    const pageBottom = document.documentElement.scrollHeight;
-
-    // Contact is at the footer/bottom, so force it active when the page is near the end.
-    if (pageBottom - scrollBottom < 90) {
-      return linkTargets.find((item) => item.id === "contact") || linkTargets.at(-1);
-    }
-
-    // Prefer the section whose top has crossed the upper reading zone.
-    let active = linkTargets[0];
-
-    for (const item of linkTargets) {
-      const rect = item.target.getBoundingClientRect();
-      if (rect.top <= 150) active = item;
-    }
-
-    return active;
-  }
-
-  function updateNavIndicatorV27() {
-    const active = getActiveItem();
-    if (!active) return;
-
-    links.forEach((link) => {
-      link.classList.toggle("is-active", link === active.link);
-    });
-
-    setIndicator(active.link);
-  }
-
-  // Anchor clicks should move the underline immediately, not only after scroll settles.
+  // Give immediate feedback on click while leaving anchor navigation entirely
+  // to the browser. The observer may confirm or update the active chapter later.
   links.forEach((link) => {
-    link.addEventListener("click", () => {
-      setTimeout(() => {
-        links.forEach((item) => item.classList.toggle("is-active", item === link));
-        setIndicator(link);
-      }, 80);
-    });
+    link.addEventListener("click", () => activate(link));
   });
 
-  window.addEventListener("scroll", updateNavIndicatorV27, { passive: true });
-  window.addEventListener("resize", updateNavIndicatorV27);
-  window.addEventListener("load", updateNavIndicatorV27);
-  requestAnimationFrame(updateNavIndicatorV27);
+  // Respect a bookmarked chapter on initial load. Otherwise begin with the
+  // first chapter until scrolling brings another chapter into the reading zone.
+  const initial = links.find((link) => link.getAttribute("href") === window.location.hash);
+  activate(initial || links[0]);
+
+  if (!("IntersectionObserver" in window)) return;
+
+  const visibleChapters = new Set();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        visibleChapters.add(entry.target);
+      } else {
+        visibleChapters.delete(entry.target);
+      }
+    });
+
+    if (!visibleChapters.size) return;
+
+    // When two neighboring chapters briefly share the observation band, prefer
+    // the chapter whose top edge is closest to the sticky-header reading line.
+    const activeChapter = chapters
+      .filter(({ target }) => visibleChapters.has(target))
+      .sort((a, b) => {
+        const aTop = Math.abs(a.target.getBoundingClientRect().top - 84);
+        const bTop = Math.abs(b.target.getBoundingClientRect().top - 84);
+        return aTop - bTop;
+      })[0];
+
+    if (activeChapter) activate(activeChapter.link);
+  }, {
+    root: null,
+    rootMargin: "-84px 0px -68% 0px",
+    threshold: 0
+  });
+
+  chapters.forEach(({ target }) => observer.observe(target));
 })();
 
 
@@ -1000,9 +782,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Advertising Campaigns",
       subtitle: "Print campaigns · client ads · award-winning layouts",
       noteTitle: "Issue Cover",
-      paragraphs: ["This issue gathers the strongest advertising-style examples into one working gallery so the archive can feel like a real printed issue instead of a static list.", "The six archive sample ads keep the gallery, overlay behavior, keyboard navigation, and full-size lightbox experience active while final images are selected."],
+      paragraphs: ["This issue gathers the strongest advertising-style examples into one working gallery so the archive can feel like a real printed issue instead of a static list.", "The gallery brings together campaign, seasonal, and client-focused advertising that demonstrates hierarchy, production judgment, and clear promotional communication."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Advertising layout, client communication, publication production, and print preparation."], ["Best Use", "Use this as the master ad gallery for the strongest single ads and campaign sets."], ["Asset Status", "Archive sample images are included so the lightbox and archive experience remain fully testable."]],
+      details: [["Role", "Advertising layout, client communication, publication production, and print preparation."], ["Focus", "Selected single advertisements and campaign work that demonstrate message hierarchy, production quality, and client communication."], ["Presentation", "Each image opens in a full-size viewer for closer inspection."]],
       shows: ["Print advertising", "Client goals", "Sales support", "Award-style proof"],
       gallery: sampleAdGallery()
     },
@@ -1011,9 +793,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Restaurant & Hospitality",
       subtitle: "Restaurants · diners · taverns · event promotions",
       noteTitle: "Issue Cover",
-      paragraphs: ["Restaurant and hospitality advertising needs to communicate quickly: what is happening, when it happens, where to go, and why it is worth attention.", "This issue uses archive sample ads to show how seasonal events, food specials, entertainment, and location details can live together in a working gallery."],
+      paragraphs: ["Restaurant and hospitality advertising needs to communicate quickly: what is happening, when it happens, where to go, and why it is worth attention.", "The selected work shows how seasonal events, food specials, entertainment, and location details can be organized into direct, energetic promotional communication."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Event advertising, food promotion layouts, seasonal campaigns, and local business communication."], ["Best Use", "Swap in real restaurant, tourism, lodging, and hospitality examples later."], ["Asset Status", "Archive sample restaurant ads are active so every thumbnail can open a lightbox."]],
+      details: [["Role", "Event advertising, food promotion layouts, seasonal campaigns, and local business communication."], ["Focus", "Restaurant, tourism, lodging, and event promotions designed for quick recognition and practical customer response."], ["Presentation", "Each image opens in a full-size viewer for closer inspection."]],
       shows: ["Restaurant advertising", "Seasonal campaigns", "Promotional hierarchy", "Local business needs"],
       gallery: sampleAdGallery([0,1,2,3,5])
     },
@@ -1022,9 +804,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Publication Design",
       subtitle: "Magazines · newspapers · real estate · business publications",
       noteTitle: "Issue Cover",
-      paragraphs: ["Recurring publication work shows more than single-piece design. It shows systems, pacing, consistency, deadlines, and the ability to manage editorial and advertising content together.", "Use this issue for North Coast Business Journal, HOMES, The Beacon, and NCPN examples as those assets are prepared."],
+      paragraphs: ["Recurring publication work shows more than single-piece design. It shows systems, pacing, consistency, deadlines, and the ability to manage editorial and advertising content together.", "The work spans business publications, newspapers, real-estate publishing, and family-focused magazines, revealing the systems that keep recurring issues coherent and readable."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Editorial layout, ad placement, issue pacing, page composition, and prepress output."], ["Best Use", "Add covers, spreads, front pages, and recurring department examples."], ["Asset Status", "Archive sample images fill the gallery until publication screenshots are added."]],
+      details: [["Role", "Editorial layout, ad placement, issue pacing, page composition, and prepress output."], ["Focus", "Covers, spreads, front pages, and recurring editorial structures that demonstrate consistency across publication formats."], ["Presentation", "Selected examples emphasize hierarchy, pacing, and production discipline."]],
       shows: ["Publication systems", "Editorial hierarchy", "Ad integration", "Deadline production"],
       gallery: sampleAdGallery([4,0,1,2,3,5])
     },
@@ -1033,9 +815,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Brand Identity",
       subtitle: "Logo design · brand refreshes · visual systems",
       noteTitle: "Issue Cover",
-      paragraphs: ["Brand identity work belongs in the archive because it supports the bigger communications story: consistent visuals across print, web, signage, advertising, and collateral.", "This issue is ready for logo tiles, before-and-after refreshes, brand color systems, and real-world application examples."],
+      paragraphs: ["Brand identity work belongs in the archive because it supports the bigger communications story: consistent visuals across print, web, signage, advertising, and collateral.", "The work includes identity marks, visual refreshes, color systems, and applications that carry a consistent brand across real-world communication."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Logo design, visual identity, brand refreshes, and applied communication systems."], ["Best Use", "Add identity tiles, mockups, and one-sentence captions explaining each design problem."], ["Asset Status", "Archive sample images are used until identity assets are added."]],
+      details: [["Role", "Logo design, visual identity, brand refreshes, and applied communication systems."], ["Focus", "Identity systems and applications that connect visual decisions to practical communication needs."], ["Presentation", "Examples are selected to show both the core identity and how it performs in use."]],
       shows: ["Logo systems", "Brand consistency", "Visual communication", "Applied identity"],
       gallery: sampleAdGallery([0,4,1,5,2,3])
     },
@@ -1044,9 +826,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Web & Digital",
       subtitle: "WordPress · SEO copy · email marketing · content updates",
       noteTitle: "Issue Cover",
-      paragraphs: ["This issue positions Adam as a communications and marketing professional who can support websites, email, content, SEO, and digital updates — not only visual design.", "Add screenshots of websites, email campaigns, page refreshes, landing sections, analytics wins, or content before-and-after examples."],
+      paragraphs: ["This issue positions Adam as a communications and marketing professional who can support websites, email, content, SEO, and digital updates — not only visual design.", "The work includes websites, email campaigns, page improvements, landing experiences, and content updates that connect strategy with practical digital execution."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "WordPress updates, web content, SEO-minded copy, email content, and digital communication support."], ["Best Use", "Strong support for digital marketing, communications, and coordinator roles."], ["Asset Status", "Archive sample images keep the gallery functional until screenshots are ready."]],
+      details: [["Role", "WordPress updates, web content, SEO-minded copy, email content, and digital communication support."], ["Focus", "Digital communication that combines content, usability, maintenance, and marketing objectives."], ["Relevance", "Demonstrates hands-on support for communications, content, and digital marketing roles."]],
       shows: ["Digital communication", "Website maintenance", "SEO content", "Email marketing"],
       gallery: sampleAdGallery([4,0,5,1,2,3])
     },
@@ -1055,9 +837,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Photography",
       subtitle: "Location images · marketing visuals · editorial support",
       noteTitle: "Issue Cover",
-      paragraphs: ["Photography adds proof that Adam can support the full communication package: images for websites, brochures, editorial layouts, hospitality marketing, and brand storytelling.", "This issue can eventually hold location photos, staff images, room photography, product shots, and edited visual assets."],
+      paragraphs: ["Photography adds proof that Adam can support the full communication package: images for websites, brochures, editorial layouts, hospitality marketing, and brand storytelling.", "The selected photography supports locations, people, interiors, products, and editorial stories with images prepared for both print and digital use."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Photography, image selection, editing, optimization, and placement across marketing materials."], ["Best Use", "Add real photo examples with captions about where each image was used."], ["Asset Status", "Archive sample images keep the overlay testable end-to-end."]],
+      details: [["Role", "Photography, image selection, editing, optimization, and placement across marketing materials."], ["Focus", "Photography created and prepared for websites, publications, brochures, and marketing campaigns."], ["Approach", "Image selection and editing are guided by the communication purpose of each project."]],
       shows: ["Marketing photography", "Image preparation", "Visual storytelling", "Cross-channel use"],
       gallery: sampleAdGallery([5,0,1,4,2,3])
     },
@@ -1066,9 +848,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Marketing Collateral",
       subtitle: "Brochures · flyers · sales support · printed communication",
       noteTitle: "Issue Cover",
-      paragraphs: ["Marketing collateral is where design, copy, audience, and business goals have to meet in a practical format people can actually use.", "This issue is ready for brochures, flyers, sell sheets, conference materials, rack cards, postcards, and sales support pieces."],
+      paragraphs: ["Marketing collateral is where design, copy, audience, and business goals have to meet in a practical format people can actually use.", "The work includes brochures, flyers, sell sheets, conference materials, rack cards, postcards, and sales tools designed for clear, practical use."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Brochure design, sales support materials, print communication, layout, and production."], ["Best Use", "Use this as proof for marketing coordinator and communications roles."], ["Asset Status", "Archive sample images stand in for collateral until final images are chosen."]],
+      details: [["Role", "Brochure design, sales support materials, print communication, layout, and production."], ["Focus", "Client-facing materials that combine message clarity, visual hierarchy, and dependable print production."], ["Relevance", "Demonstrates practical support for marketing, communications, and sales teams."]],
       shows: ["Sales support", "Clear messaging", "Brochure systems", "Print production"],
       gallery: sampleAdGallery([0,5,4,1,2,3])
     },
@@ -1077,9 +859,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       title: "Editorial Features",
       subtitle: "Feature stories · reader pacing · layout systems",
       noteTitle: "Issue Cover",
-      paragraphs: ["Editorial features show the ability to guide a reader through a story, not just decorate a page. The work is hierarchy, pacing, images, captions, pull quotes, and structure.", "Use this issue for magazine features, newspaper feature pages, business stories, parent magazine spreads, and strong editorial layouts."],
+      paragraphs: ["Editorial features show the ability to guide a reader through a story, not just decorate a page. The work is hierarchy, pacing, images, captions, pull quotes, and structure.", "The examples span magazine features, newspaper pages, business stories, and family-focused spreads, each shaped to make longer-form content easier to enter and follow."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Feature layout, story hierarchy, image placement, and reader-friendly pacing."], ["Best Use", "Add spreads and note what made the article easier to scan or understand."], ["Asset Status", "Archive sample images keep the gallery live while editorial images are gathered."]],
+      details: [["Role", "Feature layout, story hierarchy, image placement, and reader-friendly pacing."], ["Focus", "Feature layouts that use typography, imagery, captions, and pacing to guide the reader through a story."], ["Approach", "Every layout is evaluated by how clearly it helps the audience scan, understand, and continue reading."]],
       shows: ["Feature pacing", "Reader hierarchy", "Editorial polish", "Story structure"],
       gallery: sampleAdGallery([4,1,0,2,5,3])
     },
@@ -1090,7 +872,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       noteTitle: "Issue Cover",
       paragraphs: ["This issue gives hiring managers and clients a fast way to see proof of quality: award-winning ads, strongest print examples, and the pieces Adam wants people to notice first.", "Keep this issue selective. It should feel like a highlight reel, not a storage drawer."],
       sidebarTitle: "Project Notes",
-      details: [["Role", "Award-winning advertising and strongest portfolio highlights."], ["Best Use", "Keep only the clearest, most impressive examples here."], ["Asset Status", "Archive sample images are included while award-specific images and captions are selected."]],
+      details: [["Role", "Award-winning advertising and strongest portfolio highlights."], ["Focus", "A selective group of recognized and high-impact work chosen for clarity, craft, and communication value."], ["Selection", "Only the strongest examples are included so the section remains concise and meaningful."]],
       shows: ["Recognition", "Strongest examples", "Fast proof", "Portfolio highlights"],
       gallery: sampleAdGallery([3,0,2,1,5,4])
     }
@@ -1185,9 +967,9 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       }).join("");
     }
 
-   overlay.querySelector(".archive-issue-note").textContent = issue.gallery?.some(item => item.src)
-  ? "Gallery images are curated project samples. Click any thumbnail to view the full image."
-  : "Gallery frames are ready for final project images.";
+    overlay.querySelector(".archive-issue-note").textContent = issue.gallery?.some(item => item.src)
+      ? "Click any gallery image to view the full project sample."
+      : "This archive entry is presented through its project story and production notes.";
     overlay.querySelector(".archive-issue-sidebar h3").textContent = issue.sidebarTitle;
 
     const dl = overlay.querySelector(".archive-issue-sidebar dl");
@@ -1199,6 +981,13 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     const featureIssueKeys = FEATURE_ISSUE_KEYS.filter(key => ARCHIVE_ISSUES[key]);
     const archiveIssueKeys = getArchiveIssueKeys();
     const isFeatureIssue = featureIssueKeys.includes(issueKey);
+
+    // The same overlay serves feature stories and archive issues. Update the
+    // footer controls so the language matches the family currently being read.
+    const previousButton = overlay.querySelector(".archive-issue-prev");
+    const nextButton = overlay.querySelector(".archive-issue-next");
+    if (previousButton) previousButton.textContent = isFeatureIssue ? "← Previous Feature" : "← Previous Issue";
+    if (nextButton) nextButton.textContent = isFeatureIssue ? "Next Feature →" : "Next Issue →";
     const issueKeys = isFeatureIssue ? featureIssueKeys : archiveIssueKeys;
     const issueNumber = issueKeys.indexOf(issueKey) + 1;
     overlay.querySelector(".archive-issue-footer span").textContent = issueNumber > 0

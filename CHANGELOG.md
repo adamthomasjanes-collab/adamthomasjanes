@@ -1,3 +1,34 @@
+## 2026-07-11 — Navigation and source-code prepress
+
+- Removed the retired feature-reader HTML and JavaScript, plus its dedicated CSS.
+- Kept the current **Read Feature → issue overlay → gallery viewer** as the only featured-project experience.
+- Removed `content-visibility: auto` from navigable chapters after tracing it as the cause of unstable long-distance anchor destinations.
+- Kept primary navigation browser-native: ordinary anchors, CSS smooth scrolling, sticky-header clearance, and a simple clicked-link underline.
+- Corrected backstage chapter-note numbering to match the visible editorial structure.
+- Audited duplicate IDs, local asset references, JavaScript syntax, HTML structure, and CSS balance.
+- Packaged all website files at the root of the ZIP.
+
+## v5.3.1 — Visitor-Facing Phrase Audit
+
+- Replaced the Colophon running thought with “The production details behind Issue No. 01.” so the formal authorship credit appears only once in that visual spread.
+- Removed the repeated “selected work” phrasing from the Features chapter header.
+- Reworded the Education Highlights introduction so it describes the coursework grouping rather than restating the education-foundation paragraph above it.
+- Reviewed repeated project titles, interface labels, the core promise, and issue metadata; retained repetitions that serve navigation, overlay identification, branding, or publication folio functions.
+
+
+## Legacy archive lightbox removal
+
+- Removed the obsolete preview-image lightbox markup, JavaScript, keyboard handling, and component styles.
+- Archive preview artwork is now decorative; the **Open** button is the single route into the current archive issue overlay and gallery viewer.
+
+## Editorial copy audit
+
+- Removed the repeated “The Reference Library” kicker beneath the 04 chapter heading.
+- Reworded two eyebrows so they introduce rather than repeat their chapter titles.
+- Removed the duplicate ghost 08 from the contact footer; 08 now belongs only to the Colophon.
+- Removed the web-app manifest reference and file so the portfolio is not presented as an installable app.
+- Added `EDITORIAL_COPY_AUDIT.md` as the copy hierarchy source of truth.
+
 # Changelog
 
 All notable changes to the Adam Thomas Janes editorial portfolio project.
@@ -510,4 +541,83 @@ Repository workflow reminder: edit locally, commit to GitHub, and let Netlify de
 - Added `netlify.toml` so deployment from the repository root is explicit.
 - Added a lightweight `404.html` fallback page for broken or outdated links.
 - Confirmed the project remains a static website suitable for GitHub source control and Netlify hosting.
+## Editorial numbering cohesion
+- Removed the repeated “07” prefix from Education & Recognition.
+- Kept Education & Recognition and Awards & Publications together under ghost chapter 08.
+- Changed the Colophon ghost number from 10 to 09.
+- Updated internal chapter comments and EDITORIAL_STRUCTURE.md to match the final sequence.
 
+
+
+## Editorial numbering refinement — Colophon 08
+- Removed the ghost 08 from the Education & Recognition / Awards & Publications spread.
+- Kept that supporting spread intentionally unnumbered.
+- Changed the Colophon navigation label and on-page ghost number to 08.
+- Removed the previous Colophon 09 references and updated EDITORIAL_STRUCTURE.md.
+
+
+## Reference Library and Navigation Cohesion
+- Expanded Resources into a six-item Reference Library.
+- Added planned downloads for magazine, newspaper, brand, preflight, PDF settings, and SEO planning.
+- Clarified Communications Practice and Career Timeline headings.
+- Added a subtle navigation divider after Archive.
+- Updated feature overlay controls to say Previous/Next Feature while archive controls retain Previous/Next Issue.
+- Confirmed Colophon as visible chapter 08.
+
+## Education transcript verification
+- Removed the unsupported implication that responsive web development was a named college course.
+- Added Cum Laude / Magna Cum Laude honors and transcript GPAs.
+- Added concise coursework highlights covering typography, page layout, interface design, markup languages, server-side scripting, open-source systems, website operations and security, interactive mobile applications, database management, internship, and graphic-design project management.
+- Strengthened Web & WordPress and Project Management production notes with transcript-supported language.
+
+## Education highlights refinement
+- Corrected the institution name to International Academy of Design & Technology, matching the name in use when Adam attended.
+- Added a dedicated Education Highlights panel with concise, transcript-grounded coursework categories.
+- Kept both degrees, honors, and GPAs prominent while removing defensive internal wording from the public-facing copy.
+
+## Chapter eyebrow system
+- Added a consistent magenta editorial eyebrow to chapters 01–08.
+- Added a distinct running thought to each chapter heading.
+- Preserved the numbered heading and ghost-folio system while strengthening hierarchy.
+- Added responsive behavior so the supporting thought stacks cleanly on smaller screens.
+
+## Editorial redundancy audit
+
+- Removed the repeated “The Reference Library” kicker beneath the Resources chapter heading.
+- Replaced public-facing placeholder copy in the shared archive overlay with neutral fallback language.
+- Refined empty-gallery messaging so implementation notes are not shown to visitors.
+- Preserved useful contextual eyebrows, labels, and production terminology where they add information rather than repeat it.
+
+## Editorial proof pass — archive visitor copy
+
+- Replaced generic archive fallback wording with finished, visitor-facing editorial copy.
+- Removed visible instructions about swapping, adding, testing, or replacing archive assets.
+- Reframed archive sidebars around Focus, Presentation, Relevance, Approach, and Selection.
+- Reworded the no-image gallery message so it reads as an intentional project presentation rather than an editing instruction.
+- Corrected the shared overlay fallback title from “Marketing Campaigns Campaigns” to “Selected Archive Project.”
+
+
+## Navigation slider ownership fix
+- Removed the last legacy active-link update from the general scroll-state routine.
+- The unified navigation controller is now the sole owner of active chapter classes and slider position.
+- During smooth anchor scrolling, the slider remains fixed beneath the clicked menu item until arrival.
+
+- Matched navigation anchor offsets to the sticky header and changed slider lock release from a timer to target-arrival detection.
+
+## Navigation destination repair
+- Changed chapter links to target full section containers instead of nested headings.
+- Replaced mixed browser-anchor offsets with one JavaScript-calculated sticky-header offset.
+- Unified scroll destination and active-section detection around the same section coordinates.
+- Prevented the slider from falling back to the previous chapter after smooth scrolling stops.
+
+## Simplified primary navigation
+- Removed the animated moving slider and all scroll-position tracking.
+- Restored native anchor navigation with CSS smooth scrolling.
+- Added a simple magenta underline for hover, keyboard focus, and the last clicked chapter.
+- Added consistent sticky-header clearance with `scroll-margin-top`.
+
+## v5.3.1 — Lightweight chapter tracking
+- Added one `IntersectionObserver` to update the active navigation underline as chapters enter the upper reading area.
+- Kept native browser anchors and CSS smooth scrolling as the only navigation mechanism.
+- Added `aria-current="location"` to the active chapter link for assistive technology.
+- Did not restore the retired moving slider, timers, custom scrolling, or manual destination calculations.

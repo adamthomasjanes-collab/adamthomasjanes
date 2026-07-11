@@ -97,3 +97,7 @@ This document is part of the Adam Thomas Janes portfolio repository and is inten
 
 Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
 
+
+## Navigation architecture
+
+Primary chapter links are ordinary same-page anchors. CSS supplies smooth scrolling and sticky-header clearance. JavaScript only applies the visual `.is-active` underline to the most recently clicked link; it does not calculate section positions or control page movement. Do not reintroduce deferred rendering or JavaScript scroll controllers on navigable chapters.

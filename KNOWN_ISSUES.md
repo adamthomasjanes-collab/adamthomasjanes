@@ -81,3 +81,17 @@ This document is part of the Adam Thomas Janes portfolio repository and is inten
 
 Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
 
+
+- Navigation destination/slider mismatch: resolved by section-based navigation controller.
+
+## Resolved: moving navigation slider
+The former animated slider could disagree with anchor destinations and backtrack after smooth scrolling. It has been removed in favor of native anchor navigation and a stable per-link underline.
+
+## Recently resolved
+
+- Native chapter links no longer depend on deferred off-screen layout estimates.
+- The retired feature-reader system has been removed.
+
+## Verification requested for v5.3.1
+- Scroll through every chapter on desktop and mobile and confirm the underline changes once the next chapter enters the upper reading area.
+- Confirm clicking any chapter still lands correctly because the observer does not control movement.

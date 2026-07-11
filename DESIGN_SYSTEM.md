@@ -239,3 +239,8 @@ This document is part of the Adam Thomas Janes portfolio repository and is inten
 
 Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
 
+## Primary navigation interaction
+Navigation links use a restrained magenta underline on hover, keyboard focus, and the most recently clicked chapter. There is no animated slider or automatic scroll-spy state. This preserves the publication character while prioritizing predictable navigation.
+
+## Active chapter underline
+The table of contents uses a local magenta underline on each link. Hover and keyboard focus remain immediate CSS states; the `is-active` state is assigned by a single IntersectionObserver as chapters enter the upper reading zone. There is no traveling indicator.

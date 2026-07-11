@@ -1,8 +1,8 @@
 {
   "name": "adam-portfolio-site",
-  "version": "5.2.0",
+  "version": "5.3.1",
   "private": false,
-  "description": "Editorial publication-style portfolio with JavaScript-free heading-based anchor navigation.",
+  "description": "Editorial publication-style portfolio with native anchor navigation, lightweight IntersectionObserver chapter tracking, current feature/archive galleries, and synchronized project documentation.",
   "scripts": {
     "serve": "python -m http.server 8080",
     "notes": "No build step required. Open index.html directly or serve locally."
@@ -12,5 +12,5 @@
     "url": "https://github.com/adamthomasjanes-collab/adamthomasjanes.git"
   },
   "homepage": "https://adamthomasjanes.com/",
-  "notes": "Static portfolio repository. Netlify can deploy from the repository root with no build command."
+  "notes": "Static portfolio repository. Netlify deploys from the repository root with no build command. See ISSUE_HISTORY.md and CHANGELOG.md for release history."
 }

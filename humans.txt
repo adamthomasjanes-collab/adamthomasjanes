@@ -11,32 +11,22 @@ Edition: Issue No. 01 · Summer 2026
 Concept: Portfolio as Publication
 Core Promise: I make complex information clear.
 Built with: Semantic HTML, CSS, vanilla JavaScript
-Design language: Editorial rhythm, CMYK accents, folios, running heads, colophon, reader-first hierarchy
+Hosted with: GitHub + Netlify
+Domain: adamthomasjanes.com
+Design language: Editorial rhythm, CMYK accents, folios, running heads, chapter eyebrows, colophon, reader-first hierarchy
 Typography direction: Avenir / Avenir Next + Georgia
+
+/* CREDITS */
+Creative direction, design, writing, photography, and production: Adam Thomas Janes
+Development workflow and editorial collaboration: Adam Thomas Janes with OpenAI ChatGPT
 
 /* PHILOSOPHY */
 Communication before decoration.
 Organize the information. Respect the reader. Design with purpose.
 
 /* CURRENT RELEASE */
-Release: v5.1.6
-Focus: Stable menu scrolling and consolidated JavaScript behavior.
+Release: v5.3.0
+Focus: Documentation governance and navigation arrival alignment.
 
-/* CURRENT RELEASE */
-Release: v5.1.7
-Focus: CSS-only anchor navigation, reliability over scroll flair.
-
-/* CURRENT RELEASE */
-Release: v5.1.8
-Focus: No-JavaScript primary navigation; function over flair.
-
-/* CURRENT RELEASE */
-Release: v5.1.9
-Focus: JavaScript-free navigation with dedicated anchor targets.
-
-/* CURRENT RELEASE */
-Release: v5.2.0
-Focus: JavaScript-free heading-based navigation anchors.
-
-Maintenance note:
-This file is intentionally plain text so it can be read in GitHub, VS Code, Netlify deploy previews, or a simple file browser. Keep instructions explicit and update them whenever related assets or launch workflow changes.
+/* MAINTENANCE */
+This file is intentionally plain text. Update the current release and credits only when the public project, production workflow, or contributor information changes.

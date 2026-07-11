@@ -236,3 +236,16 @@ This document is part of the Adam Thomas Janes portfolio repository and is inten
 
 Repository workflow reminder: edit locally, commit to GitHub, and let Netlify deploy from the repository root. Keep `index.html`, `styles.css`, and `script.js` heavily commented so the project can be reviewed as a professional web/content artifact as well as a live portfolio.
 
+
+## Section-based chapter navigation
+Navigation links target major section containers (`#services`, `#featured`, etc.) rather than title elements. One controller calculates both scroll destinations and active states using the sticky header's live height, preventing anchor offsets and slider tracking from disagreeing.
+
+## Navigation favors reliability over choreography
+The moving table-of-contents slider was retired after repeated timing and section-detection conflicts. Primary navigation now uses native anchors and a simple per-link underline. The browser controls scrolling; JavaScript only records the last selected link.
+
+## Keep chapter destinations in normal document layout
+
+Primary navigation uses native anchors. Major chapters remain in normal browser layout; `content-visibility: auto` is not used on navigable sections because estimated off-screen heights can cause long-distance anchor jumps to land inaccurately until the destination renders. Reliability takes priority over this micro-optimization.
+
+## Navigation tracking without navigation control
+Issue No. 01 uses native anchor links for movement and one IntersectionObserver only for the active underline. The observer may change `is-active` and `aria-current`, but it must never call `scrollIntoView`, prevent anchor navigation, calculate destinations, or animate one shared slider between links.

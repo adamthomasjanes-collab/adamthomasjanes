@@ -366,16 +366,6 @@ img { max-width: 100%; }
   font-weight: 950;
 }
 
-.nav-toc-indicator {
-  position: absolute;
-  left: var(--toc-left, 0);
-  bottom: -9px;
-  width: var(--toc-width, 0);
-  height: 2px;
-  background: var(--magenta);
-  opacity: var(--toc-opacity, 0);
-  transition: left .26s var(--ease-editorial), width .26s var(--ease-editorial), opacity .18s ease;
-}
 
 .nav-toggle {
   display: none;
@@ -517,7 +507,6 @@ img { max-width: 100%; }
 .positioning h2,
 .service-card h2,
 .featured-copy h2,
-.project-sheet h2,
 .process-content h2,
 .experience-item h2,
 .skill-panel h2,
@@ -597,8 +586,6 @@ h3 {
 .skill-panel,
 .archive-preview,
 .print-system-panel,
-.project-sheet,
-.archive-lightbox-panel,
 .seo-box,
 .process-panel,
 .skill-stage,
@@ -966,7 +953,7 @@ h3 {
   filter: grayscale(1);
   background-size: cover;
   background-position: center;
-  cursor: zoom-in;
+  cursor: default;
   transition: transform .42s ease;
 }
 
@@ -1442,167 +1429,7 @@ h3 {
 #process::after { color: rgba(255,212,0,.13); }
 #contact::after { display: none; }
 
-/* DIALOGS + OVERLAYS — magazine spreads, lightboxes, close buttons, and the dramatic “let me show you more” moments. */
-.project-reader,
-.archive-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 220;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.project-reader.is-open,
-.archive-lightbox.is-open {
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.project-reader::before,
-.archive-lightbox::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(5,5,5,.8);
-  opacity: 0;
-  transition: opacity .24s;
-}
-
-.project-reader.is-open::before,
-.archive-lightbox.is-open::before { opacity: 1; }
-
-.project-reader-inner {
-  position: absolute;
-  inset: 7vh 5vw;
-  perspective: 1400px;
-}
-
-.project-sheet {
-  display: none;
-  position: absolute;
-  inset: 0;
-  padding: clamp(28px, 5vw, 64px);
-  overflow: auto;
-  box-shadow: 10px 10px 0 var(--cyan), 20px 20px 0 var(--magenta), 30px 30px 0 var(--yellow);
-}
-
-.project-reader.is-open .project-sheet.is-active {
-  display: block;
-  animation: flyInSheet .52s var(--ease-editorial);
-}
-
-.project-sheet h2 {
-  font-size: clamp(42px, 7vw, 88px);
-  line-height: .88;
-  margin: 0 0 24px;
-}
-
-.reader-lede {
-  max-width: 820px;
-  font-size: clamp(19px, 2vw, 24px);
-  line-height: 1.55;
-}
-
-.reader-columns,
-.project-proof-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
-  margin-top: 42px;
-  border-top: var(--rule);
-  padding-top: 30px;
-}
-
-.project-proof-strip {
-  margin: 28px 0 34px;
-  border: 0;
-  padding: 0;
-}
-
-.project-proof-strip span {
-  border: var(--rule);
-  background: var(--white);
-  padding: 13px;
-  font: 900 11px/1.3 var(--sans);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-}
-
-.project-reader-close,
-.project-reader-nav,
-.archive-lightbox-close,
-.archive-lightbox-nav {
-  position: fixed;
-  z-index: 230;
-  border: 1px solid rgba(255,255,255,.5);
-  color: var(--white);
-  background: transparent;
-  cursor: pointer;
-}
-
-.project-reader-close,
-.archive-lightbox-close {
-  top: 22px;
-  right: 24px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-size: 32px;
-}
-
-.project-reader-nav,
-.archive-lightbox-nav {
-  top: 50%;
-  width: 54px;
-  height: 72px;
-  transform: translateY(-50%);
-  font-size: 54px;
-}
-
-.project-reader-prev,
-.archive-lightbox-prev { left: 22px; }
-.project-reader-next,
-.archive-lightbox-next { right: 22px; }
-
-.archive-lightbox {
-  z-index: 260;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 84px;
-}
-
-.archive-lightbox.is-open { display: flex; }
-
-.archive-lightbox-panel {
-  width: min(1080px, 100%);
-  min-height: 580px;
-  display: grid;
-  grid-template-columns: 1.35fr .75fr;
-  box-shadow: 8px 8px 0 var(--cyan), 16px 16px 0 var(--magenta), 24px 24px 0 var(--yellow);
-  overflow: hidden;
-  z-index: 2;
-}
-
-.archive-lightbox-image {
-  min-height: 580px;
-  filter: grayscale(1);
-  background-size: cover;
-  background-position: center;
-}
-
-.archive-lightbox-copy {
-  padding: 42px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.archive-lightbox-title {
-  font: 950 clamp(34px, 5vw, 64px)/.92 var(--sans);
-  letter-spacing: -.065em;
-  margin: 0 0 22px;
-}
+/* CURRENT OVERLAYS are styled in the archive issue section below. */
 
 /* 10 MOTION */
 @keyframes resumeOrbit { to { transform: rotate(1turn); } }
@@ -1619,10 +1446,6 @@ h3 {
   from { opacity: 0; transform: translateY(12px) rotate(.4deg); }
   to { opacity: 1; transform: none; }
 }
-@keyframes flyInSheet {
-  from { opacity: 0; transform: translate3d(12vw, 8vh, -260px) rotateX(12deg) rotateZ(4deg); }
-  to { opacity: 1; transform: none; }
-}
 
 /* 11 RESPONSIVE — the layout stops pretending every reader has a giant monitor and adapts for real devices. */
 /* RESPONSIVE RULES: adjustments for smaller screens and touch-first browsing. */
@@ -1637,17 +1460,11 @@ h3 {
   .skills-browser,
   .archive-browser,
   .archive-preview,
-  .reader-columns,
   .process-track,
   .education-awards-grid,
   .footer-grid,
   .split-intro,
   .print-system-panel,
-  .archive-lightbox-panel,
-  .project-proof-strip {
-    grid-template-columns: 1fr;
-  }
-
   .hero-grid { grid-template-columns: 1fr; }
   .hero-side { align-items: flex-start; }
 
@@ -1661,8 +1478,7 @@ h3 {
   .skill-tabs,
   .archive-list { position: static; }
 
-  .archive-preview-image,
-  .archive-lightbox-image {
+  .archive-preview-image {
     min-height: 320px;
     border-right: 0;
     border-bottom: var(--rule);
@@ -1686,7 +1502,6 @@ h3 {
     padding-bottom: 20px;
   }
 
-  .nav-toc-indicator { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -1728,21 +1543,6 @@ h3 {
     gap: 14px;
   }
 
-  .project-reader-nav,
-  .archive-lightbox-nav {
-    top: auto;
-    bottom: 18px;
-    transform: none;
-    height: 48px;
-    width: 48px;
-    font-size: 38px;
-  }
-
-  .project-reader-prev,
-  .archive-lightbox-prev { left: 24px; }
-
-  .project-reader-next,
-  .archive-lightbox-next { right: 84px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1773,18 +1573,9 @@ h3 {
    Version 2.5 Production Polish
    ------------------------------------------------------------ */
 
-/* Browser rendering performance: large sections can wait until near viewport. */
-main > section {
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
-}
-
-/* Keep hero/header immediately rendered. */
-#top,
-.hero {
-  content-visibility: visible;
-  contain-intrinsic-size: auto;
-}
+/* Anchor reliability: navigable chapters remain in normal document layout.
+   Deferred rendering was removed because estimated off-screen heights can
+   make long native anchor jumps land before the page finishes laying out. */
 
 /* Touch-device refinement: remove custom cursor and tilt assumptions. */
 @media (hover: none), (pointer: coarse) {
@@ -1802,12 +1593,6 @@ main > section {
   .award-card-grid article {
     transform: none !important;
   }
-}
-
-/* Accessible inert/hidden dialog state helper. */
-[aria-hidden="true"].project-reader,
-[aria-hidden="true"].archive-lightbox {
-  visibility: hidden;
 }
 
 /* Stronger keyboard focus for tab-like controls. */
@@ -1833,8 +1618,6 @@ main > section {
   .cursor-dot,
   .print-system-bg,
   .paper-spotlight,
-  .project-reader,
-  .archive-lightbox,
   .top-resume-download {
     display: none !important;
   }
@@ -1846,8 +1629,6 @@ main > section {
   }
 
   main > section {
-    content-visibility: visible;
-    contain-intrinsic-size: auto;
     break-inside: avoid;
   }
 
@@ -1874,40 +1655,6 @@ main > section {
     12px 12px 0 var(--magenta),
     16px 16px 0 var(--cyan);
 }
-
-/* Make sure the nav underline has room to reach Contact cleanly. */
-.nav {
-  --toc-left: 0px;
-  --toc-width: 0px;
-  --toc-opacity: 0;
-}
-
-.nav-toc-indicator {
-  pointer-events: none;
-}
-
-
-/* v2.7: nav slider contact fix */
-.nav {
-  position: relative;
-}
-
-.nav-toc-indicator {
-  display: block !important;
-  position: absolute;
-  left: var(--toc-left, 0px) !important;
-  bottom: -9px;
-  width: var(--toc-width, 0px) !important;
-  height: 2px;
-  background: var(--magenta);
-  opacity: var(--toc-opacity, 0);
-  pointer-events: none;
-  transition:
-    left 260ms cubic-bezier(.19, 1, .22, 1),
-    width 260ms cubic-bezier(.19, 1, .22, 1),
-    opacity 180ms ease;
-}
-
 
 /* v2.8: mobile/tablet content hierarchy refinement */
 
@@ -2200,37 +1947,7 @@ main > section {
     font-size: clamp(24px, 8vw, 34px);
   }
 
-  /* Dialogs: keep usable on mobile. */
-  .project-reader-inner {
-    inset: 7vh 4vw 12vh;
-  }
-
-  .project-sheet {
-    padding: 24px;
-  }
-
-  .project-sheet h2 {
-    font-size: clamp(32px, 11vw, 56px);
-  }
-
-  .reader-columns,
-  .project-proof-strip {
-    gap: 18px;
-  }
-
-  .archive-lightbox {
-    padding: 72px 18px 84px;
-  }
-
-  .archive-lightbox-copy {
-    padding: 24px;
-  }
-
-  .archive-lightbox-title {
-    font-size: clamp(30px, 10vw, 46px);
-  }
-
-  /* Hide some purely decorative density on small screens. */
+/* Hide some purely decorative density on small screens. */
   .drift-mark,
   .print-line {
     opacity: .35;
@@ -2705,33 +2422,7 @@ section[tabindex="-1"]:focus-visible {
 
 
 
-/* v5.2.0 heading-based anchor navigation */
-:root {
-  --heading-anchor-offset: 132px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--heading-anchor-offset);
-}
-
-#top,
-#main-content,
-#services-title,
-#featured-title,
-#archive-title,
-#process-title,
-#experience-title,
-#skills-title,
-#colophon-title {
-  scroll-margin-top: var(--heading-anchor-offset);
-}
-
-@media (max-width: 820px) {
-  :root {
-    --heading-anchor-offset: 112px;
-  }
-}
+/* Anchor movement is calculated by the unified navigation controller in script.js. */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -2769,9 +2460,6 @@ body.archive-issue-open{overflow:hidden}
 @media(max-width:840px){.archive-issue-grid{grid-template-columns:1fr}.archive-issue-sidebar{border-left:0;border-top:1px solid rgba(17,17,17,.22);padding-left:0;padding-top:22px}.archive-ad-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-issue-footer{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.archive-ad-grid{grid-template-columns:1fr}}
 
-
-/* EDITING NOTE: The .project-reader styles below remain for backup only.
-   Current Feature cards open #archive-issue-overlay instead of the old project-reader pop-up. */
 
 /* =======================================================
 ARCHIVE POLISH PASS — DEMO IMAGE GALLERIES
@@ -3213,3 +2901,409 @@ Editing:
   display: block;
   background: #fff;
 }
+
+/* ==========================================================
+   REFERENCE LIBRARY / DOWNLOADABLE RESOURCES
+
+   The navigation keeps the concise label “Resources,” while this
+   section reads like the reference library of the publication.
+   Cards marked .is-coming-soon intentionally have no link until a
+   cleaned, documented, rights-safe file is placed in /assets/resources.
+   ========================================================== */
+.resource-intro {
+  display: grid;
+  grid-template-columns: minmax(180px, .55fr) minmax(0, 1.45fr);
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.resource-intro h2 {
+  font: 950 clamp(42px, 6vw, 76px)/.9 var(--sans);
+  letter-spacing: -.065em;
+  margin: 0 0 20px;
+}
+
+.resource-intro > p:last-child {
+  grid-column: 2;
+  margin: -10px 0 0;
+  max-width: 760px;
+}
+
+.resource-library {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.resource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 28px;
+  border: var(--rule);
+  background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,253,248,.92));
+  box-shadow: 7px 7px 0 rgba(0,0,0,.075);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.resource-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--black), 11px 11px 0 var(--magenta);
+}
+
+.resource-card-featured::before {
+  content: "AVAILABLE";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: var(--magenta-contrast);
+  font: 900 9px/1 var(--sans);
+  letter-spacing: .14em;
+}
+
+.resource-number {
+  margin: 0 0 30px;
+  color: var(--magenta-contrast);
+  font: 900 10px/1 var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.resource-card h2 {
+  margin: 0 0 18px;
+  font: 900 clamp(27px, 3vw, 39px)/.97 var(--sans);
+  letter-spacing: -.055em;
+}
+
+.resource-card > p:not(.resource-number) {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.resource-card ul {
+  margin: 0 0 26px;
+  padding: 16px 0 0 18px;
+  border-top: 1px solid rgba(0,0,0,.15);
+  font: 800 11px/1.55 var(--sans);
+  letter-spacing: .035em;
+}
+
+.resource-card-action {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 12px 14px;
+  border: var(--rule);
+  background: var(--black);
+  color: var(--white);
+  font: 900 10px/1 var(--sans);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.resource-card-action.is-coming-soon {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--line);
+  cursor: default;
+}
+
+.resource-library-note {
+  margin: 30px 0 0;
+  padding-left: 18px;
+  border-left: 4px solid var(--magenta);
+}
+
+.resource-library-note a {
+  border-bottom: 1px solid currentColor;
+  font-weight: 700;
+}
+
+/* A subtle contents-divider separates the primary portfolio work
+   (Practice, Features, Archive) from supporting chapters. */
+.nav a:nth-child(3) {
+  margin-right: 12px;
+}
+
+.nav a:nth-child(4) {
+  padding-left: 18px;
+  border-left: 1px solid rgba(0,0,0,.25);
+}
+
+@media (max-width: 980px) {
+  .resource-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resource-intro { grid-template-columns: 1fr; }
+  .resource-intro > p:last-child { grid-column: auto; margin-top: 0; }
+}
+
+@media (max-width: 640px) {
+  .resource-library { grid-template-columns: 1fr; }
+  .resource-card { min-height: auto; }
+  .nav a:nth-child(3) { margin-right: 0; }
+  .nav a:nth-child(4) { padding-left: 0; border-left: 0; }
+}
+
+
+/* ==========================================================
+   EDUCATION CREDENTIALS · TRANSCRIPT-VERIFIED HIGHLIGHTS
+
+   These small refinements turn the degree listings into a concise
+   explanation of Adam's formal foundation without reproducing an
+   entire transcript or implying coursework that was not documented.
+   ========================================================== */
+.education-foundation {
+  grid-column: 1 / -1;
+  max-width: 820px;
+  margin: 0 0 6px;
+  padding-left: 18px;
+  border-left: 5px solid var(--magenta);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.education-highlights {
+  margin-top: 18px;
+}
+
+.education-highlights li::marker {
+  color: var(--magenta);
+}
+
+@media (max-width: 640px) {
+  .education-foundation {
+    font-size: 16.5px;
+  }
+}
+
+/* ==========================================================
+   EDUCATION HIGHLIGHTS · FORMAL FOUNDATION AT A GLANCE
+
+   This supporting panel keeps the degree cards concise while giving
+   recruiters a quick, transcript-grounded view of the disciplines
+   behind Adam's editorial, web, and production work.
+   ========================================================== */
+.education-highlights-panel {
+  grid-column: 1 / -1;
+  margin-top: 22px;
+  padding: clamp(26px, 4vw, 42px);
+  border: var(--rule);
+  background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,253,248,.92));
+  box-shadow: 8px 8px 0 var(--black), 12px 12px 0 var(--magenta);
+}
+
+.education-highlights-panel h4 {
+  margin: 0 0 14px;
+  font: 950 clamp(30px, 4vw, 48px)/.95 var(--sans);
+  letter-spacing: -.055em;
+}
+
+.education-highlights-intro {
+  max-width: 820px;
+  margin: 0 0 26px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.education-highlights-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.education-highlights-grid li {
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,.22);
+  background: rgba(255,255,255,.72);
+}
+
+.education-highlights-grid strong,
+.education-highlights-grid span {
+  display: block;
+}
+
+.education-highlights-grid strong {
+  margin-bottom: 8px;
+  font: 900 13px/1.2 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .055em;
+}
+
+.education-highlights-grid span {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .education-highlights-grid { grid-template-columns: 1fr; }
+  .education-highlights-intro { font-size: 16.5px; }
+}
+
+/* ==========================================================
+   EDUCATION SPREAD · SPACING + FULL-WIDTH HIGHLIGHTS
+
+   The opening sentence now reads as a deliberate editorial intro,
+   rather than crowding the section heading. The coursework panel
+   spans both columns beneath Education and Awards so it closes the
+   spread as a unified foundation statement.
+   ========================================================== */
+.education-awards-grid > div > h3 {
+  margin-bottom: 22px;
+}
+
+.education-foundation {
+  margin-top: 0;
+  margin-bottom: 28px;
+  max-width: 34rem;
+}
+
+.education-highlights-panel {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 18px;
+  padding: clamp(34px, 5vw, 58px);
+}
+
+.education-highlights-panel .education-highlights-intro {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.education-highlights-panel .education-highlights-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.education-highlights-panel .education-highlights-grid li {
+  min-height: 100%;
+  padding: 22px;
+}
+
+@media (max-width: 980px) {
+  .education-highlights-panel .education-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .education-awards-grid > div > h3 {
+    margin-bottom: 18px;
+  }
+
+  .education-foundation {
+    margin-bottom: 24px;
+    max-width: none;
+  }
+
+  .education-highlights-panel {
+    padding: 26px 22px;
+  }
+
+  .education-highlights-panel .education-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   CHAPTER EYEBROWS + RUNNING THOUGHTS
+
+   Each numbered chapter opens with a small magenta editorial cue
+   and a short supporting thought. Together they act like a magazine
+   running head: the eyebrow introduces the chapter, the numbered
+   heading names it, and the sentence at right adds voice and context.
+   ========================================================== */
+
+.section-title-copy {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.chapter-eyebrow,
+.chapter-running-thought {
+  margin: 0;
+  color: var(--magenta-contrast);
+  font: 900 11px/1.25 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .11em;
+}
+
+.chapter-running-thought {
+  max-width: 440px;
+  text-align: right;
+  align-self: end;
+  padding-bottom: 2px;
+}
+
+/* The chapter heading owns the stronger visual weight. */
+.section-title-copy h3 {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .section-title-row {
+    align-items: start;
+  }
+
+  .chapter-running-thought {
+    max-width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+
+/* ==========================================================
+   SIMPLE, RELIABLE TABLE-OF-CONTENTS NAVIGATION
+
+   Native anchor links handle movement through the page. The
+   magenta rule appears beneath hovered, keyboard-focused, or
+   currently visible chapter links. One IntersectionObserver
+   updates the active state without controlling page movement.
+   ========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+main > section[id] {
+  scroll-margin-top: 84px;
+}
+
+.nav a {
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 2px;
+  background: var(--magenta);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms ease;
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after,
+.nav a.is-active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 640px) {
+  .nav a::after {
+    bottom: -5px;
+    width: 44px;
+    right: auto;
+  }
+}
+
