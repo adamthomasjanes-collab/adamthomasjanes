@@ -1,4 +1,30 @@
-## v5.8.0 Audit Result
+# Code Audit — v5.27.1
+
+This maintenance pass focused on consistency rather than new visitor-facing behavior.
+
+## Changes completed
+
+- Documented the stylesheet architecture and marked major component regions.
+- Centralized repeated interaction timings in `TIMING`.
+- Added `scheduleAfterEvent()` for the few interactions that intentionally wait until the current event completes.
+- Added a technical-debt register so deferred cleanup is tracked rather than forgotten or mixed into feature releases.
+- Synchronized package and cache metadata.
+
+## Maintenance standard
+
+Use existing helpers, component classes, archive schemas, and dialog systems before introducing another implementation pattern. Broad consolidation belongs in a dedicated maintenance release with visual regression testing.
+
+---
+
+# Code Audit — v5.11.8
+
+The v5.11.8 audit confirmed all four Feature-card image paths resolve to WebP assets, one main landmark, one H1, no duplicate IDs, valid internal anchors, JavaScript syntax, balanced CSS braces, explicit accessible counter values, restored counter-card layout, and simplified nested-viewer state. Camp Perry and North Coast Business Journal use curated authentic galleries. Remaining work is Beacon and NCPN population plus manual browser and assistive-technology testing.
+
+Previous summary: The v5.11.3 audit confirmed one main landmark, one H1, no duplicate IDs, valid internal anchors, JavaScript syntax, balanced CSS braces, explicit accessible counter values, restored counter-card layout, and simplified nested-viewer state. Static image dimensions and WebP delivery are present. Remaining work is manual browser and assistive-technology testing.
+
+---
+
+## v5.9.0 Audit Result
 
 - JavaScript syntax: passed.
 - Duplicate HTML IDs: none found.

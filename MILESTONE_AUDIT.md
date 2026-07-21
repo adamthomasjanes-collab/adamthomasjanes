@@ -1,4 +1,10 @@
-# Milestone Audit — v5.8.0
+# Milestone Audit — v5.11.8
+
+This release marks the template framework as structurally complete. The audit covered editorial repetition, semantic landmarks, WAI-ARIA tabs, modal focus behavior, mobile navigation, image delivery, metadata, internal anchors, duplicate IDs, JavaScript syntax, and CSS structure. See `ACCESSIBILITY_AUDIT.md`, `PERFORMANCE_AUDIT.md`, and `PRODUCTION_STATUS.md` for the remaining pre-launch checklist.
+
+---
+
+# Milestone Audit — v5.9.0
 
 ## Focus and accessibility pass
 
@@ -14,6 +20,9 @@
 - Reordered the portfolio around evidence, practice, method, career/education, resources, and production notes.
 - Reframed the professional narrative around editorial judgment, web fluency, and production discipline.
 - Rewrote feature results around audience and operational value without adding unsupported metrics.
+- Replaced abstract Feature imagery with optimized, project-authentic portfolio assets.
+- Widened the desktop canvas and tightened editorial pacing without changing the mobile hierarchy.
+- Distributed the two editorial margin notes across the early and late chapters as intentional bookends.
 
 ## Corrected
 
@@ -33,5 +42,5 @@
 ## Deferred intentionally
 
 - Full heading-outline refactor, because it should be performed as a dedicated accessibility pass with visual regression testing.
-- Removal of source PNG files; they remain useful production masters.
+- Redundant Camp Perry PNG production masters are excluded from the deployable ZIP while remaining preserved in Adam's creative archive.
 - Completion of inactive Reference Library downloads.

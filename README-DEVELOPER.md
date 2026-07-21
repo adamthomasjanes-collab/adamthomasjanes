@@ -41,8 +41,8 @@ Each object controls the preview panel before the overlay opens:
   type: "Advertising / Print Campaigns",
   desc: "Preview description...",
   points: ["Point one", "Point two", "Point three"],
-  thumb: "thumb-ads",
-  issueKey: "archive-advertising"
+  thumb: "thumb-campaigns",
+  issueKey: "archive-campaigns"
 }
 ```
 
@@ -75,9 +75,9 @@ For quick copy edits, start in `script.js`. For structure changes, use `index.ht
 Archive overlay gallery cards are generated in `script.js` inside `setIssueContent()`.
 Each item uses this structure:
 
-- `.archive-ad-thumb` — clickable card
-- `.archive-ad-art` — square image area
-- `.archive-ad-caption` — number and title below the image
+- `.archive-media-card` — clickable card
+- `.archive-media-art` — square image area
+- `.archive-media-caption` — number and title below the image
 
 The square image area uses `object-fit: contain`, so the full ad/design stays visible. Any unused space is black on purpose. This makes mixed-size work feel more like a gallery contact sheet.
 

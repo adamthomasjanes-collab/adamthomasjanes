@@ -3,26 +3,26 @@
 This portfolio is intentionally organized as Issue No. 01: a digital publication rather than a conventional portfolio menu.
 
 ## Navigation / Table of Contents
-01 Practice
-02 Features
+01 Features
+02 Practice
 03 Archive
-04 Resources
-05 Method
-06 Timeline
+04 Method
+05 Timeline
+06 Resources
 07 Notes
 08 Colophon
 
-The first three entries form the primary portfolio story. A subtle divider before Resources separates the featured work from supporting chapters.
+The first three entries form the primary portfolio story. A subtle divider before Method separates portfolio evidence from supporting chapters.
 
 ## Publication Sequence
-01 Communications Practice
-02 Feature Stories
+01 Feature Stories
+02 Communications Practice
 03 Selected Archive
-04 Reference Library
-05 Method
-06 Career Timeline
-07 Production Notes
+04 Method
+05 Career Timeline
 Education & Recognition / Awards & Publications — supporting spread, unnumbered
+06 Reference Library
+07 Production Notes
 08 Colophon
 
 ## Naming Rules

@@ -25,7 +25,7 @@ Communication before decoration.
 Organize the information. Respect the reader. Design with purpose.
 
 /* CURRENT RELEASE */
-Release: v5.4.0
+Release: v5.11.3
 Focus: Milestone audit, archive numbering cleanup, resource truthfulness, and documentation synchronization.
 
 /* MAINTENANCE */

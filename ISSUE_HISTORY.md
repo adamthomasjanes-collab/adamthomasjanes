@@ -1,3 +1,11 @@
+## v5.11.3 — Feature Cover Asset Pass
+
+The four art-directed Feature covers were connected as optimized WebP delivery assets and renamed with durable, descriptive filenames. The change improved maintainability, sharing context, and image-search clarity without altering the visual composition.
+
+## v5.11.0 — Editorial Prepress
+
+The template entered prepress: visitor-facing copy was tightened, redundant opening proof tags were removed, custom widgets received stronger ARIA and focus behavior, mobile navigation was hardened, remaining large gallery images gained optimized WebP delivery, and formal accessibility/performance/production-status documents were added.
+
 ## v5.6.5 — Milestone Audit Cleanup
 
 Editorial and performance cleanup after the utility-tab milestone. Archive language was finalized, the heaviest gallery assets were optimized for delivery, and release documentation was synchronized.
@@ -31,6 +39,7 @@ A publication-style production log for **Issue No. 01 · Summer 2026**. This com
 - Built a reusable feature cycle for Camp Perry, North Coast Business Journal, The Beacon, and NCPN Parent Magazine.
 - Replaced the legacy preview lightbox with the current **Open → issue overlay → gallery viewer** system.
 - Added full-size images plus separate square thumbnails.
+- Added the portfolio website itself as a living archive case study, documenting the editorial concept, AI-assisted implementation, accessibility and performance standards, and future milestones.
 
 ### Reference Library
 - Expanded Resources into a Reference Library for practical downloadable tools.

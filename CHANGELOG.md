@@ -1,3 +1,164 @@
+# v6.1.0 — ATJ Identity System and Case Study
+
+- Replaced the website header mark and favicon source with the new optimized ATJ primary monogram.
+- Added a fifth featured story, “Building the ATJ Identity,” documenting vector construction, typography studies, negative-space refinement, discarded concepts, and the responsive logo system.
+- Added the new case study to the magazine-style feature overlay and feature-to-feature navigation.
+- Added optimized SVG masters, transparent PNG exports, an expanded signature lockup, favicon output, and identity usage notes under `assets/brand/`.
+- Added a curated process gallery showing the evolution from the first custom vector direction to the final primary mark and signature lockup.
+- Updated the feature introduction from four to five assignments and synchronized the package release to v6.1.0.
+
+## v6.0.0 — ATJ identity release
+
+- Introduced a refined geometric ATJ monogram with a signature magenta crossbar through the A.
+- Rebalanced the T and J proportions for a more unified, compact website mark.
+- Added a coordinated square favicon for browser tabs and saved shortcuts.
+- Updated header sizing and responsive behavior for the new logo.
+- Added a restrained logo interaction that respects reduced-motion preferences.
+- Renamed the downloadable Newspaper Starter Template to Weekly Newspaper Production Kit and clarified its two-page editorial scope.
+- Synchronized the production package version to v6.0.0.
+
+## v5.28.0 — Archive System Preview Pairings
+
+- Replaced the single-image Archive previews for Parade of Homes, Best of the Best, and Portfolio Website with paired stacked images that better communicate each project as a system.
+- Paired the Parade of Homes cover with its route map, the Best of the Best seal with a publication spread, and the portfolio homepage with its Archive interface.
+- Added WebP to the production-ready brand asset deliverables and clarified that the exported assets support both print and digital use.
+- Reused the existing Archive preview-page structure rather than introducing a second rendering method.
+- Refreshed script and stylesheet cache versions.
+
+## v5.27.1 — Code Consistency Maintenance
+
+- Added a stylesheet architecture map and major component landmarks without changing the rendered design.
+- Centralized clipboard timeout and status-reset timings in one shared JavaScript timing object.
+- Replaced repeated zero-delay event timers with one named scheduling helper.
+- Added `TECHNICAL_DEBT.md` to separate non-urgent cleanup from feature development and establish a five-to-ten-release review cadence.
+- Updated package metadata and refreshed stylesheet and script cache versions.
+- Re-ran syntax, reference, and structural checks after the maintenance pass.
+
+## v5.27.0 — Career Notes
+
+- Expanded Section 05 from a résumé-style timeline into an editorial career narrative while preserving the complete professional record.
+- Added six career notes covering Adam’s transition to sole designer, the full Beacon redesign, communication philosophy, client discovery, production systems, curiosity, and AI-assisted practice.
+- Documented the 2015 negotiation into a salaried sole-designer role without publishing compensation.
+- Added A/B testing, call-to-action comparison, content optimization, iterative design, and user-centered refinement to Backstage and Tools & Methods.
+- Added a closing statement connecting two decades of changing tools to the consistent goal of helping audiences understand.
+
+# v5.26.0 — Editorial Continuity + Cover Line Edit
+
+- Audited v5.25.1 against the later-night `script(5).js`; the files were byte-for-byte identical, confirming that the expanded feature and archive copy had already been retained.
+- Removed the threefold repetition of “clear” from the cover/opening sequence.
+- Reframed the cover around communication, craft, systems, complexity, and understanding.
+- Varied repeated wording in the Editor’s Letter, Camp Perry summary, advertising, and responsive-email copy.
+- Restored broader hiring-language from earlier drafts: brochures, sell sheets, rack cards, sales collateral, postcards, Google Analytics, and professional real-estate photography.
+- Added `EDITORIAL_CONTINUITY_REPORT.md` as a permanent record of what was checked and preserved.
+
+# Changelog
+
+## v5.25.1 — CMYK Orbit Visibility
+
+- Increased the CMYK orbit dots slightly and added a restrained keyline for cleaner separation from the paper background.
+- Gave the yellow dot a paper halo and black outer ring so it remains clearly visible without changing the established CMYK palette.
+- Refreshed the stylesheet cache version.
+
+## v5.25.0 — Publication Architecture Rewrite
+
+- Removed six accumulated explanatory editorial sections so the site no longer repeatedly announces its publication concept.
+- Rewrote the Editor’s Letter as the opening essay for Issue No. 01.
+- Reframed the four featured projects as concise editorial stories: the story, the editorial decision, and what changed.
+- Renamed the site architecture using restrained publication language: Feature Stories, Departments, Back Issues, Backstage, The Masthead, Reference Library, Production Desk, Colophon, and The Next Issue.
+- Rewrote section introductions and the closing contact area so the editorial framing comes from sequencing and voice rather than added manifesto copy.
+- Preserved existing anchors, interactions, accessibility structure, archive overlays, and responsive layout.
+
+
+## v5.17.3
+- Expanded Website case study with editorial philosophy, design process, communication goals, and client experience.
+
+## v5.16.1 — Ghost CMYK Scroll Wave
+
+- Replaced the fixed proof-frame graphic and long magenta sweep with four translucent CMYK dots.
+- Tied the dots to scroll position in a staggered wave so the ambient motion remains subtle and non-obstructive.
+- Added a static reduced-motion presentation and a smaller mobile composition.
+
+## v5.16.0 — Front-End and Production-Layer Audit
+
+- Corrected service-card semantics so expandable button behavior exists only at the mobile breakpoint.
+- Added a no-backend contact path with a standard email link, copy-email control, live status feedback, and clickable telephone number.
+- Added Open Graph and Twitter preview imagery and refreshed sitemap and robots review dates.
+- Strengthened Netlify security headers and replaced year-long immutable asset caching with a shorter revalidation policy suitable for same-name portfolio updates.
+- Added incremental archive-gallery loading in batches of eight with keyboard focus preservation.
+- Replaced three print-weight full-issue PDFs with complete screen-optimized web editions, reducing their combined size from 56.6 MB to 27.3 MB.
+- Added a reusable web-PDF production tool and visually verified representative cover, interior, advertisement, and final pages.
+- Updated service, freelance-experience, and contact positioning to include custom HTML, CSS, JavaScript, and AI-assisted prompt-engineering work.
+- Removed unused font preconnection and repeated CSS declarations.
+
+## v5.12.0 — North Coast Parent Editorial Curation
+
+- Re-curated the North Coast Parent feature around the strongest portfolio work rather than equal representation of every issue.
+- Renamed the project consistently to North Coast Parent Magazine across structured data, the feature card, and the project dialog.
+- Preserved original landscape center spreads as standalone artwork and kept those pages out of every other category.
+- Refined project copy to emphasize cover direction, center-spread concepts, editorial systems, information design, sponsor integration, and production.
+- Removed superseded North Coast Parent gallery assets, manifests, and installation notes from earlier iterations.
+- Confirmed all remaining gallery assets are actively referenced by the production site.
+
+## v5.11.7 — North Coast Business Journal gallery sync
+
+- Replaced the six placeholder North Coast Business Journal cards with authentic project assets.
+- Added nested carousels for Publication Identity, Editorial Design, Featured, Marketing Integration, and Information Systems.
+- Added a Published Magazine card that opens the complete PDF in a new tab.
+- Added descriptive alt text and captions for the new imagery.
+- Extended the gallery renderer to support linked PDF items alongside image carousels.
+
+# v5.11.3 — SEO-Named WebP Feature Covers
+
+- Connected the four new 1600×900 WebP artworks to the visible Feature cards.
+- Renamed Feature artwork with descriptive lowercase, hyphenated filenames that identify both project and subject without keyword stuffing.
+- Updated Feature image alternative text to describe the visible work and its editorial context.
+- Updated the remaining CSS fallback reference to the renamed Business Journal WebP asset.
+- Synchronized release, performance, production-status, milestone, and code-audit documentation.
+
+## v5.11.0 — Editorial Prepress, Accessibility & Performance
+
+- Completed a full visitor-facing editorial pass and removed the redundant opening proof-tag row so evidence is presented once through the metric grid.
+- Corrected the opening metric label to “Years in Communications.”
+- Renamed visitor-facing archive language from “project sample” to “project image” and refined the Awards archive copy.
+- Renamed internal archive sample constants and helpers to production-neutral names.
+- Improved ARIA tabs with explicit orientation, stable IDs, `aria-controls`, `aria-labelledby`, roving tabindex, and hidden inactive panels.
+- Strengthened the shared project dialog and nested image viewer with scoped focus trapping, focus return, background inertness, dialog descriptions, and single-image navigation handling.
+- Removed the nested second `<main>` landmark from the overlay.
+- Improved the mobile navigation with Escape-to-close, click-away dismissal, and desktop breakpoint reset.
+- Added intrinsic dimensions to static images to reduce layout shift.
+- Added WebP delivery assets for the two remaining large Camp Perry gallery images while preserving original JPEG masters.
+- Added forced-colors focus support and production status/accessibility audit documentation.
+
+## v5.9.0 — Feature Proof & Deployment Cleanup
+
+- Replaced full-page Feature backgrounds with dedicated 16:9 art-directed thumbnails.
+- Switched Feature artwork to semantic, lazy-loaded `<img>` elements with descriptive alternative text.
+- Present Feature work in color, with restrained saturation and contrast refinement on hover or keyboard focus.
+- Corrected the Production Notes decorative selector after the H2-to-H3 accessibility refactor.
+- Made initial bookmarked-chapter positioning immediate by temporarily disabling smooth scrolling during placement.
+- Shifted desktop margin notes left to create breathing room beside the fixed utility rail.
+- Excluded the redundant 7.86 MB Camp Perry brochure PNG and 5.44 MB website PNG from the deployable package; originals remain in Adam's creative archive.
+- Removed superseded full-page Feature JPEGs from the deployable package.
+
+## v5.8.2 — Editorial Margin-Note Rhythm
+
+- Kept the two vertical margin notes as a restrained editorial motif.
+- Retained the reader-focused note near the early portfolio chapters.
+- Moved “Production is where good design proves itself” from the Method/Career transition to the opening of Chapter 07, Production Notes.
+- Increased the distance between the notes so they function as intentional editorial bookends.
+
+## v5.8.1 — Authentic Feature Imagery & Pacing
+
+- Replaced all four abstract Feature-card placeholders with authentic project imagery.
+- Added optimized North Coast Business Journal, Beacon, and North Coast Parent cover images from Adam's creative archive.
+- Reused the existing Camp Perry website proof image on its Feature card.
+- Added accessible descriptions to the Feature imagery.
+- Widened the maximum desktop composition from 1040px to 1160px.
+- Tightened chapter openings and selected vertical spacing by roughly 10–15 percent.
+- Widened and reduced the Reference Library introduction heading for better line breaks.
+- Reduced Production Notes panel padding.
+- Increased desktop navigation type for stronger functional readability.
+
 ## v5.8.0 — Evidence-First Positioning
 
 - Reframed the core professional narrative around editorial judgment, web fluency, and production discipline.
@@ -724,3 +885,50 @@ Repository workflow reminder: edit locally, commit to GitHub, and let Netlify de
 - Centered the collapsed Resume and LinkedIn labels inside identical fixed tab boxes.
 - Added visible Resume and LinkedIn icons to the collapsed desktop tabs.
 - Preserved the slower magenta-only animated border treatment.
+# v5.11.1 — Accessibility and packaging refinement
+
+- Replaced generic counter labels with explicit visually hidden final values.
+- Simplified nested viewer state by relying on `inert` without temporarily hiding the focused issue spread from the accessibility tree.
+- Removed the global `!important` hidden-state override in favor of targeted, higher-specificity selectors.
+- Excluded two superseded Camp Perry JPEG masters from the deployable project archive; their WebP replacements remain live.
+# v5.11.2 — Counter layout repair
+
+- Scoped counter-card styling to direct grid children so nested accessibility text remains visually hidden and does not inherit card borders, spacing, or layout rules.
+- Preserved the original animated counter presentation and the explicit screen-reader values introduced in v5.11.1.
+## v5.11.8 — Feature-gallery milestone
+
+- Committed the completed Camp Perry and North Coast Business Journal gallery milestone before Beacon production begins.
+- Curated Camp Perry location photography from nine images to six representative views.
+- Corrected the Camp Perry business-card caption and alternative text.
+- Corrected the structured-data portrait URL and retired Brand Identity thumbnail reference found during milestone validation.
+- Synchronized package and production documentation to v5.11.8.
+- Confirmed the complete Business Journal PDF uses Fast Web View, loads only on request, and receives long-lived asset caching.
+- Prepared a clean handoff archive without Git history or unreferenced photography files.
+## v5.17.0 — Portfolio Website Living Case Study
+
+- Added the portfolio website as an eighth archive project and living case study.
+- Documented creative direction, information architecture, content ownership, AI-assisted front-end development, accessibility review, and performance standards without inventing outcomes.
+- Added a five-part visual record covering the homepage, feature system, services, archive, and process/contact experience.
+- Established the archive entry as an evolving record for future launch findings, validation, and meaningful improvements.
+## v5.17.1 — Production polish and delivery audit
+
+- Re-encoded the primary portrait at its rendered 1000 × 1000 dimensions, reducing it from 188 KB to approximately 72 KB without changing the visible layout.
+- Added an explicit preload and eager-loading signal for the above-the-fold portrait while retaining high fetch priority and asynchronous decoding.
+- Refreshed CSS, JavaScript, and portrait cache-busting tokens so deployed visitors receive the audited files immediately.
+- Removed the duplicate robots directive from the custom 404 page and synchronized its stylesheet reference.
+- Re-ran JavaScript syntax, runtime asset-reference, WebP inventory, and delivery-ceiling checks against the complete production asset set.
+- Synchronized the package release number to v5.17.1.
+
+
+
+## v5.18.0
+- Expanded website case study with editorial reflections and communication philosophy.
+
+
+## v5.22.0
+- Added Editor's Margin, Recurring Theme, and Next Issue sections.
+- Continued transition from portfolio to publication.
+
+
+## Editorial Direction
+This edition continues the evolution from a portfolio into an editorial publication. Features are written to explain not only what was created, but why those communication decisions mattered. Recurring editorial reflections, transitions, and thematic storytelling reinforce the idea that every project is part of a larger conversation about clear communication.

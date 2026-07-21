@@ -1,10 +1,13 @@
 {
   "name": "adam-portfolio-site",
-  "version": "5.8.0",
+  "version": "6.1.0",
   "private": false,
-  "description": "Editorial publication-style portfolio with inward-facing animated Resume and LinkedIn edge utilities, envelope email access, native anchor navigation, lightweight chapter tracking, and synchronized milestone documentation.",
+  "description": "Editorial publication-style portfolio with the new ATJ identity system, a complete logo-development case study, accessible project overlays, and optimized production assets.",
   "scripts": {
     "serve": "python -m http.server 8080",
+    "check": "node --check script.js && python tools/asset_health.py",
+    "audit:assets": "python tools/asset_health.py",
+    "optimize:assets": "python tools/asset_health.py --optimize",
     "notes": "No build step required. Open index.html directly or serve locally."
   },
   "repository": {

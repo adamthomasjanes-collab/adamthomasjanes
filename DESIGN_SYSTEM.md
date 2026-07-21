@@ -1,3 +1,11 @@
+## v5.11.0 — Inclusive interaction standards
+
+- Keyboard focus must remain clearly visible, including in forced-colors mode.
+- Tab interfaces use roving tabindex and arrow/Home/End keys.
+- Modal layers use focus containment, Escape dismissal, background inertness, and focus return.
+- Reduced motion removes nonessential transitions and counter animation.
+- Static imagery includes intrinsic dimensions; large gallery delivery files should use optimized modern formats.
+
 ## Portfolio Image Delivery
 
 - Thumbnails remain square, lightweight previews.

@@ -1,6 +1,20 @@
-## v5.8.0 Status
+# Known Issues — v5.11.8
 
-Initial hash navigation receives one post-layout correction so bookmarked chapter links arrive consistently. The unfinished Reference Library is intentionally visible as a pre-launch preview with roadmap states; downloads remain inactive until each package is verified. The visible heading outline is semantic, and the chapter order now leads with evidence. Outstanding work is primarily adding project-specific visuals or verified metrics and completing downloadable resources.
+## Open before launch
+
+- Complete final feature and archive imagery.
+- Complete and rights-check downloadable resources before enabling links.
+- Run NVDA, VoiceOver, keyboard-only, forced-colors, and 200%/400% zoom tests.
+- Re-run performance tests after final images are installed.
+- Verify all quantitative proof points against source records before public launch.
+
+No known blocking JavaScript, anchor-navigation, duplicate-ID, or local-reference errors were found in the static audit.
+
+---
+
+## v5.9.0 Status
+
+Bookmarked chapters now receive immediate positioning plus one post-layout confirmation. The unfinished Reference Library is intentionally visible as a pre-launch preview with roadmap states; downloads remain inactive until each package is verified. The visible heading outline is semantic, the chapter order leads with evidence, and all Feature cards use color, art-directed project thumbnails. Outstanding work is primarily adding verified metrics where available and completing downloadable resources.
 
 ## v5.6.3 review
 

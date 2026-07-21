@@ -1,3 +1,11 @@
+## v5.11.0 — Accessibility and delivery decisions
+
+- Use ARIA only for custom widget semantics; preserve native links and buttons for ordinary navigation and actions.
+- Keep one page-level main landmark. Overlay content uses neutral containers inside a dialog.
+- Treat the nested image viewer as the only active modal layer while open and return focus to its originating thumbnail.
+- Expose stable final labels for animated metrics so assistive technology never receives transient zero values.
+- Keep original image masters but reference optimized WebP files for browser delivery.
+
 ## 2026-07-11 — Optimize delivery assets without discarding source exports
 
 The live gallery now references optimized WebP versions of the two largest Camp Perry images. Original PNG exports remain in the repository as source-quality assets for future editing.

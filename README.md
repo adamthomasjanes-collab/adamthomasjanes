@@ -1,3 +1,15 @@
+
+
+# Editorial Manifesto
+
+This publication is built on a simple belief: communication is an act of service.
+
+Every feature in this issue explores the same question: how can complex information become clear, approachable, and memorable? The projects collected here are not trophies. They are documented conversations between audience, content, and design.
+
+Readers will notice recurring themes—research before aesthetics, structure before style, clarity before decoration. These are not constraints but editorial values that shape every decision.
+
+Welcome to Issue No. 01.
+
 # Adam Thomas Janes Portfolio
 
 ## Editorial Portfolio Website
@@ -16,9 +28,9 @@ The central brand promise is:
 
 ## Current Version
 
-**v5.8.0 — Evidence-First Positioning Release**
+**v5.9.0 — Feature Proof & Deployment Cleanup Release**
 
-This release reorganizes the portfolio around an evidence-first narrative: selected work now precedes the service inventory, career flows into education, resources move later as an authority-building preview, and the copy emphasizes editorial judgment, web fluency, production discipline, repeatable systems, and audience outcomes.
+This release introduces art-directed color Feature thumbnails, semantic lazy-loaded images, faster bookmarked-chapter positioning, corrected Production Notes styling, more margin-note breathing room, and a leaner deployable package without redundant Camp Perry PNG masters.
 
 ---
 
@@ -175,3 +187,13 @@ See `BACKSTAGE_NOTES.md` for a plain-English tour of the project structure, the 
 This version includes editorial-style chapter notes throughout the source. They are written for anyone who opens the repository for the first time and wants to understand the intent behind the portfolio, not just the mechanics of the code.
 
 See [`CHAPTER_NOTES.md`](CHAPTER_NOTES.md) for the full map.
+
+
+This project emphasizes communication strategy, editorial thinking, accessibility, documentation, and maintainable design systems.
+
+
+> **Communication first. Design second.** Every project begins with understanding people, organizing information, and creating experiences that help audiences succeed.
+
+
+## Editorial Direction
+This edition continues the evolution from a portfolio into an editorial publication. Features are written to explain not only what was created, but why those communication decisions mattered. Recurring editorial reflections, transitions, and thematic storytelling reinforce the idea that every project is part of a larger conversation about clear communication.
