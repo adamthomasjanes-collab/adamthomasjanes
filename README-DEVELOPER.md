@@ -87,7 +87,7 @@ The Resources section starts with a Newspaper Production Template card. The butt
 
 `assets/templates/newspaper-indesign-template.zip`
 
-Replace that placeholder ZIP with the final cleaned InDesign package and keep the filename the same. The final template should be generic and should not include employer-owned logos, client content, proprietary images, or fonts that cannot be legally redistributed.
+The downloadable resource now uses the final branded `.indt` template and reference PDF. Future revisions should preserve the public filenames, remove employer-owned or proprietary material, and avoid redistributing restricted fonts.
 
 ---
 

@@ -1,14 +1,9 @@
-ADAM THOMAS JANES — IDENTITY ASSETS
+ATJ Brand Assets — v7.0.5
 
-Primary web format: SVG
-- adam-thomas-janes-primary-mark.svg: standalone ATJ monogram for website headers, favicons, social avatars, watermarks, and compact applications.
-- adam-thomas-janes-signature-lockup.svg: monogram plus supporting name treatment for covers, presentations, proposals, and larger applications.
+Canonical website SVG files:
+- adam-thomas-janes-primary-mark.svg
+- adam-thomas-janes-signature-lockup.svg
+- adam-thomas-janes-wordmark.svg
 
-Raster exports
-- Transparent PNG files are provided for platforms that do not accept SVG.
-
-Production guidance
-- Keep the SVG files as the digital masters.
-- Keep the original Illustrator file as the editable source of truth.
-- Use PDF for professional print exchange.
-- Use the primary monogram without the supporting name at very small sizes.
+These files were replaced with the corrected exports supplied on July 21, 2026.
+To update the identity later, replace these canonical files while preserving their filenames.

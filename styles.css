@@ -2546,7 +2546,7 @@ transform: translate(-3px, -3px);
 }
 
 .resource-card-featured::before {
-content: "COMING FIRST";
+content: "FREE DOWNLOAD";
   position: absolute;
   right: 18px;
   top: 18px;
@@ -4155,3 +4155,854 @@ display: none;
 .featured-media-logo { background: #fff; display: grid; place-items: center; }
 .featured-media-logo img { object-fit: contain; padding: clamp(1.5rem, 4vw, 4rem); }
 @media (max-width: 760px) { .site-logo-mark { width: 72px; } }
+
+/* ============================================================
+   V7.0 — EDITORIAL PERSPECTIVE + IDENTITY SYSTEM
+   ============================================================ */
+.philosophy-intro{max-width:880px;margin:0 0 clamp(2rem,5vw,4.5rem);font-family:Georgia,serif;font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.45}
+.philosophy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-color,#d7d0c5);border:1px solid var(--line-color,#d7d0c5)}
+.philosophy-grid article{background:var(--paper,#f7f2e9);padding:clamp(1.5rem,3.5vw,3rem);min-height:260px}
+.philosophy-grid article>span{display:block;font:700 .75rem/1 Avenir,Arial,sans-serif;letter-spacing:.16em;color:var(--magenta,#e50068);margin-bottom:2.5rem}
+.philosophy-grid h3{font-family:Georgia,serif;font-size:clamp(1.5rem,2.2vw,2.15rem);margin:0 0 1rem}
+.philosophy-grid p{max-width:38ch;margin:0}
+.decision-brief{margin-top:clamp(2rem,5vw,4rem);padding:clamp(1.5rem,4vw,3.5rem);border-top:6px solid #111;border-bottom:1px solid #111;background:rgba(255,255,255,.35)}
+.decision-brief h3{max-width:850px;font-family:Georgia,serif;font-size:clamp(1.8rem,3.5vw,3.4rem);line-height:1.05;margin:.6rem 0 2rem}
+.decision-questions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.decision-questions span{padding:.85rem 1rem;border:1px solid currentColor;font-size:.9rem;font-weight:700}
+.identity-system-strip{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-top:clamp(3rem,7vw,7rem);padding:clamp(2rem,5vw,5rem);border-top:1px solid #111;border-bottom:1px solid #111}
+.identity-system-strip h3{font-family:Georgia,serif;font-size:clamp(2rem,4vw,4rem);line-height:1;margin:.5rem 0 1.25rem}
+.identity-system-strip p{max-width:62ch}
+.identity-assets{display:grid;gap:2rem;align-items:center;justify-items:center}
+.identity-assets img:first-child{width:min(230px,70%)}
+.identity-assets img:last-child{width:min(360px,100%)}
+.hero-subhead{max-width:700px}
+@media(max-width:760px){.philosophy-grid,.decision-questions,.identity-system-strip{grid-template-columns:1fr}.philosophy-grid article{min-height:0}.identity-system-strip{padding-inline:0}}
+
+
+/* ==========================================================================
+   v8.0.0 — Cover-story refinement
+   Consolidated point-release overrides for navigation, cover hierarchy,
+   identity presentation, profile spine, production rules and accessibility.
+   ========================================================================== */
+
+.site-logo-mark{display:block;width:auto;height:46px}
+.header-inner{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:clamp(24px,3vw,52px)}
+.nav{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));align-items:stretch;gap:0;min-width:0}
+.nav a{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-width:0;min-height:44px;padding:0 8px;white-space:nowrap;text-align:center;font-size:clamp(10px,.72vw,12px)}
+.nav-num{flex:0 0 auto}
+@media(max-width:1260px){
+  .nav-toggle{display:inline-flex;justify-self:end;align-items:center;justify-content:center;min-width:76px;min-height:44px}
+  .header-inner{grid-template-columns:auto auto;justify-content:space-between}
+  .nav{position:absolute;inset:100% 0 auto;display:none;grid-template-columns:repeat(3,minmax(0,1fr));padding:18px max(24px,calc((100vw - var(--container))/2));background:rgba(250,247,239,.985);border-bottom:1px solid rgba(0,0,0,.2);box-shadow:0 16px 28px rgba(0,0,0,.08)}
+  .nav.is-open{display:grid}
+  .nav a{justify-content:flex-start;padding:10px 12px;font-size:12px;border-bottom:1px solid rgba(0,0,0,.1)}
+}
+@media(max-width:720px){.nav{grid-template-columns:1fr;max-height:calc(100vh - 78px);overflow:auto}}
+
+/* Cover story: name is the one dominant object; the promise functions as its deck. */
+.hero{min-height:min(820px,calc(100svh - 72px));display:flex;align-items:center}
+.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:clamp(56px,7vw,112px);align-items:center}
+.hero-cover-copy{max-width:720px}
+.kinetic-title{margin:10px 0 0;font:800 clamp(76px,8.2vw,132px)/.76 var(--sans);letter-spacing:-.075em;text-transform:uppercase}
+.kinetic-title span{display:block}
+.hero-rule{margin-top:30px}
+.hero-professional-label{margin:18px 0 9px;color:var(--magenta);font:800 12px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.hero-deck{margin:0;padding:0;border:0;max-width:660px}
+.hero-deck p{margin:0;font:italic 600 clamp(24px,2.25vw,36px)/1.18 var(--serif);letter-spacing:-.025em;text-wrap:balance}
+.cover-meta-strip{margin-top:22px}
+.hero-actions{margin-top:28px}
+.headshot-card{max-width:440px;margin-inline:auto}
+.hero-side{opacity:.97}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-cover-copy{max-width:none}
+  .hero-side{max-width:520px}
+  .kinetic-title{font-size:clamp(68px,18vw,116px)}
+}
+@media(max-width:560px){
+  .kinetic-title{font-size:clamp(56px,20vw,92px)}
+  .cover-meta-strip{display:grid;grid-template-columns:1fr 1fr}
+}
+
+/* Profile keyword spine follows the chapter rather than ending after the intro. */
+.experience .container{position:relative}
+.experience-rail{position:absolute;left:-70px;top:128px;bottom:72px;width:48px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px;border-left:1px solid rgba(0,0,0,.18);padding-left:8px}
+.experience-rail span{writing-mode:vertical-rl;transform:rotate(180deg);display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:7px 4px;border:1px solid rgba(255,0,110,.28);background:rgba(250,247,239,.96);color:var(--magenta);font:900 8px/1 var(--sans);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;box-shadow:2px 2px 0 rgba(255,0,110,.1)}
+.experience-rail span:nth-child(4n+2){color:var(--cyan);border-color:rgba(0,174,239,.34)}
+.experience-rail span:nth-child(4n+3){color:var(--black);border-color:rgba(0,0,0,.24)}
+.experience-rail span:nth-child(4n+4){color:#8b7300;border-color:rgba(255,212,0,.46)}
+@media(max-width:1160px){.experience-rail{display:none}}
+
+/* One quiet cyan production guide; the unused yellow rule is removed. */
+.print-system-bg{opacity:.58}
+.print-line{height:.5px;filter:none;transition:width .8s cubic-bezier(.2,.75,.2,1),left .8s cubic-bezier(.2,.75,.2,1),top .8s cubic-bezier(.2,.75,.2,1),opacity .55s ease,transform .8s cubic-bezier(.2,.75,.2,1)}
+.line-yellow{display:none}
+.line-cyan{width:43vw;max-width:760px;min-width:360px;left:-5vw;top:23vh;bottom:auto;opacity:.18;background:color-mix(in srgb,var(--cyan) 72%,transparent);transform:rotate(-12deg);transform-origin:left center}
+body[data-active-chapter="philosophy"] .line-cyan{width:45vw;left:-5vw;top:24vh;transform:rotate(-12deg)}
+body[data-active-chapter="featured"] .line-cyan{width:38vw;left:4vw;top:29vh;transform:rotate(-19deg)}
+body[data-active-chapter="services"] .line-cyan{width:35vw;left:1vw;top:30vh;transform:rotate(11deg)}
+body[data-active-chapter="archive"] .line-cyan{width:42vw;left:-3vw;top:38vh;transform:rotate(-5deg)}
+body[data-active-chapter="process"] .line-cyan{width:34vw;left:7vw;top:34vh;transform:rotate(-24deg)}
+body[data-active-chapter="experience"] .line-cyan{width:39vw;left:-1vw;top:27vh;transform:rotate(-1.5deg)}
+body[data-active-chapter="resources"] .line-cyan{width:31vw;left:9vw;top:37vh;transform:rotate(-31deg)}
+body[data-active-chapter="skills"] .line-cyan{width:36vw;left:2vw;top:32vh;transform:rotate(6deg)}
+body[data-active-chapter="contact"] .line-cyan{width:44vw;left:10vw;top:28vh;transform:rotate(-15deg)}
+@media(max-width:900px){.line-cyan{width:58vw;min-width:0;opacity:.13}}
+@media(max-width:640px){.line-cyan{width:70vw;left:-18vw!important;top:22vh!important;opacity:.09;transform:rotate(-10deg)!important}}
+
+/* Identity and downloadable-file details. */
+.identity-assets img,.featured-media-logo img{display:block;max-width:100%;height:auto}
+a small{font:700 .72em/1 var(--sans);letter-spacing:.04em}
+
+/* Keyboard clarity. */
+:where(a,button,[role="tab"],[role="button"]):focus-visible{outline:3px solid var(--magenta);outline-offset:4px}
+.archive-issue-close,.archive-media-viewer-close,.archive-media-viewer-nav,.nav-toggle,.copy-email-button{min-width:44px;min-height:44px}
+@media(forced-colors:active){.nav a[aria-current="location"]{outline:2px solid CanvasText;outline-offset:2px}}
+@media(prefers-reduced-motion:reduce){.print-line{transition:none}}
+
+
+/* ==========================================================================
+   v8.0.1 — Navigation breathing room and compact Profile keyword spine
+   ========================================================================== */
+
+/* Remove the historical divider and special spacing after Departments. */
+.nav a:nth-child(3),
+.nav a:nth-child(4) {
+  margin-right: 0;
+  padding-left: 8px;
+  border-left: 0;
+}
+
+/* Slightly smaller publisher mark gives all nine chapter labels equal room. */
+.site-logo-mark {
+  height: 40px;
+}
+
+/* Use equal flex gaps rather than nine compressed grid tracks. */
+.header-inner {
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(24px, 2.4vw, 40px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 1.35vw, 24px);
+}
+
+.nav a {
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  padding: 0;
+  font-size: clamp(10px, .68vw, 11.5px);
+  letter-spacing: .055em;
+}
+
+.nav-num {
+  margin-right: 1px;
+}
+
+/* Switch to the compact menu before equal spacing becomes cramped. */
+@media (max-width: 1320px) {
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: end;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    min-height: 44px;
+  }
+
+  .header-inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .nav {
+    position: absolute;
+    inset: 100% 0 auto;
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    padding: 18px max(24px, calc((100vw - var(--container)) / 2));
+    background: rgba(250, 247, 239, .985);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, .08);
+  }
+
+  .nav.is-open {
+    display: grid;
+  }
+
+  .nav a {
+    justify-content: flex-start;
+    padding: 10px 12px;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    grid-template-columns: 1fr;
+    max-height: calc(100vh - 78px);
+    overflow: auto;
+  }
+}
+
+/* The spine remains close to its guide and advances steadily through Profile. */
+.experience-rail {
+  left: -62px;
+  top: 122px;
+  bottom: auto;
+  width: 42px;
+  justify-content: flex-start;
+  gap: 3px;
+  padding-left: 5px;
+  border-left: 1px solid rgba(0, 0, 0, .22);
+}
+
+.experience-rail span {
+  min-height: 42px;
+  padding: 5px 3px;
+  font-size: 7px;
+  letter-spacing: .075em;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .045);
+}
+
+/* Keep the spine visually attached to the chapter instead of floating far away. */
+@media (min-width: 1161px) and (max-width: 1380px) {
+  .experience-rail {
+    left: -48px;
+  }
+}
+
+
+/* v8.0.2 · Editorial newspaper resource */
+.resource-downloads {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+.resource-downloads .resource-card-action {
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+.resource-card-action-secondary {
+  background: transparent;
+  color: var(--black);
+}
+.resource-preview-trigger {
+  margin-top: 0;
+  align-self: stretch;
+}
+.resource-card-available::before { content: "FREE DOWNLOAD"; }
+
+/* v8.0.4 · Performance, touch interaction, and release hardening */
+.featured-media-newspaper {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(300px, 36vw, 470px);
+  background: #eee7da;
+  cursor: zoom-in;
+}
+.featured-media-newspaper > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity .5s ease, transform .7s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+}
+.featured-media-newspaper .newspaper-preview-crop {
+  opacity: 1;
+  transform: scale(1.02);
+}
+.featured-media-newspaper .newspaper-preview-spread {
+  opacity: 0;
+  object-fit: contain;
+  transform: scale(.94);
+}
+.featured-media-newspaper:hover .newspaper-preview-crop,
+.featured-media-newspaper:focus-visible .newspaper-preview-crop,
+.featured-media-newspaper:focus-within .newspaper-preview-crop,
+.featured-media-newspaper.is-revealed .newspaper-preview-crop {
+  opacity: 0;
+  transform: scale(1.09);
+}
+.featured-media-newspaper:hover .newspaper-preview-spread,
+.featured-media-newspaper:focus-visible .newspaper-preview-spread,
+.featured-media-newspaper:focus-within .newspaper-preview-spread,
+.featured-media-newspaper.is-revealed .newspaper-preview-spread {
+  opacity: 1;
+  transform: scale(1);
+}
+.newspaper-preview-hint {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 8px 10px;
+  background: rgba(17,17,17,.88);
+  color: #fff;
+  font: 900 9px/1 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.featured-media-newspaper:hover .newspaper-preview-hint,
+.featured-media-newspaper:focus-visible .newspaper-preview-hint,
+.featured-media-newspaper.is-revealed .newspaper-preview-hint {
+  opacity: .74;
+  transform: translateY(-2px);
+}
+
+@media (hover: none) {
+  .featured-media-newspaper { cursor: pointer; }
+  .newspaper-preview-hint { opacity: 1; }
+}
+
+.resource-card-action,
+.archive-download-action {
+  position: relative;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform .16s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
+}
+.resource-card-action small,
+.archive-download-action small,
+.editorial-utility-expanded-label small {
+  font-size: .78em;
+  font-weight: 800;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.resource-card-action-secondary {
+  background: transparent;
+  color: var(--black);
+}
+.resource-card-action:hover,
+.resource-card-action:focus-visible,
+.archive-download-action:hover,
+.archive-download-action:focus-visible {
+  transform: translateX(4px);
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 3px 3px 0 var(--cyan), 6px 6px 0 var(--magenta), 9px 9px 0 var(--yellow);
+  outline: none;
+}
+.resource-preview-trigger:hover,
+.resource-preview-trigger:focus-visible {
+  transform: translateX(4px);
+}
+
+.archive-issue-link-entry .archive-download-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: var(--rule);
+  background: transparent;
+  color: var(--black);
+  font: 900 10px/1.2 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.archive-issue-link-entry + .archive-issue-link-entry {
+  margin-top: 18px;
+}
+.archive-issue-link-entry .archive-download-action:hover,
+.archive-issue-link-entry .archive-download-action:focus-visible {
+  border-bottom: var(--rule);
+  color: var(--white);
+}
+
+/* The template project uses one gallery card that opens a two-page carousel. */
+.archive-media-card[data-media-index="0"] .archive-media-art img[src*="editorial-newspaper-template"] {
+  object-fit: contain;
+  background: #eee7da;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-media-newspaper > img,
+  .newspaper-preview-hint,
+  .resource-card-action,
+  .archive-download-action {
+    transition: none;
+  }
+}
+
+/* === v8.0.5 Production chapter === */
+.production-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  gap: clamp(28px, 5vw, 64px);
+  margin: 0 0 46px;
+  padding: clamp(28px, 5vw, 56px);
+  border: var(--rule);
+  background: var(--white);
+  box-shadow: 8px 8px 0 var(--black), 12px 12px 0 var(--magenta);
+}
+.production-kicker,
+.skill-panel-label {
+  margin: 0 0 12px;
+  color: var(--magenta);
+  font: 900 11px/1 var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.production-intro h3 {
+  max-width: 760px;
+  margin: 0 0 22px;
+  font: 950 clamp(38px, 5.8vw, 78px)/.88 var(--sans);
+  letter-spacing: -.055em;
+}
+.production-intro-copy > p:not(.production-kicker) {
+  max-width: 760px;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.55;
+}
+.production-principles {
+  align-self: stretch;
+  display: grid;
+  border-left: var(--rule);
+}
+.production-principles div {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 15px 0 15px 22px;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+}
+.production-principles div:last-child { border-bottom: 0; }
+.production-principles strong {
+  font: 900 14px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.production-principles span { line-height: 1.35; }
+.skill-panel-label { margin-bottom: 18px; }
+.skill-why {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-left: 5px solid var(--magenta);
+  background: rgba(255,0,110,.055);
+}
+.skill-why strong { font-family: var(--sans); }
+.skill-stage::after { content: "PRODUCTION"; }
+@media (max-width: 900px) {
+  .production-intro { grid-template-columns: 1fr; }
+  .production-principles { border-left: 0; border-top: var(--rule); }
+  .production-principles div { padding-left: 0; }
+}
+@media (max-width: 520px) {
+  .production-principles div { grid-template-columns: 1fr; gap: 6px; }
+}
+
+
+/* v8.0.7 — Before You Explore cover artwork */
+.hero-grid{grid-template-columns:minmax(0,.82fr) minmax(520px,1.18fr);gap:clamp(40px,5vw,84px)}
+.headshot-card{max-width:680px}
+.headshot-card img{aspect-ratio:1/1;object-position:center}
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-side{max-width:760px;width:100%;margin-inline:auto}
+  .headshot-card{max-width:760px}
+}
+@media(max-width:560px){
+  .hero-side{padding-top:0}
+  .headshot-card{max-width:none}
+}
+
+/* ========================================================================== 
+   v8.0.9 — Tablet and phone reading-flow audit
+   Reduces repeated mobile content, shortens vertical travel, and turns long
+   card stacks into accessible horizontal reading rails on small screens.
+   ========================================================================== */
+
+/* Tablet: preserve useful two-column comparisons instead of creating a long
+   single-card stack as soon as the navigation collapses. */
+@media (min-width: 701px) and (max-width: 980px) {
+  .featured-grid,
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .featured-card {
+    min-height: 0;
+  }
+
+  .featured-copy,
+  .service-card,
+  .experience-item,
+  .process-panel,
+  .skill-stage,
+  .education-awards article {
+    padding: 24px;
+  }
+
+  .section {
+    padding-block: 48px;
+  }
+
+  main > .editorial-number-section {
+    padding-top: 72px;
+  }
+
+  .hero {
+    min-height: 0;
+    padding-top: 42px;
+  }
+
+  .hero-side {
+    order: -1;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --mobile-card-width: min(86vw, 360px);
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .section,
+  main > .editorial-number-section {
+    padding-block: 36px;
+  }
+
+  main > .editorial-number-section {
+    padding-top: 54px;
+  }
+
+  .ruled .container {
+    padding-top: 26px;
+  }
+
+  .section-title-row,
+  main > .editorial-number-section .section-title-row {
+    margin-bottom: 24px;
+  }
+
+  .section-slide-title,
+  .registration-section {
+    font-size: clamp(34px, 11vw, 52px);
+    line-height: .94;
+  }
+
+  .chapter-running-thought {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* The artwork already contains the opening philosophy. On phones, remove
+     repeated cover details while keeping identity and calls to action. */
+  .hero {
+    min-height: 0;
+    padding: 28px 0 34px;
+  }
+
+  .hero-grid {
+    gap: 22px;
+  }
+
+  .hero-side {
+    order: -1;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .headshot-card {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .hero .eyebrow,
+  .hero-rule,
+  .hero-deck,
+  .cover-meta-strip,
+  .hero-motion-stack,
+  .accent-mark {
+    display: none;
+  }
+
+  .kinetic-title {
+    margin: 0;
+    font-size: clamp(43px, 13.5vw, 62px);
+    line-height: .88;
+    letter-spacing: -.065em;
+  }
+
+  .kinetic-title span {
+    display: inline;
+  }
+
+  .kinetic-title span:not(:last-child)::after {
+    content: " ";
+  }
+
+  .hero-professional-label {
+    margin-top: 14px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .hero-primary-action,
+  .hero-contact-action {
+    min-width: 0;
+    min-height: 46px;
+    padding-inline: 10px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  /* The short cover image already establishes this belief, so the repeated
+     standalone quote is omitted from the compact edition. */
+  .pull-quote-section,
+  .print-language {
+    display: none;
+  }
+
+  .split-intro,
+  .philosophy-intro,
+  .services-intro,
+  .resource-intro {
+    margin-bottom: 24px;
+  }
+
+  .split-intro h2,
+  .positioning h2 {
+    font-size: clamp(31px, 9vw, 44px);
+    line-height: 1;
+  }
+
+  .split-intro p,
+  .philosophy-intro p,
+  .services-intro p,
+  .resource-intro p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .proof-placeholder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .proof-placeholder-grid strong {
+    font-size: 24px;
+  }
+
+  /* Long collections become one-card-high swipe rails. Keyboard users can
+     tab through the same cards; native scrolling remains available. */
+  .philosophy-grid,
+  .featured-grid,
+  .service-grid,
+  .experience-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: var(--mobile-card-width);
+    grid-template-columns: none;
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
+    padding: 4px 14px 18px 2px;
+    margin-right: -14px;
+  }
+
+  .philosophy-grid > *,
+  .featured-grid > *,
+  .service-grid > *,
+  .experience-list > * {
+    scroll-snap-align: start;
+  }
+
+  .philosophy-grid article,
+  .featured-card,
+  .service-card,
+  .experience-item {
+    min-height: 0;
+  }
+
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-copy,
+  .service-card,
+  .experience-item,
+  .process-panel,
+  .skill-stage,
+  .education-awards article,
+  .resource-card {
+    padding: 22px;
+  }
+
+  .featured-copy p:not(.case-meta),
+  .service-card p,
+  .service-card li,
+  .experience-item p,
+  .process-content p,
+  .skill-panel p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .service-card h3 {
+    font-size: clamp(27px, 8vw, 36px);
+    margin-bottom: 16px;
+  }
+
+  .service-card ul {
+    padding-left: 18px;
+  }
+
+  .service-card li {
+    margin-bottom: 7px;
+  }
+
+  .decision-brief {
+    padding: 22px;
+  }
+
+  .decision-brief h3 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .decision-questions {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    padding-bottom: 10px;
+  }
+
+  .decision-questions span {
+    flex: 0 0 min(76vw, 300px);
+    scroll-snap-align: start;
+  }
+
+  .services-availability {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .services-availability-action {
+    width: 100%;
+  }
+
+  .archive-preview,
+  .archive-preview-image {
+    --archive-preview-height: 240px;
+    min-height: 240px;
+  }
+
+  .process-track {
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .process-step {
+    min-width: 126px;
+    padding: 12px 10px;
+  }
+
+  .experience-item {
+    display: block;
+  }
+
+  .experience-item > div:first-child {
+    margin-bottom: 16px;
+  }
+
+  .education-highlights-panel .education-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-library,
+  .resource-library-single {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-card {
+    min-height: 0;
+  }
+
+  .resource-card h3 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .production-intro {
+    gap: 20px;
+    margin-bottom: 28px;
+    padding: 22px;
+    box-shadow: 5px 5px 0 var(--black), 8px 8px 0 var(--magenta);
+  }
+
+  .production-intro h3 {
+    font-size: clamp(35px, 10vw, 50px);
+  }
+
+  .production-intro-copy > p:not(.production-kicker) {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .production-principles div {
+    padding-block: 11px;
+  }
+
+  .footer-grid {
+    gap: 24px;
+  }
+
+  .footer-portrait {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 410px) {
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .kinetic-title {
+    font-size: clamp(40px, 13vw, 52px);
+  }
+
+  .proof-placeholder-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  :root {
+    --mobile-card-width: min(88vw, 340px);
+  }
+}

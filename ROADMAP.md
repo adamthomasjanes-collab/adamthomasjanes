@@ -9,7 +9,7 @@ The site has reached the v5 editorial publication direction. The next work shoul
 ## Priority 1 — Content Proof
 
 - Add real project images.
-- Replace placeholder proof text.
+- Continue replacing qualitative claims with verified metrics when reliable figures are available.
 - Expand Camp Perry into a full case study.
 - Add measurable outcomes where available.
 - Add before/after visuals where possible.

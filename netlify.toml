@@ -25,3 +25,15 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+# HTML should revalidate so editorial and portfolio updates appear immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Large downloadable resources rarely change and should not be re-fetched unnecessarily.
+[[headers]]
+  for = "/assets/resources/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"

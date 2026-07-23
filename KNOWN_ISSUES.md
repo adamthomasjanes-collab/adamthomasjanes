@@ -50,7 +50,7 @@ This file tracks items to verify before launch.
 
 ### Content
 
-- Replace placeholder proof text such as `[Add metric/proof]`.
+- Add quantitative proof only where a reliable, supportable metric is available; no public placeholder proof text remains.
 - Add real project screenshots.
 - Confirm all résumé download links point to the correct final PDF.
 - Confirm phone/email/contact details are current.

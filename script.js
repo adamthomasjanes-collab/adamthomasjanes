@@ -124,14 +124,18 @@ function init() {
 }
 
 function initNav() {
-  const closeMenu = () => {
-    els.nav?.classList.remove("is-open");
-    els.navToggle?.setAttribute("aria-expanded", "false");
+  const setMenuState = (open) => {
+    els.nav?.classList.toggle("is-open", open);
+    els.navToggle?.setAttribute("aria-expanded", String(open));
+    els.navToggle?.setAttribute("aria-label", open ? "Close issue contents menu" : "Open issue contents menu");
+    if (els.navToggle) els.navToggle.textContent = open ? "Close" : "Menu";
   };
 
+  const closeMenu = () => setMenuState(false);
+
   els.navToggle?.addEventListener("click", () => {
-    const open = els.nav.classList.toggle("is-open");
-    els.navToggle.setAttribute("aria-expanded", String(open));
+    const open = !els.nav.classList.contains("is-open");
+    setMenuState(open);
   });
 
   els.navLinks.forEach(link => link.addEventListener("click", closeMenu));
@@ -505,6 +509,12 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         item.removeAttribute("aria-current");
       }
     });
+
+    /* The cyan production rule changes direction with the active chapter.
+       This gives each section a distinct editorial movement while keeping
+       the rule subtle enough to remain background structure. */
+    const chapterId = link?.getAttribute("href")?.replace(/^#/, "");
+    if (chapterId) document.body.dataset.activeChapter = chapterId;
   }
 
   links.forEach((link) => {
@@ -731,8 +741,8 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     return [
       { label: "Reusable Color Seal", src: "assets/archive/best-of-best/best-of-best-seal-color.webp", alt: "Best of the Best lighthouse and laurel color seal" },
       { label: "Reader Program Introduction", layout: "spread", src: "assets/archive/best-of-best/best-of-best-pages-02-03.webp", alt: "Best of the Best introduction and winning-business spread" },
-      { label: "Winners and Community", layout: "spread", src: "assets/archive/best-of-best/best-of-best-pages-04-05.webp", alt: "Best of the Best winners and community photography spread" },
-      { label: "Category Directory", layout: "spread", src: "assets/archive/best-of-best/best-of-best-pages-08-09.webp", alt: "Best of the Best category directory and advertiser spread" },
+      { label: "Winners and Community (12.3 MB)", layout: "spread", src: "assets/archive/best-of-best/best-of-best-pages-04-05.webp", alt: "Best of the Best winners and community photography spread" },
+      { label: "Category Directory (4.2 MB)", layout: "spread", src: "assets/archive/best-of-best/best-of-best-pages-08-09.webp", alt: "Best of the Best category directory and advertiser spread" },
       { label: "Published Beacon Web Edition", thumb: "assets/beacon/gallery-beacon-front-page-archive-15.webp", href: "assets/beacon/gallery-beacon-full.pdf", alt: "Open the complete September 22, 2016 Beacon edition featuring Best of the Best coverage", linkLabel: "Open the complete September 22, 2016 Beacon web edition" },
       { label: "Complete Best of the Best Publication", thumb: "assets/archive/best-of-best/best-of-best-pages-04-05.webp", href: "assets/archive/best-of-best/best-of-best-2015-full.pdf", alt: "Open the complete color Best of the Best annual publication", linkLabel: "Open the complete Best of the Best publication" }
     ];
@@ -809,18 +819,58 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
         {
           label: "Final Identity System",
           thumb: "assets/atj-identity/hero-atj-identity.webp",
-          src: "assets/atj-identity/atj-signature-lockup.svg",
+          src: "assets/atj-identity/atj-signature-lockup.svg?v=8.0.0",
           alt: "ATJ signature lockup for Adam Thomas Janes",
           images: [
             { src: "assets/atj-identity/atj-primary-mark.svg", alt: "Standalone ATJ primary monogram", caption: "Primary mark · A compact, scalable monogram for the website, favicon, avatars, and small applications" },
-            { src: "assets/atj-identity/atj-signature-lockup.svg", alt: "ATJ signature lockup with Adam Thomas Janes name treatment", caption: "Signature lockup · The expanded identity for covers, presentations, résumé materials, and editorial applications" }
+            { src: "assets/atj-identity/atj-signature-lockup.svg?v=8.0.0", alt: "ATJ signature lockup with Adam Thomas Janes name treatment", caption: "Signature lockup · The expanded identity for covers, presentations, résumé materials, and editorial applications" }
           ]
         },
         { label: "First Vector Direction", src: "assets/atj-identity/01-first-vector-direction.webp", alt: "Early black ATJ vector logo with magenta crossbar", caption: "First vector direction · A custom geometric A, structural T, hand-built J, and magenta crossbar established the initial vocabulary" },
         { label: "Geometric Refinement", src: "assets/atj-identity/02-refined-geometric-direction.webp", alt: "Refined ATJ monogram exploration with a rounded J", caption: "Geometric refinement · The J became more recognizable and the monogram began to read as one mark rather than three separate letters" },
         { label: "Avenir Study", src: "assets/atj-identity/03-avenir-typographic-study.webp", alt: "ATJ logo study based on Avenir letterforms", caption: "Avenir study · Testing the site's existing sans serif improved typographic consistency while revealing what the custom A contributed to distinctiveness" },
         { label: "Color-System Exploration", src: "assets/atj-identity/04-magenta-system-study.webp", alt: "ATJ logo exploration using magenta caps across the letterforms", caption: "Color-system exploration · Extending magenta across every letter made the accent dominate, confirming that color worked better as a supporting brand device" },
-        { label: "Name Lockup Study", src: "assets/atj-identity/05-editorial-name-lockup-study.webp", alt: "ATJ monogram with Adam name treatment beneath the A", caption: "Name lockup study · Supporting typography shifted the project from a single monogram toward a flexible identity system" }
+        { label: "Final Wordmark", src: "assets/atj-identity/atj-wordmark.svg?v=8.0.0", alt: "Adam Thomas Janes horizontal wordmark", caption: "Final wordmark · A clean horizontal signature for headers, bylines, footers, and narrow spaces" }
+      ]
+    },
+
+
+    "editorial-newspaper-template": {
+      kicker: "Free Resource / Publication Design + Editorial Systems",
+      title: "Editorial Newspaper Template",
+      subtitle: "Adobe InDesign template · finished PDF · six-column editorial system · 2026",
+      noteTitle: "A Downloadable Publication System Built to Explain Its Own Design",
+      paragraphs: [
+        "Great publications are built on systems, not isolated pages. This free Adobe InDesign template demonstrates how editorial hierarchy, reusable paragraph styles, modular columns, photography, captions, pull quotes, and production notes work together to create a publication that feels intentional and easy to navigate.",
+        "The first page is designed as Issue No. 01 of The Communication Journal. It combines a dominant feature story with recurring departments, an interview, an opinion column, production notes, supporting photography, and a five-principle infographic exploring alignment, proximity, contrast, repetition, and white space.",
+        "The second page turns the template into documentation. It presents the actual paragraph-style system beside plain-language explanations of each style's purpose, when it should be used, and why it matters to the reader. The page demonstrates that paragraph styles are not merely shortcuts; they are editorial standards that create consistency and reduce production errors.",
+        "The downloadable package includes the editable .INDT template and a finished reference PDF. The source file is intended as a starting point: designers can replace the sample content, adapt the hierarchy, and extend the system while preserving the underlying communication logic.",
+        "The project was developed entirely in Adobe InDesign using Avenir for display and structural typography and Georgia for sustained reading. Its six-column architecture reflects years of newspaper and magazine production experience while remaining flexible enough for journals, newsletters, community publications, and creative-industry editorial projects."
+      ],
+      sidebarTitle: "What's Included",
+      details: [
+        ["Format", "Editable Adobe InDesign template (.INDT) and finished example PDF"],
+        ["Pages", "Two-page baseline: a complete front page and an inside-page editorial style system"],
+        ["Grid", "Six-column modular editorial structure"],
+        ["Typography", "Avenir for hierarchy and navigation; Georgia for long-form reading"],
+        ["Styles", "Feature, section, kicker, deck, byline, body, drop cap, no-indent, bullets, caption, pull quote, fact box, opinion, classified, and specialty styles"],
+        ["Purpose", "A reusable resource that demonstrates communication-first publication design rather than supplying decorative placeholders"]
+      ],
+      shows: ["Editorial hierarchy", "Reusable paragraph styles", "Six-column publication systems", "Production documentation", "Communication-first design"],
+      links: [
+        { label: "Download InDesign Template · 8.6 MB", href: "assets/resources/editorial-newspaper-template/ATJ-Editorial-Newspaper-Template.indt", note: "Editable Adobe InDesign template with the complete two-page publication system.", download: true },
+        { label: "Download Example PDF · 5.3 MB", href: "assets/resources/editorial-newspaper-template/ATJ-Editorial-Newspaper-Template.pdf", note: "Finished reference PDF showing the front page and documented paragraph-style system.", download: true }
+      ],
+      gallery: [
+        {
+          label: "Browse the Two-Page Template",
+          thumb: "assets/resources/editorial-newspaper-template/feature-two-page-spread.webp",
+          alt: "The two-page Communication Journal editorial newspaper template shown side by side",
+          images: [
+            { src: "assets/resources/editorial-newspaper-template/page-1.webp", alt: "The Communication Journal front page demonstrating a six-column newspaper system, editorial hierarchy, photography, infographic, and recurring departments", caption: "Page one of two · Finished front page" },
+            { src: "assets/resources/editorial-newspaper-template/page-2.webp", alt: "Inside page of the Adobe InDesign newspaper template showing paragraph-style specimens and explanations", caption: "Page two of two · Editorial style system" }
+          ]
+        }
       ]
     },
 
@@ -1184,7 +1234,7 @@ document.querySelectorAll('a[target="_blank"]').forEach((link) => {
           ]
         },
         {
-          label: "Published Web Edition",
+          label: "Published Web Edition (10.5 MB)",
           thumb: "assets/north-coast-business-journal/thumbs/thumb-north-coast-business-journal-full.webp",
           href: "assets/north-coast-business-journal/gallery-north-coast-business-journal-full.pdf",
           alt: "Open the complete screen-optimized April 2017 North Coast Business Journal PDF",
@@ -1717,7 +1767,7 @@ gallery: [
   },
 
   {
-    label: "Published Web Edition",
+    label: "Published Web Edition (12.3 MB)",
     thumb: "assets/beacon/gallery-beacon-front-page-archive-15.webp",
     href: "assets/beacon/gallery-beacon-full.pdf",
     alt: "Open the complete screen-optimized September 22, 2016 edition of The Beacon newspaper",
@@ -1850,7 +1900,7 @@ showAllInitially: true
           ]
         },
         {
-          label: "Published Web Edition",
+          label: "Published Web Edition (4.5 MB)",
           thumb: "assets/north-coast-parent/thumbs/thumb-north-coast-parent-published-magazine.webp",
           href: "assets/north-coast-parent/gallery-north-coast-parent-full.pdf",
           alt: "Open a complete screen-optimized issue of North Coast Parent magazine",
@@ -2143,6 +2193,7 @@ showAllInitially: true
 
 
   const FEATURE_ISSUE_KEYS = [
+    "editorial-newspaper-template",
     "camp-perry-brand-system",
     "north-coast-business-journal",
     "beacon-newspaper-production",
@@ -2277,8 +2328,13 @@ showAllInitially: true
 
         const link = document.createElement("a");
         link.href = item.href;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
+        link.className = "archive-download-action";
+        if (item.download) {
+          link.setAttribute("download", "");
+        } else {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
         link.textContent = item.label;
         entry.appendChild(link);
 
@@ -2542,3 +2598,25 @@ showAllInitially: true
 
   chapters.forEach((chapter) => observer.observe(chapter));
 })();
+
+/* v8.0.4 · Make the editorial-template preview usable on touch and keyboard. */
+(() => {
+  const preview = document.querySelector('.featured-media-newspaper');
+  if (!preview) return;
+
+  const setRevealed = (revealed) => {
+    preview.classList.toggle('is-revealed', revealed);
+    preview.setAttribute('aria-pressed', String(revealed));
+  };
+
+  preview.addEventListener('click', () => {
+    setRevealed(!preview.classList.contains('is-revealed'));
+  });
+
+  preview.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    setRevealed(!preview.classList.contains('is-revealed'));
+  });
+})();
+

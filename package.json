@@ -1,14 +1,15 @@
 {
   "name": "adam-portfolio-site",
-  "version": "6.1.0",
+  "version": "8.0.11",
   "private": false,
-  "description": "Editorial publication-style portfolio with the new ATJ identity system, a complete logo-development case study, accessible project overlays, and optimized production assets.",
+  "description": "Adam Thomas Janes editorial portfolio, expanded with a communication-first Production chapter and a downloadable newspaper template resource.",
   "scripts": {
     "serve": "python -m http.server 8080",
-    "check": "node --check script.js && python tools/asset_health.py",
+    "check": "node --check script.js && python tools/asset_health.py && python tools/site_health.py",
     "audit:assets": "python tools/asset_health.py",
     "optimize:assets": "python tools/asset_health.py --optimize",
-    "notes": "No build step required. Open index.html directly or serve locally."
+    "notes": "No build step required. Open index.html directly or serve locally.",
+    "audit:site": "python tools/site_health.py"
   },
   "repository": {
     "type": "git",

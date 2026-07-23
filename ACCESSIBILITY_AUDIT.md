@@ -1,37 +1,68 @@
-# Accessibility Audit — v5.11.8
+# Accessibility Audit — v7.0.7
 
-This audit aligns the site with semantic HTML and WAI-ARIA Authoring Practices where custom widgets are used. It is a strong implementation baseline, not a certification of WCAG conformance. Manual testing with assistive technologies is still required.
+This release uses semantic HTML first and WAI-ARIA only where native HTML does not provide the required widget behavior. It is a strong accessibility baseline, not a formal WCAG certification.
 
-## Implemented
+## Implemented and verified in code
 
-- Skip link to the main content landmark.
-- One page-level `<main>` landmark and one `<h1>`.
-- Native anchor navigation with visible keyboard focus.
-- Mobile navigation supports Escape, click-away closing, and accurate `aria-expanded` state.
-- Process and Production Notes use ARIA tab patterns with keyboard arrow/Home/End navigation, roving tabindex, `aria-controls`, `aria-labelledby`, and hidden inactive panels.
-- Feature/archive overlay uses `role="dialog"`, `aria-modal`, accessible title/description, focus placement, focus trapping, background inertness, Escape closing, and focus return.
-- Nested image viewer traps focus within the active viewer, returns focus to the selected thumbnail, exposes the caption as its accessible name, and hides irrelevant previous/next controls for a single image.
-- Decorative marks are hidden from assistive technology.
-- Reduced-motion styles and counter behavior are present.
-- Forced-colors focus indicators are included.
-- Animated proof counters expose explicit visually hidden final values instead of transient animated numbers.
+- Skip link is the first keyboard-focusable control and moves focus to the main landmark.
+- One page-level `<main>` landmark and one page-level `<h1>`.
+- Primary navigation is labelled **Issue contents**.
+- The mobile menu exposes accurate `aria-expanded` and accessible Open/Close labels.
+- Escape closes the mobile menu and returns focus to its toggle.
+- Current chapter links receive `aria-current="location"`.
+- The former **Masthead** chapter is now labelled **Profile**.
+- Process and Production interfaces follow the ARIA tabs pattern:
+  - `role="tablist"`, `role="tab"`, and `role="tabpanel"`
+  - unique IDs, `aria-controls`, and `aria-labelledby`
+  - roving `tabindex`
+  - Arrow, Home, and End keyboard navigation
+  - inactive panels are removed from the tab order with `hidden`
+  - tab panels remain readable but are not added as artificial Tab stops
+  - visually hidden keyboard instructions are associated with each tablist
+- Feature and archive stories use a modal dialog pattern with:
+  - accessible title and description
+  - focus placement and focus containment
+  - Escape closing
+  - background inertness
+  - focus return to the opening control
+- The nested image viewer has its own modal focus containment and returns focus to the selected thumbnail.
+- Decorative rules, crop marks, and production marks are hidden from assistive technology.
+- Visible `:focus-visible` indicators are provided for links, buttons, tabs, tab panels, and custom controls.
+- Forced-colors focus treatment is included.
+- Important compact controls have a minimum 44 × 44 CSS-pixel target.
+- Reduced-motion behavior is supported.
+- Animated counters expose stable screen-reader text rather than announcing transient values.
+- Copy-email feedback uses a live status message.
 
-## Manual tests still required
+## Keyboard traversal expectation
 
-- NVDA + Firefox or Chrome on Windows.
-- VoiceOver + Safari on iPhone and macOS.
-- Keyboard-only traversal through the full page and both dialog levels.
-- Browser zoom at 200% and 400% reflow.
-- Windows High Contrast / forced-colors mode.
-- Contrast measurements for magenta text and muted text over every paper/gradient surface.
-- Touch-target sizing on compact mobile controls.
-- Reading order after responsive Education and Archive rearrangements.
+The intended sequence begins with:
 
-## Recommended acceptance criteria
+1. Skip to main content
+2. Publisher utility links
+3. ATJ home mark
+4. Menu toggle when displayed
+5. Issue-contents links
+6. Page calls to action and interactive features in reading order
 
-- No keyboard traps except intentional modal focus containment.
-- All interactive controls have a visible focus indicator.
-- Every dialog returns focus to the control that opened it.
+Within each tab interface, only the selected tab is in the ordinary Tab sequence. Arrow keys move between tabs; the next Tab moves to the next genuine interactive control. Modal dialogs temporarily contain focus until closed.
+
+## Manual testing still required before claiming WCAG conformance
+
+- NVDA with Firefox and Chrome on Windows
+- VoiceOver with Safari on iPhone and macOS
+- Full keyboard-only traversal, including both dialog levels
+- 200% and 400% browser zoom and 320 CSS-pixel reflow
+- Windows High Contrast / forced-colors mode
+- Measured contrast for magenta and muted copy across all paper and image surfaces
+- Touch-target checks on physical phones and tablets
+- Reading order after responsive Education, Archive, and utility-rail rearrangements
+
+## Acceptance criteria
+
+- No keyboard traps except intentional focus containment in an open modal.
+- Every actionable control has a visible focus indicator.
+- Dialogs return focus to the control that opened them.
 - No content or functionality is lost at 200% zoom or 320 CSS pixels wide.
 - Meaning is not conveyed by color alone.
-- Final project images have concise, contextual alternative text; decorative mockup surroundings use empty alt text where appropriate.
+- Informative images have contextual alternative text; decorative images have empty alternative text.

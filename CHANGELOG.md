@@ -1,3 +1,147 @@
+# 8.0.11 — Profile image sharing and search metadata
+
+- Replaced the former ATJ social lockup preview with a 1200×630 JPEG derived from the approved cover portrait and communication statement.
+- Updated Open Graph and Twitter/X metadata so shared links request Adam Thomas Janes’s cover portrait.
+- Added secure image URL, MIME type, dimensions, descriptive alternative text, and site-name metadata for broader social-platform compatibility.
+- Added `rel="image_src"` and `max-image-preview:large` to strengthen image discovery and large-preview eligibility.
+- Added a dedicated Schema.org `ImageObject` and connected it to the Person, WebSite, and ProfilePage structured data.
+- Added the profile image to the XML sitemap using the image sitemap namespace.
+- Updated cache-busting references and package metadata to 8.0.11.
+
+# 8.0.10 — Copy refinement
+
+- Replaced the line “A visitor should not need an interview to understand how I can help.” with “Good communication anticipates questions before they’re asked.”
+- Preserved the approved v8.0.9 tablet and phone reading-flow improvements.
+- Updated cache-busting references and package metadata to 8.0.10.
+
+# 8.0.9 — Tablet and phone reading-flow audit
+
+- Preserved the approved v8.0.8 desktop cover and final readable hero artwork.
+- Reduced mobile cover repetition by keeping the portrait statement, name, professional label, and primary actions while hiding duplicate deck and metadata text.
+- Reordered the cover artwork first on tablet and phone.
+- Converted Philosophy, Feature Stories, What I Make, and Career Notes into native, keyboard-accessible horizontal snap rails on phones, preventing six-card and four-card sections from becoming extremely long vertical stacks.
+- Restored two-column Feature and Service grids on tablets instead of collapsing them prematurely to one column.
+- Removed two redundant decorative interludes from the phone edition while retaining them on tablet and desktop.
+- Tightened section spacing, card padding, headings, proof points, production content, archive preview height, and footer spacing for smaller screens.
+- Preserved all content and interactions; no articles, projects, downloads, or capabilities were removed.
+
+# v8.0.8 — Readability-Refined Hero Artwork
+
+- Replaced the “Before You Explore” hero with the final readability-refined artwork supplied by Adam Thomas Janes.
+- Preserved the established v8.0.7 hero layout and responsive behavior; only the artwork was refreshed.
+- Re-exported the source PNG as an optimized 1400×1400 WebP for crisp embedded typography.
+- Updated hero preload, structured-data image URL, visible image cache-busting, stylesheet and script versions, and package version to 8.0.8.
+- Retained descriptive alternative text identifying Adam and the communication-philosophy introduction.
+
+# v8.0.7 — Before You Explore Hero
+
+- Replaced the former standalone portrait with the new “Before You Explore” cover artwork.
+- Converted the supplied PNG to an optimized 1400×1400 WebP asset (about 192 KB).
+- Renamed the asset to `hero-adam-thomas-janes-before-you-explore.webp`.
+- Updated preload, structured-data image reference, visible hero image, dimensions, and accessible alternative text.
+- Expanded the hero image column so the embedded editorial copy remains readable on desktop and collapses cleanly on smaller screens.
+- Updated cache-busting and package version to 8.0.7.
+
+# Changelog
+
+## 8.0.6 — Newspaper Template Asset Refresh
+
+- Replaced the downloadable Adobe InDesign template with the corrected July 26 production file.
+- Replaced the example PDF with the corrected two-page export.
+- Regenerated Page 1 and Page 2 WebP previews from the new PDF.
+- Regenerated the animated top crop and two-page spread so all website previews match the current downloadable files.
+- Updated displayed download sizes to 8.6 MB for the INDT and 5.3 MB for the PDF.
+- Updated CSS and JavaScript cache-busting references.
+
+## 8.0.5 — Production Chapter
+
+- Renamed Chapter 08 from **Tools & Methods** to **Production**.
+- Reframed the chapter around Adam’s strongest professional identity: editorial production, typography, advertising, systems, and complete client delivery.
+- Added a **Principles Before Platforms** opening statement grounded in Adam’s love of InDesign, newspaper production, and type.
+- Reorganized capabilities into Editorial & Publication Production, Advertising & Campaigns, Communication Systems, Digital Publishing, and Project Delivery.
+- Positioned websites as one supporting delivery channel rather than Adam’s primary identity.
+- Replaced software-list copy with explanations of why each production discipline is used and what clients gain from it.
+- Added responsive production-principle and production-note styling.
+
+# v8.0.3 — Editorial Newspaper Template Resource
+
+- Added the Editorial Newspaper Template as Feature Six.
+- Added a full project story and two-page WebP preview gallery.
+- Added downloadable, branded INDT and PDF files to the Reference Library.
+- Replaced the coming-soon newspaper resource with live download and preview actions.
+- Updated package version to 8.0.3.
+
+## 8.0.3 — Navigation and Keyword Spine
+
+- Reduced the ATJ header mark from 46px to 40px.
+- Removed the remaining divider and special spacing between Departments and Back Issues.
+- Replaced compressed nine-column navigation tracks with evenly spaced flex navigation.
+- Moved the compact-menu breakpoint to 1320px so the full navigation disappears before it becomes crowded.
+- Expanded the Profile keyword spine from 19 to 39 demonstrated disciplines.
+- Tightened the keyword boxes, gaps, lettering, and distance from the vertical guide.
+- Kept the keyword sequence continuous rather than stretching a small number of labels across the chapter.
+
+## 8.0.0 — Cover Story Refinement
+
+- Returned to the v7.0.7 cover composition and preserved the large stacked name as the dominant masthead.
+- Restyled the professional promise as a serif editorial deck beneath the name rather than a competing headline.
+- Preserved the portrait, capability chips, publication metadata, and cover actions.
+- Added a 1200 × 630 social-sharing image based on the official ATJ signature lockup.
+- Restored the supplied ATJ identity hero asset.
+- Expanded the Profile keyword spine through the chapter using demonstrated disciplines only.
+- Added the InDesign workflow story to the identity case study.
+- Conducted a repetition-focused edit of the opening and Perspective copy.
+- Introduced the compact menu at 1260px.
+- Removed the unused yellow production rule.
+- Added visible file sizes to résumé and full-publication PDF links.
+- Updated package.json to 8.0.0.
+- Removed unused legacy brand variants.
+- Consolidated stacked v7 release overrides into one documented v8 block.
+
+## 7.0.7 — Tab Order and Chapter Numbering
+
+- Removed `tabindex="0"` from large ARIA tab panels so keyboard focus no longer jumps to the top or bottom of tall content areas.
+- Kept roving keyboard navigation on the actual tab buttons; Tab now proceeds to the next genuine interactive control.
+- Added scroll margins so anchored chapter headings clear the sticky navigation.
+- Corrected visible chapter numbers to match the navigation: Perspective 01 through Production 08.
+- Removed chapter numbering from the Colophon because it is supporting issue metadata rather than the ninth navigation destination.
+- Kept Next Issue as navigation item 09 and the final contact chapter.
+
+## 7.0.6 — Profile and Accessibility Pass
+
+- Renamed the navigation chapter **Masthead** to **Profile**.
+- Renamed the visible chapter eyebrow from **The Masthead** to **Profile**.
+- Relabelled the primary navigation as **Issue contents**.
+- Added accurate Open/Close accessible labels and visible text to the mobile navigation toggle.
+- Added keyboard instructions to both ARIA tab interfaces.
+- Made selected tab panels focusable as the next logical Tab stop.
+- Strengthened keyboard focus visibility, forced-colors treatment, and touch-target sizing.
+- Updated the accessibility audit with the intended tab order and remaining manual tests.
+
+## 7.0.5 — Corrected brand SVGs
+
+- Replaced the primary mark, signature lockup, and wordmark with the latest corrected SVG exports supplied by Adam.
+- Updated duplicate and legacy SVG asset copies so the website uses the same canonical artwork throughout.
+- Refreshed SVG cache-version references.
+
+# v7.0.5 — Navigation and identity asset refinement
+
+- Reduced the desktop ATJ header mark and redistributed navigation spacing so all nine destinations fit more comfortably.
+- Added an earlier responsive menu breakpoint for narrower laptop and tablet widths.
+- Added the official Adam Thomas Janes wordmark SVG to the brand asset library and identity presentation.
+- Removed the white background rectangle from every active signature-lockup SVG.
+- Replaced the raster lockup hero and the earlier white-block lockup study with transparent final vector assets.
+- Regenerated the signature-lockup PNG with transparency.
+
+# v7.0.0 — Editorial Perspective Edition
+
+- Reframed the cover around Adam’s promise: delivering messages as memorable audience experiences.
+- Added an Editorial Perspective chapter based on Adam’s communication philosophy.
+- Added a hiring brief that answers practical employer questions before an interview.
+- Added a separate identity-system strip while preserving the ATJ development case study.
+- Documented that the identity was developed in Adobe InDesign and exported as responsive vector artwork.
+- Integrated the primary mark and signature lockup as complementary parts of the publishing system.
+
 # v6.1.0 — ATJ Identity System and Case Study
 
 - Replaced the website header mark and favicon source with the new optimized ATJ primary monogram.
@@ -51,7 +195,6 @@
 - Restored broader hiring-language from earlier drafts: brochures, sell sheets, rack cards, sales collateral, postcards, Google Analytics, and professional real-estate photography.
 - Added `EDITORIAL_CONTINUITY_REPORT.md` as a permanent record of what was checked and preserved.
 
-# Changelog
 
 ## v5.25.1 — CMYK Orbit Visibility
 
@@ -932,3 +1075,14 @@ Repository workflow reminder: edit locally, commit to GitHub, and let Netlify de
 
 ## Editorial Direction
 This edition continues the evolution from a portfolio into an editorial publication. Features are written to explain not only what was created, but why those communication decisions mattered. Recurring editorial reflections, transitions, and thematic storytelling reinforce the idea that every project is part of a larger conversation about clear communication.
+
+## 8.0.4 — Performance and release hardening
+
+- Reduced the two full-page editorial-template WebP previews from roughly 1.67 MB combined to under 600 KB combined while preserving readable gallery previews.
+- Removed three unused portfolio-site gallery images identified by the asset audit.
+- Added click, tap, Enter, and Space support to the crop-to-spread newspaper preview, including an accurate pressed state for assistive technology.
+- Added a zero-dependency site-health audit for duplicate IDs, missing local references, missing image alternatives, and unlabeled buttons.
+- Added the site-health audit to `npm run check` so JavaScript, assets, HTML structure, and local references are validated together.
+- Added targeted Netlify caching for HTML and downloadable resource files.
+- Updated stale developer notes that still referred to placeholder proof text and a placeholder template archive.
+- Updated the package version to 8.0.4.
