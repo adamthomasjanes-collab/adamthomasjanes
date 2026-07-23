@@ -5006,3 +5006,25 @@ a small{font:700 .72em/1 var(--sans);letter-spacing:.04em}
     --mobile-card-width: min(88vw, 340px);
   }
 }
+
+
+/* ============================================================
+   v8.1.0 — Archive thumbnail fill and Backstage simplification
+   ============================================================ */
+.archive-media-art {
+  aspect-ratio: 4 / 3;
+  background: var(--paper, #f7f3ea);
+}
+
+.archive-media-card.has-image img,
+.archive-media-art img {
+  object-fit: cover;
+  object-position: center top;
+  background: transparent;
+}
+
+@media (max-width: 760px) {
+  .archive-media-art {
+    aspect-ratio: 16 / 10;
+  }
+}

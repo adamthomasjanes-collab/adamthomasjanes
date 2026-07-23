@@ -1,3 +1,10 @@
+# 8.1.0 — Mobile gallery and Backstage refinement
+
+- Changed archive overlay thumbnails to crop and fill their frames on desktop, tablet, and phone instead of leaving large areas of empty white space around portrait pages and spreads.
+- Uses the upper portion of spreads when necessary so each thumbnail reads clearly at small sizes while full images remain available in the interactive viewer.
+- Removed the redundant, non-interactive six-step Backstage summary diagram; the interactive process tabs remain.
+- Updated stylesheet cache-busting to 8.1.0.
+
 # 8.0.11 — Profile image sharing and search metadata
 
 - Replaced the former ATJ social lockup preview with a 1200×630 JPEG derived from the approved cover portrait and communication statement.

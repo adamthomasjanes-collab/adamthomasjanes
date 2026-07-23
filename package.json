@@ -1,6 +1,6 @@
 {
   "name": "adam-portfolio-site",
-  "version": "8.0.11",
+  "version": "8.1.0",
   "private": false,
   "description": "Adam Thomas Janes editorial portfolio, expanded with a communication-first Production chapter and a downloadable newspaper template resource.",
   "scripts": {
